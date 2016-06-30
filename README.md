@@ -3,7 +3,7 @@
 A PHP library providing ISO 3166-1 data.
 
 [![Build Status](https://img.shields.io/travis/thephpleague/iso3166/master.svg?style=flat-square)](https://travis-ci.org/thephpleague/iso3166)
-[![License](https://img.shields.io/packagist/l/thephpleague/iso3166.svg?style=flat-square)](https://packagist.org/packages/thephpleague/iso3166)
+[![License](https://img.shields.io/packagist/l/league/iso3166.svg?style=flat-square)](https://packagist.org/packages/league/iso3166)
 
 ## What is ISO 3166-1
 
