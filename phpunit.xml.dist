@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    backupGlobals="false"
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    stderr="true"
+>
+
+    <testsuites>
+        <testsuite name="ISO3166 Test Suite">
+            <file>src/ISO3166Test.php</file>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <file>src/ISO3166.php</file>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-text" target="php://stderr" />
+        <log type="coverage-html" target="coverage" showUncoveredFiles="true"/>
+        <log type="coverage-clover" target="coverage.xml" showUncoveredFiles="true"/>
+    </logging>
+
+</phpunit>
