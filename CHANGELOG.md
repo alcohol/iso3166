@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-* 
+* Changed: update Antarctica currencies (thephpleague/iso3166#6).
 
 ## [1.0.0] - 2016/06/30
 
