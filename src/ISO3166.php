@@ -236,7 +236,7 @@ class ISO3166 implements \IteratorAggregate, DataProvider
                 'SEK',
                 'UAH',
                 'USD',
-                'UYU,'
+                'UYU',
                 'ZAR',
             ],
         ],
