@@ -33,7 +33,7 @@ class ISO3166 implements \IteratorAggregate, DataProvider
             throw new \DomainException('Not a valid alpha2: ' . $alpha2);
         }
 
-        return $this->get($alpha2);
+        return $this->getBy(self::KEY_ALPHA2, $alpha2);
     }
 
     /**
@@ -54,7 +54,7 @@ class ISO3166 implements \IteratorAggregate, DataProvider
             throw new \DomainException('Not a valid alpha3: ' . $alpha3);
         }
 
-        return $this->get($alpha3);
+        return $this->getBy(self::KEY_ALPHA3, $alpha3);
     }
 
     /**
@@ -75,7 +75,7 @@ class ISO3166 implements \IteratorAggregate, DataProvider
             throw new \DomainException('Not a valid numeric: ' . $numeric);
         }
 
-        return $this->get($numeric);
+        return $this->getBy(self::KEY_NUMERIC, $numeric);
     }
 
     /**
@@ -127,24 +127,22 @@ class ISO3166 implements \IteratorAggregate, DataProvider
      *
      * Looks for a match against all known identifying keys of each entry in the dataset.
      *
-     * @param string $id
+     * @param string $key
+     * @param string $value
      *
      * @throws \OutOfBoundsException
      *
      * @return array
      */
-    protected function get($id)
+    protected function getBy($key, $value)
     {
         foreach ($this as $country) {
-            if (0 === strcasecmp($id, $country[self::KEY_ALPHA2]) ||
-                0 === strcasecmp($id, $country[self::KEY_ALPHA3]) ||
-                0 === strcasecmp($id, $country[self::KEY_NUMERIC])
-            ) {
+            if (0 === strcasecmp($value, $country[$key])) {
                 return $country;
             }
         }
 
-        throw new \OutOfBoundsException('ISO 3166-1 does not contain: ' . $id);
+        throw new \OutOfBoundsException('ISO 3166-1 does not contain: ' . $value);
     }
 
     /**
