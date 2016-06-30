@@ -8,13 +8,13 @@
 
     <testsuites>
         <testsuite name="ISO3166 Test Suite">
-            <file>src/ISO3166Test.php</file>
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <file>src/ISO3166.php</file>
+            <directory>src</directory>
         </whitelist>
     </filter>
 
