@@ -24,6 +24,11 @@
         "phpunit/phpunit": "^4.6 || ^5.0",
         "phpunit/php-invoker": "@stable"
     },
+    "autoload-dev": {
+        "psr-4": {
+            "League\\ISO3166\\": "tests"
+        }
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.x-dev"
