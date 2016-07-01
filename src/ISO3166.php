@@ -125,7 +125,7 @@ class ISO3166 implements \IteratorAggregate, DataProvider
     /**
      * Lookup ISO3166-1 data by given identifier.
      *
-     * Looks for a match against all known identifying keys of each entry in the dataset.
+     * Looks for a match against the given key for each entry in the dataset.
      *
      * @param string $key
      * @param string $value
