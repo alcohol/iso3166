@@ -33,5 +33,9 @@
         "branch-alias": {
             "dev-master": "1.x-dev"
         }
+    },
+    "scripts": {
+        "cs": "php-cs-fixer fix --verbose --diff",
+        "test": "phpunit"
     }
 }
