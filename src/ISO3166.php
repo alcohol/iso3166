@@ -17,176 +17,22 @@ use OutOfBoundsException;
 
 class ISO3166 implements Countable, IteratorAggregate, DataProvider
 {
+    use ValidatorTrait;
+
     const KEY_ALPHA2 = 'alpha2';
     const KEY_ALPHA3 = 'alpha3';
     const KEY_NUMERIC = 'numeric';
 
     /**
      * new Instance
-     * @param mixed $countries an iterable object/structure where each item
+     * @param array $countries an iterable object/structure where each item
      *                         represents a valid country array data
      */
-    public function __construct($countries = [])
+    public function __construct(array $countries = [])
     {
-        if ($countries) {
-            $list = [];
-            foreach ($countries as $country) {
-                $list[] = $this->validateCountryArray($country);
-            }
-            $this->countries = $list;
+        if (!empty($countries)) {
+            $this->countries = $countries;
         }
-    }
-
-    /**
-     * Validate and normalize a country array
-     *
-     * @param array $country
-     *
-     * @throws InvalidArgumentException if required indexes are missing
-     * @throws DomainException if the input array does not conform to the expected format
-     *
-     * @return array
-     */
-    protected function validateCountryArray(array $country)
-    {
-        if (!isset(
-            $country[self::KEY_ALPHA2],
-            $country[self::KEY_ALPHA3],
-            $country[self::KEY_NUMERIC],
-            $country['currency'],
-            $country['name']
-        )) {
-            throw new InvalidArgumentException(sprintf(
-                'Invalid value for $country, one of the following required key is missing: %s',
-                implode(', ', [ISO3166::KEY_ALPHA2, ISO3166::KEY_ALPHA3, ISO3166::KEY_NUMERIC, 'currency'])
-            ));
-        }
-
-        return [
-            self::KEY_ALPHA2 => $this->validateAlpha2($country[self::KEY_ALPHA2]),
-            self::KEY_ALPHA3 => $this->validateAlpha3($country[self::KEY_ALPHA3]),
-            self::KEY_NUMERIC => $this->validateNumeric($country[self::KEY_NUMERIC]),
-            'currency' => $this->validateCurrencies($country['currency']),
-            'name' => $this->validateName($country['name']),
-        ];
-    }
-
-    /**
-     * Validate and normalized ISO3166-1-alpha2-code
-     *
-     * @param  string $input
-     *
-     * @throws DomainException if input does not conform to alpha2 format.
-     *
-     * @return string
-     */
-    protected function validateAlpha2($input)
-    {
-        if (!preg_match('/^[a-zA-Z]{2}$/', $input)) {
-            throw new DomainException('Not a valid alpha2: ' . $input);
-        }
-
-        return strtoupper($input);
-    }
-
-    /**
-     * Validate and normalized ISO3166-1-alpha3-code
-     *
-     * @param  string $input
-     *
-     * @throws DomainException if input does not conform to alpha3 format.
-     *
-     * @return string
-     */
-    protected function validateAlpha3($input)
-    {
-        if (!preg_match('/^[a-zA-Z]{3}$/', $input)) {
-            throw new DomainException('Not a valid alpha3: ' . $input);
-        }
-
-        return strtoupper($input);
-    }
-
-    /**
-     * Validate and normalized ISO3166-1-numeric-code
-     *
-     * @param  string $input
-     *
-     * @throws DomainException if input does not conform to numeric format.
-     *
-     * @return string
-     */
-    protected function validateNumeric($input)
-    {
-        if (!preg_match('/^[0-9]{3}$/', $input)) {
-            throw new DomainException('Not a valid numeric: ' . $input);
-        }
-
-        return $input;
-    }
-
-    /**
-     * Validate and normalized ISO4217-alpha3-code
-     *
-     * @param mixed $input a string or an iterable object
-     *
-     * @return string|array
-     */
-    protected function validateCurrencies($input)
-    {
-        if (is_array($input)) {
-            $list = [];
-            foreach ($input as $currency) {
-                $list[] = $this->validateCurrency($currency);
-            }
-            return $list;
-        }
-
-        return $this->validateCurrency($input);
-    }
-
-    /**
-     * Validate and normalized ISO4217-alpha3-code
-     *
-     * @param string $input a string or an iterable object
-     *
-     * @throws DomainException if input does not conform to ISO4217 alpha3 format.
-     *
-     * @return string
-     */
-    protected function validateCurrency($input)
-    {
-        if (!preg_match('/^[a-zA-Z]{3}$/', $input)) {
-            throw new DomainException('Not a valid ISO4217 currency code: ' . $input);
-        }
-
-        return strtoupper($input);
-    }
-
-    /**
-     * Validate and normalized the country name
-     *
-     * @param string $str a string or an iterable object
-     *
-     * @throws DomainException if input is empty
-     *
-     * @return string
-     */
-    protected function validateName($input)
-    {
-        if (is_string($input) || (is_object($input) && !method_exists($input, '__toString'))) {
-            $input = trim((string) $input);
-            if ('' !== $input) {
-                return $input;
-            }
-
-            throw new DomainException('A country name can not be empty');
-        }
-
-        throw new InvalidArgumentException(sprintf(
-            'Expected data to be a string; received "%s"',
-            (is_object($input) ? get_class($input) : gettype($input))
-        ));
     }
 
     /**
@@ -301,7 +147,7 @@ class ISO3166 implements Countable, IteratorAggregate, DataProvider
      */
     private function getBy($key, $value)
     {
-        foreach ($this as $country) {
+        foreach ($this->countries as $country) {
             if ($value === $country[$key]) {
                 return $country;
             }

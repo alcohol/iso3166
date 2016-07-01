@@ -11,7 +11,6 @@ namespace League\ISO3166;
 
 class ISO3166Test extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @testdox Calling the constructor with a user defined country list
      */
@@ -20,89 +19,25 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
         $arr = [
             [
                 ISO3166::KEY_ALPHA2 => 'FO',
-                ISO3166::KEY_ALPHA3 => 'FoO',
+                ISO3166::KEY_ALPHA3 => 'FOO',
                 ISO3166::KEY_NUMERIC => 111,
-                'currency' => ['bAr'],
+                'currency' => ['BAR'],
                 'name' => 'The country of Foo',
             ],
             [
                 ISO3166::KEY_ALPHA2 => 'BA',
-                ISO3166::KEY_ALPHA3 => 'BaR',
+                ISO3166::KEY_ALPHA3 => 'BAR',
                 ISO3166::KEY_NUMERIC => 444,
                 'currency' => 'BAZ',
-                'name' => '    The country of Bar     ',
+                'name' => 'The country of Bar',
             ],
         ];
         $collection = new ISO3166($arr);
+        $this->assertCount(2, $collection);
         $this->assertInternalType('array', $collection->getByAlpha3('FOO'));
-        $this->assertSame(['BAR'], $collection->getByAlpha2('Fo')['currency']);
+        $this->assertSame(['BAR'], $collection->getByAlpha2('FO')['currency']);
         $this->assertSame('BAZ', $collection->getByAlpha3('BAR')['currency']);
         $this->assertSame('The country of Bar', $collection->getByAlpha3('BAR')['name']);
-        $this->assertCount(2, $collection);
-    }
-
-    /**
-     * @testdox Calling the constructor with invalid country array throws a InvalidArgumentException
-     * @expectedException \InvalidArgumentException
-     */
-    public function testNewInstanceThrowsInvalidArgumentException()
-    {
-        new ISO3166([[]]);
-    }
-
-    /**
-     * @testdox Calling the constructor with a wrongly formatted user defined country list
-     * @expectedException \DomainException
-     * @expectedExceptionMessageRegExp /^Not a valid ISO4217 currency code: .*$/
-     */
-    public function testNewInstanceThrowsDomainExceptionOnBadCurrency()
-    {
-        $arr = [
-            [
-                ISO3166::KEY_ALPHA2 => 'BA',
-                ISO3166::KEY_ALPHA3 => 'BaR',
-                ISO3166::KEY_NUMERIC => 444,
-                'currency' => '444',
-                'name' => 'The country of BAR',
-            ],
-        ];
-        new ISO3166($arr);
-    }
-
-    /**
-     * @testdox Calling the constructor with a wrongly formatted user defined country list
-     * @expectedException \InvalidArgumentException
-     */
-    public function testNewInstanceThrowsInvalidArgumentExceptionOnBadName()
-    {
-        $arr = [
-            [
-                ISO3166::KEY_ALPHA2 => 'BA',
-                ISO3166::KEY_ALPHA3 => 'BaR',
-                ISO3166::KEY_NUMERIC => 444,
-                'currency' => 'BAZ',
-                'name' => [],
-            ],
-        ];
-        new ISO3166($arr);
-    }
-
-    /**
-     * @testdox Calling the constructor with a wrongly formatted user defined country list
-     * @expectedException \DomainException
-     */
-    public function testNewInstanceThrowsDomainExceptionOnBadName()
-    {
-        $arr = [
-            [
-                ISO3166::KEY_ALPHA2 => 'BA',
-                ISO3166::KEY_ALPHA3 => 'BaR',
-                ISO3166::KEY_NUMERIC => 444,
-                'currency' => 'BAZ',
-                'name' => '',
-            ],
-        ];
-        new ISO3166($arr);
     }
 
     /**
