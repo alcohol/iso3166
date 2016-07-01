@@ -160,6 +160,8 @@ class ISO3166 implements \IteratorAggregate, DataProvider
      */
     protected function get($id)
     {
+        trigger_error('The method "' . __METHOD__ . '" is deprecated and will be removed in a future release.', E_USER_DEPRECATED);
+
         foreach ($this as $country) {
             if (0 === strcasecmp($id, $country[self::KEY_ALPHA2]) ||
                 0 === strcasecmp($id, $country[self::KEY_ALPHA3]) ||
