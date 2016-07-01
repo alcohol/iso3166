@@ -20,8 +20,8 @@
 
     <logging>
         <log type="coverage-text" target="php://stderr" />
-        <log type="coverage-html" target="coverage" showUncoveredFiles="true"/>
-        <log type="coverage-clover" target="coverage.xml" showUncoveredFiles="true"/>
+        <log type="coverage-html" target="build/coverage" showUncoveredFiles="true"/>
+        <log type="coverage-clover" target="build/coverage.xml" showUncoveredFiles="true"/>
     </logging>
 
 </phpunit>
