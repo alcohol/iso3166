@@ -9,11 +9,31 @@
 
 namespace League\ISO3166;
 
-class ISO3166 implements \IteratorAggregate, DataProvider
+use Countable;
+use DomainException;
+use IteratorAggregate;
+use InvalidArgumentException;
+use OutOfBoundsException;
+
+class ISO3166 implements Countable, IteratorAggregate, DataProvider
 {
+    use ValidatorTrait;
+
     const KEY_ALPHA2 = 'alpha2';
     const KEY_ALPHA3 = 'alpha3';
     const KEY_NUMERIC = 'numeric';
+
+    /**
+     * new Instance
+     * @param array $countries an iterable object/structure where each item
+     *                         represents a valid country array data
+     */
+    public function __construct(array $countries = [])
+    {
+        if (!empty($countries)) {
+            $this->countries = $countries;
+        }
+    }
 
     /**
      * Lookup ISO3166-1 data by alpha2 identifier.
@@ -22,18 +42,11 @@ class ISO3166 implements \IteratorAggregate, DataProvider
      *
      * @param string $alpha2
      *
-     * @throws \DomainException if input does not conform to alpha2 format.
-     * @throws \OutOfBoundsException if input does not exist in ISO3166-1.
-     *
      * @return array
      */
     public function getByAlpha2($alpha2)
     {
-        if (!preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
-            throw new \DomainException('Not a valid alpha2: ' . $alpha2);
-        }
-
-        return $this->getBy(self::KEY_ALPHA2, $alpha2);
+        return $this->getBy(self::KEY_ALPHA2, $this->validateAlpha2($alpha2));
     }
 
     /**
@@ -43,18 +56,11 @@ class ISO3166 implements \IteratorAggregate, DataProvider
      *
      * @param string $alpha3
      *
-     * @throws \DomainException if input does not conform to alpha3 format.
-     * @throws \OutOfBoundsException if input does not exist in ISO3166-1.
-     *
      * @return array
      */
     public function getByAlpha3($alpha3)
     {
-        if (!preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
-            throw new \DomainException('Not a valid alpha3: ' . $alpha3);
-        }
-
-        return $this->getBy(self::KEY_ALPHA3, $alpha3);
+        return $this->getBy(self::KEY_ALPHA3,  $this->validateAlpha3($alpha3));
     }
 
     /**
@@ -64,18 +70,13 @@ class ISO3166 implements \IteratorAggregate, DataProvider
      *
      * @param string $numeric
      *
-     * @throws \DomainException if input does not conform to numeric format.
-     * @throws \OutOfBoundsException if input does not exist in ISO3166-1.
+     * @throws DomainException if input does not conform to numeric format.
      *
      * @return array
      */
     public function getByNumeric($numeric)
     {
-        if (!preg_match('/^[0-9]{3}$/', $numeric)) {
-            throw new \DomainException('Not a valid numeric: ' . $numeric);
-        }
-
-        return $this->getBy(self::KEY_NUMERIC, $numeric);
+        return $this->getBy(self::KEY_NUMERIC, $this->validateNumeric($numeric));
     }
 
     /**
@@ -86,28 +87,6 @@ class ISO3166 implements \IteratorAggregate, DataProvider
     public function getAll()
     {
         return $this->countries;
-    }
-
-    /**
-     * @api
-     *
-     * @param string $listBy
-     *
-     * @return \Generator
-     */
-    public function listBy($listBy = self::KEY_ALPHA2)
-    {
-        if (!in_array($listBy, $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC], true)) {
-            throw new \DomainException(sprintf(
-                'Invalid value for $indexBy, got "%s", expected one of: %s',
-                $listBy,
-                implode(', ', $keys)
-            ));
-        }
-
-        foreach ($this->countries as $country) {
-            yield $country[$listBy] => $country;
-        }
     }
 
     /**
@@ -123,6 +102,38 @@ class ISO3166 implements \IteratorAggregate, DataProvider
     }
 
     /**
+     * @internal
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->countries);
+    }
+
+    /**
+     * @api
+     *
+     * @param string $listBy
+     *
+     * @return \Generator
+     */
+    public function listBy($listBy = self::KEY_ALPHA2)
+    {
+        if (!in_array($listBy, $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC], true)) {
+            throw new DomainException(sprintf(
+                'Invalid value for $indexBy, got "%s", expected one of: %s',
+                $listBy,
+                implode(', ', $keys)
+            ));
+        }
+
+        foreach ($this->countries as $country) {
+            yield $country[$listBy] => $country;
+        }
+    }
+
+    /**
      * Lookup ISO3166-1 data by given identifier.
      *
      * Looks for a match against the given key for each entry in the dataset.
@@ -130,19 +141,19 @@ class ISO3166 implements \IteratorAggregate, DataProvider
      * @param string $key
      * @param string $value
      *
-     * @throws \OutOfBoundsException
+     * @throws OutOfBoundsException
      *
      * @return array
      */
     private function getBy($key, $value)
     {
-        foreach ($this as $country) {
-            if (0 === strcasecmp($value, $country[$key])) {
+        foreach ($this->countries as $country) {
+            if ($value === $country[$key]) {
                 return $country;
             }
         }
 
-        throw new \OutOfBoundsException('ISO 3166-1 does not contain: ' . $value);
+        throw new OutOfBoundsException(sprintf('ISO 3166-1 does not contain: %s', $value));
     }
 
     /**
@@ -154,7 +165,7 @@ class ISO3166 implements \IteratorAggregate, DataProvider
      *
      * @param string $id
      *
-     * @throws \OutOfBoundsException
+     * @throws OutOfBoundsException
      *
      * @return array
      */
@@ -171,7 +182,7 @@ class ISO3166 implements \IteratorAggregate, DataProvider
             }
         }
 
-        throw new \OutOfBoundsException('ISO 3166-1 does not contain: ' . $id);
+        throw new OutOfBoundsException('ISO 3166-1 does not contain: ' . $id);
     }
 
     /**

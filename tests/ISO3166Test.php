@@ -12,6 +12,35 @@ namespace League\ISO3166;
 class ISO3166Test extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @testdox Calling the constructor with a user defined country list
+     */
+    public function testConstructor()
+    {
+        $arr = [
+            [
+                ISO3166::KEY_ALPHA2 => 'FO',
+                ISO3166::KEY_ALPHA3 => 'FOO',
+                ISO3166::KEY_NUMERIC => 111,
+                'currency' => ['BAR'],
+                'name' => 'The country of Foo',
+            ],
+            [
+                ISO3166::KEY_ALPHA2 => 'BA',
+                ISO3166::KEY_ALPHA3 => 'BAR',
+                ISO3166::KEY_NUMERIC => 444,
+                'currency' => 'BAZ',
+                'name' => 'The country of Bar',
+            ],
+        ];
+        $collection = new ISO3166($arr);
+        $this->assertCount(2, $collection);
+        $this->assertInternalType('array', $collection->getByAlpha3('FOO'));
+        $this->assertSame(['BAR'], $collection->getByAlpha2('FO')['currency']);
+        $this->assertSame('BAZ', $collection->getByAlpha3('BAR')['currency']);
+        $this->assertSame('The country of Bar', $collection->getByAlpha3('BAR')['name']);
+    }
+
+    /**
      * @testdox Calling getByAlpha2 with an invalid alpha2 throws a DomainException.
      * @dataProvider invalidAlpha2Provider
      * @expectedException \DomainException
