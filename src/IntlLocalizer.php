@@ -7,7 +7,7 @@ use Generator;
 use InvalidArgumentException;
 use Traversable;
 
-class DataLocalizer
+class IntlLocalizer implements LocalizeData
 {
     use KeyValidators;
 
@@ -25,7 +25,7 @@ class DataLocalizer
 
     /**
      * New Instance
-     * 
+     *
      * @param string $key    the index key to add to the entry
      * @param string $locale locale to use to display the region name
      */
@@ -44,10 +44,10 @@ class DataLocalizer
      *
      * @throws DomainException if input is not valid.
      */
-    private function guardAgainstInvalidKey($input) 
+    private function guardAgainstInvalidKey($input)
     {
         $this->guardAgainstInvalidString($input, '$key');
-        $invalid_keys = [ISO3166::KEY_ALPHA3 => 1, ISO3166::KEY_ALPHA2 => 1, ISO3166::KEY_NUMERIC = 1];
+        $invalid_keys = [ISO3166::KEY_ALPHA3 => 1, ISO3166::KEY_ALPHA2 => 1, ISO3166::KEY_NUMERIC => 1];
         if (isset($invalid_keys[$input])) {
             throw new DomainException(sprintf(
                 'Invalid value for $key, got "%s", $key can not be : %s',
@@ -77,8 +77,6 @@ class DataLocalizer
     /**
      * localize a collection of country entries
      *
-     * @see DataLocalizer::localize
-     *
      * @param iterable $iterable
      *
      * @throws InvalidArgumentException if input is not a iterable.
@@ -86,20 +84,6 @@ class DataLocalizer
      * @return Generator
      */
     public function __invoke($iterable)
-    {
-        return $this->localize($iterable);
-    }
-
-    /**
-     * localize a collection of country entries
-     *
-     * @param iterable $iterable
-     *
-     * @throws InvalidArgumentException if input is not a iterable.
-     *
-     * @return Generator
-     */
-    public function localize($iterable)
     {
         if (!is_array($iterable) && !$iterable instanceof Traversable) {
             throw new InvalidArgumentException(sprintf('Expected an iterable got: %s', gettype($iterable)));
@@ -125,11 +109,7 @@ class DataLocalizer
      */
     private function localizeEntry(array $entry)
     {
-        if (!isset($entry[ISO3166::KEY_ALPHA3])) {
-            throw new DomainException('Each data entry must contain a valid alpha3 key.');
-        }
-
-        $this->guardAgainstInvalidAlpha3($entry[ISO3166::KEY_ALPHA3]);
+        $this->assertEntryHasRequiredKeys($entry);
 
         $entry[$this->key] = locale_get_display_region(
             '-'.$entry[ISO3166::KEY_ALPHA3],

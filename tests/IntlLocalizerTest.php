@@ -7,16 +7,16 @@ use Generator;
 use League\ISO3166\ISO3166;
 use PHPUnit_Framework_TestCase as TestCase;
 
-class DataLocalizerTest extends TestCase
+class IntlLocalizerTest extends TestCase
 {
     /**
      * @testdox Calling constructor with invalid arguments throws a InvalidArgumentException.
      * @dataProvider constructorThrowsInvalidArgumentExceptionProvider
      * @expectedException \InvalidArgumentException
      */
-    public function testNewInstanceThrowsInvalidArgumentException($key, $in_locale)
+    public function testNewInstanceThrowsInvalidArgumentException($key, $locale)
     {
-        new DataLocalizer($key, $in_locale);
+        new IntlLocalizer($key, $locale);
     }
 
     public function constructorThrowsInvalidArgumentExceptionProvider()
@@ -24,22 +24,27 @@ class DataLocalizerTest extends TestCase
         return [
             'invalid $key type' => [
                 'key' => [],
-                'in_locale' => '',
+                'locale' => '',
             ],
-            'invalid $in_locale type' => [
+            'invalid $locale type' => [
                 'key' => 'foo',
-                'in_locale' => [],
+                'locale' => [],
             ],
         ];
+    }
+
+    public function testImplementsLocalizeData()
+    {
+        $this->assertInstanceOf(LocalizeData::class, new IntlLocalizer);
     }
 
     /**
      * @testdox Calling constructor with forbidden key throws a DomainException.
      * @expectedException \DomainException
      */
-    public function testNewInstanceThrowsDomainException($key, $in_locale)
+    public function testNewInstanceThrowsDomainException()
     {
-        new DataLocalizer(ISO3166::KEY_NUMERIC);
+        new IntlLocalizer(ISO3166::KEY_NUMERIC);
     }
 
     /**
@@ -48,39 +53,29 @@ class DataLocalizerTest extends TestCase
      */
     public function testLocalizeThrowsInvalidArgumentException()
     {
-        (new DataLocalizer())->__invoke('SEN');
+        iterator_to_array((new IntlLocalizer())->__invoke('SEN'));
     }
 
     /**
      * @testdox Calling localize with invalid iterable throws a DomainException.
-     * @dataProvider invalidLocalizeArgumentsProvider
      * @expectedException \DomainException
      */
-    public function testLocalizeThrowsDomainException($input)
+    public function testLocalizeThrowsDomainException()
     {
-        (new DataLocalizer())->__invoke($input);
-    }
-
-    public function invalidLocalizeArgumentsProvider()
-    {
-        return [
-            'input type must be an iterable with array as item' => [
-                'input' => new ArrayIterator([1, 2, 3]),
-            ],
-            'item array must contain an alpha3 key' => [
-                'input' => [[ISO3166::KEY_ALPHA2 => 'US']],
-            ],
-            'item array must contain a valid alpha3 key' => [
-                'input' => [[ISO3166::KEY_ALPHA3 => 'US']],
-            ],
-        ];
+        iterator_to_array((new IntlLocalizer())->__invoke([
+            [
+                ISO3166::KEY_ALPHA2 => 'US',
+                ISO3166::KEY_ALPHA3 => 'US',
+                ISO3166::KEY_NUMERIC => '686'
+            ]
+        ]));
     }
 
     public function testLocalizeReturnsGenerator()
     {
         $this->assertInstanceOf(
             Generator::class,
-            (new DataLocalizer())->__invoke([[ISO3166::KEY_ALPHA3 => 'BEL']])
+            (new IntlLocalizer())->__invoke([[ISO3166::KEY_ALPHA3 => 'BEL']])
         );
     }
 
@@ -91,8 +86,10 @@ class DataLocalizerTest extends TestCase
     public function testLocalize($key, $locale, $expected, $data)
     {
         $collection = new ISO3166($data);
-        $localizer = new DataLocalizer($key, $locale);
-        $firstEntry = array_shift(iterator_to_array($localizer($collection)));
+        $localizer = new IntlLocalizer($key, $locale);
+        $res = iterator_to_array($localizer($collection));
+        $firstEntry = array_shift($res);
+
         $this->assertSame($expected, $firstEntry[$key]);
     }
 
