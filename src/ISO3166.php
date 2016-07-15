@@ -170,36 +170,6 @@ class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
     }
 
     /**
-     * Lookup ISO3166-1 data by given identifier.
-     *
-     * Looks for a match against all known identifying keys of each entry in the dataset.
-     *
-     * @deprecated
-     * @codeCoverageIgnore
-     *
-     * @param string $id
-     *
-     * @throws \OutOfBoundsException
-     *
-     * @return array
-     */
-    protected function get($id)
-    {
-        trigger_error('The method "' . __METHOD__ . '" is deprecated and will be removed in a future release.', E_USER_DEPRECATED);
-
-        foreach ($this as $country) {
-            if (0 === strcasecmp($id, $country[self::KEY_ALPHA2]) ||
-                0 === strcasecmp($id, $country[self::KEY_ALPHA3]) ||
-                0 === strcasecmp($id, $country[self::KEY_NUMERIC])
-            ) {
-                return $country;
-            }
-        }
-
-        throw new \OutOfBoundsException(sprintf('ISO 3166-1 does not contain: %s', $id));
-    }
-
-    /**
      * Default dataset.
      *
      * @var array
