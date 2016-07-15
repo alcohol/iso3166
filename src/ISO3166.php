@@ -158,7 +158,7 @@ class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
      *
      * @return array
      */
-    private function getBy($key, $value)
+    public function getBy($key, $value)
     {
         foreach ($this->countries as $country) {
             if (0 === strcasecmp($value, $country[$key])) {
