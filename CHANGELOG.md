@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+* Changed: `get()` method has been removed ([#19]).
 * Changed: `currency` key in default dataset entries is now always an array ([#15]).
 * New: `ISO3166` now implements `Countable` interface ([#18]).
 * New: can now replace default dataset by injecting a new one into `ISO3166` through the constructor ([#18]).
@@ -24,6 +25,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
 
+[#19]: https://github.com/thephpleague/iso3166/issues/19
 [#18]: https://github.com/thephpleague/iso3166/issues/18
 [#15]: https://github.com/thephpleague/iso3166/issues/15
 [#12]: https://github.com/thephpleague/iso3166/issues/12
