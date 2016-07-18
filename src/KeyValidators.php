@@ -12,23 +12,86 @@ namespace League\ISO3166;
 trait KeyValidators
 {
     /**
+     * @var array
+     */
+    private $requiredKeys = [
+        ISO3166::KEY_ALPHA2 => 'guardAgainstInvalidAlpha2',
+        ISO3166::KEY_ALPHA3 => 'guardAgainstInvalidAlpha3',
+        ISO3166::KEY_NUMERIC => 'guardAgainstInvalidNumeric',
+    ];
+
+    /**
+     * @param array $entry
+     *
+     * @throws \DomainException if given data entry does not have all the required keys.
+     */
+    private function assertEntryHasRequiredKeys(array $entry)
+    {
+        foreach ($this->requiredKeys as $key => $filter) {
+            if (!isset($entry[$key])) {
+                throw new \DomainException(sprintf('Each data entry must have a valid %s key.', $key));
+            }
+
+            call_user_func([$this, $filter], $entry[$key]);
+        }
+    }
+
+    /**
      * Assert that input looks like an alpha2 key.
      *
      * @param string $alpha2
-     *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like an alpha2 key.
-     *
-     * @return string
      */
     private function guardAgainstInvalidAlpha2($alpha2)
     {
-        if (!is_string($alpha2)) {
-            throw new \InvalidArgumentException(sprintf('Expected $alpha2 to be of type string, got: %s', gettype($alpha2)));
-        }
+        $this->assertValidRequiredKey($alpha2, 'alpha2', '/^[a-zA-Z]{2}$/');
+    }
 
-        if (!preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
-            throw new \DomainException(sprintf('Not a valid alpha2 key: %s', $alpha2));
+    /**
+     * Assert that input validate a required key.
+     *
+     * @param string $input input value
+     * @param string $param input name
+     * @param string $regexp domain specific regular expression
+     *
+     */
+    private function assertValidRequiredKey($input, $param, $regexp)
+    {
+        $this->guardAgainstInvalidString($input, '$'.$param);
+        $this->guardAgainstInvalidRegexp($input, $param, $regexp);
+    }
+
+    /**
+     * Assert that input is a string.
+     *
+     * @param string $input input value
+     * @param string $param input name
+     *
+     * @throws \InvalidArgumentException if input is not a string.
+     */
+    private function guardAgainstInvalidString($input, $param)
+    {
+        if (!is_string($input)) {
+            throw new \InvalidArgumentException(sprintf(
+                'Expected %s to be of type string, got: %s',
+                $param,
+                gettype($input)
+            ));
+        }
+    }
+
+    /**
+     * Assert that the input string validate the given regular expression.
+     *
+     * @param string $input input value
+     * @param string $param input name
+     * @param string $regexp domain specific regular expression
+     *
+     * @throws \DomainException if input does not validate the expression.
+     */
+    private function guardAgainstInvalidRegexp($input, $param, $regexp)
+    {
+        if (!preg_match($regexp, $input)) {
+            throw new \DomainException(sprintf('Not a valid %s key: %s', $param, $input));
         }
     }
 
@@ -36,41 +99,19 @@ trait KeyValidators
      * Assert that input looks like an alpha3 key.
      *
      * @param string $alpha3
-     *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like an alpha3 key.
-     *
-     * @return string
      */
     private function guardAgainstInvalidAlpha3($alpha3)
     {
-        if (!is_string($alpha3)) {
-            throw new \InvalidArgumentException(sprintf('Expected $alpha3 to be of type string, got: %s', gettype($alpha3)));
-        }
-
-        if (!preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
-            throw new \DomainException(sprintf('Not a valid alpha3 key: %s', $alpha3));
-        }
+        $this->assertValidRequiredKey($alpha3, 'alpha3', '/^[a-zA-Z]{3}$/');
     }
 
     /**
      * Assert that input looks like a numeric key.
      *
      * @param string $numeric
-     *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like a numeric key.
-     *
-     * @return string
      */
     private function guardAgainstInvalidNumeric($numeric)
     {
-        if (!is_string($numeric)) {
-            throw new \InvalidArgumentException(sprintf('Expected $numeric to be of type string, got: %s', gettype($numeric)));
-        }
-
-        if (!preg_match('/^[0-9]{3}$/', $numeric)) {
-            throw new \DomainException(sprintf('Not a valid numeric key: %s', $numeric));
-        }
+        $this->assertValidRequiredKey($numeric, 'numeric', '/^[0-9]{3}$/');
     }
 }
