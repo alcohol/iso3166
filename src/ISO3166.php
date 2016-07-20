@@ -9,7 +9,7 @@
 
 namespace League\ISO3166;
 
-class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
+final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
 {
     use KeyValidators;
 
