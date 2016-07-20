@@ -9,7 +9,7 @@
 
 namespace League\ISO3166;
 
-class DataValidator
+final class DataValidator
 {
     use KeyValidators;
 
