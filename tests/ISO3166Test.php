@@ -44,7 +44,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     {
         $this->setExpectedExceptionRegExp($expectedException, $exceptionPattern);
 
-        $this->iso3166->getByAlpha2($alpha2);
+        $this->iso3166->alpha2($alpha2);
     }
 
     /**
@@ -70,8 +70,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByAlpha2()
     {
-        $this->assertEquals($this->foo, $this->iso3166->getByAlpha2($this->foo[ISO3166::KEY_ALPHA2]));
-        $this->assertEquals($this->bar, $this->iso3166->getByAlpha2($this->bar[ISO3166::KEY_ALPHA2]));
+        $this->assertEquals($this->foo, $this->iso3166->alpha2($this->foo[ISO3166::KEY_ALPHA2]));
+        $this->assertEquals($this->bar, $this->iso3166->alpha2($this->bar[ISO3166::KEY_ALPHA2]));
     }
 
     /**
@@ -84,7 +84,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     {
         $this->setExpectedExceptionRegExp($expectedException, $exceptionPattern);
 
-        $this->iso3166->getByAlpha3($alpha3);
+        $this->iso3166->alpha3($alpha3);
     }
 
     /**
@@ -110,8 +110,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByAlpha3()
     {
-        $this->assertEquals($this->foo, $this->iso3166->getByAlpha3($this->foo[ISO3166::KEY_ALPHA3]));
-        $this->assertEquals($this->bar, $this->iso3166->getByAlpha3($this->bar[ISO3166::KEY_ALPHA3]));
+        $this->assertEquals($this->foo, $this->iso3166->alpha3($this->foo[ISO3166::KEY_ALPHA3]));
+        $this->assertEquals($this->bar, $this->iso3166->alpha3($this->bar[ISO3166::KEY_ALPHA3]));
     }
 
     /**
@@ -124,7 +124,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     {
         $this->setExpectedExceptionRegExp($expectedException, $exceptionPattern);
 
-        $this->iso3166->getByNumeric($numeric);
+        $this->iso3166->numeric($numeric);
     }
 
     /**
@@ -154,8 +154,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetByNumeric()
     {
-        $this->assertEquals($this->foo, $this->iso3166->getByNumeric($this->foo[ISO3166::KEY_NUMERIC]));
-        $this->assertEquals($this->bar, $this->iso3166->getByNumeric($this->bar[ISO3166::KEY_NUMERIC]));
+        $this->assertEquals($this->foo, $this->iso3166->numeric($this->foo[ISO3166::KEY_NUMERIC]));
+        $this->assertEquals($this->bar, $this->iso3166->numeric($this->bar[ISO3166::KEY_NUMERIC]));
     }
 
     /**
@@ -163,7 +163,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      */
     public function testGetAll()
     {
-        $this->assertInternalType('array', $this->iso3166->getAll(), 'getAll() should return an array.');
+        $this->assertInternalType('array', $this->iso3166->all(), 'getAll() should return an array.');
     }
 
     /**
@@ -176,7 +176,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
             ++$i;
         }
 
-        $this->assertEquals(count($this->iso3166->getAll()), $i, 'Compare iterated count to count(getAll()).');
+        $this->assertEquals(count($this->iso3166->all()), $i, 'Compare iterated count to count(getAll()).');
     }
 
     /**
@@ -185,7 +185,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     public function testListBy()
     {
         try {
-            foreach ($this->iso3166->listBy('foo') as $key => $value) {
+            foreach ($this->iso3166->iterator('foo') as $key => $value) {
                 // void
             }
         } catch (\Exception $e) {
@@ -196,7 +196,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
         }
 
         $i = 0;
-        foreach ($this->iso3166->listBy(ISO3166::KEY_ALPHA3) as $key => $value) {
+        foreach ($this->iso3166->iterator(ISO3166::KEY_ALPHA3) as $key => $value) {
             ++$i;
         }
 
