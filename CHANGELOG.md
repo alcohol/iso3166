@@ -5,6 +5,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+* Changed: renamed `getBy<Identifier>` methods to `<identifier>` ([#29]).
+* Changed: renamed `getAll` to `all` ([#29]).
+* Changed: renamed `listBy` to `iterator` ([#29]).
 * Changed: `ISO3166` and `DataValidator` are now `final` ([#24]).
 * Changed: support for PHP 5.5.x has been dropped ([#23]).
 * Changed: `get()` method has been removed ([#19]).
@@ -27,6 +30,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
 
+[#29]: https://github.com/thephpleague/iso3166/issues/29
 [#24]: https://github.com/thephpleague/iso3166/issues/24
 [#23]: https://github.com/thephpleague/iso3166/issues/23
 [#19]: https://github.com/thephpleague/iso3166/issues/19
