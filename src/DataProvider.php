@@ -16,19 +16,19 @@ interface DataProvider
      *
      * @param string $alpha2
      */
-    public function getByAlpha2($alpha2);
+    public function alpha2($alpha2);
 
     /**
      * Return data for given alpha3 code.
      *
      * @param string $alpha3
      */
-    public function getByAlpha3($alpha3);
+    public function alpha3($alpha3);
 
     /**
      * Return data for given numeric code.
      *
      * @param string $numeric
      */
-    public function getByNumeric($numeric);
+    public function numeric($numeric);
 }

@@ -45,11 +45,11 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
      *
      * @return array
      */
-    public function getByAlpha2($alpha2)
+    public function alpha2($alpha2)
     {
         $this->guardAgainstInvalidAlpha2($alpha2);
 
-        return $this->getBy(self::KEY_ALPHA2, $alpha2);
+        return $this->lookup(self::KEY_ALPHA2, $alpha2);
     }
 
     /**
@@ -65,11 +65,11 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
      *
      * @return array
      */
-    public function getByAlpha3($alpha3)
+    public function alpha3($alpha3)
     {
         $this->guardAgainstInvalidAlpha3($alpha3);
 
-        return $this->getBy(self::KEY_ALPHA3, $alpha3);
+        return $this->lookup(self::KEY_ALPHA3, $alpha3);
     }
 
     /**
@@ -85,11 +85,11 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
      *
      * @return array
      */
-    public function getByNumeric($numeric)
+    public function numeric($numeric)
     {
         $this->guardAgainstInvalidNumeric($numeric);
 
-        return $this->getBy(self::KEY_NUMERIC, $numeric);
+        return $this->lookup(self::KEY_NUMERIC, $numeric);
     }
 
     /**
@@ -97,7 +97,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
      *
      * @return array
      */
-    public function getAll()
+    public function all()
     {
         return $this->countries;
     }
@@ -105,26 +105,28 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
     /**
      * @api
      *
-     * @param string $listBy
+     * @param string $key
      *
      * @return \Generator
      */
-    public function listBy($listBy = self::KEY_ALPHA2)
+    public function iterator($key = self::KEY_ALPHA2)
     {
-        if (!in_array($listBy, $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC], true)) {
+        if (!in_array($key, $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC], true)) {
             throw new \DomainException(sprintf(
                 'Invalid value for $indexBy, got "%s", expected one of: %s',
-                $listBy,
+                $key,
                 implode(', ', $keys)
             ));
         }
 
         foreach ($this->countries as $country) {
-            yield $country[$listBy] => $country;
+            yield $country[$key] => $country;
         }
     }
 
     /**
+     * @see \Countable.
+     *
      * @internal
      *
      * @return int
@@ -135,6 +137,8 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
     }
 
     /**
+     * @see \IteratorAggregate.
+     *
      * @internal
      *
      * @return \Generator
@@ -158,7 +162,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
      *
      * @return array
      */
-    private function getBy($key, $value)
+    private function lookup($key, $value)
     {
         foreach ($this->countries as $country) {
             if (0 === strcasecmp($value, $country[$key])) {
