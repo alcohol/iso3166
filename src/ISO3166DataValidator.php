@@ -11,7 +11,7 @@ namespace League\ISO3166;
 
 final class ISO3166DataValidator
 {
-    use KeyValidators;
+    use ISO3166KeyValidators;
 
     /**
      * @param array $data
