@@ -1,10 +1,10 @@
 ---
 layout: default
 permalink: /installing
-title: Installing
+title: Installing league/iso3166
 ---
 
-# Installing
+# Installing league/iso3166
 
 ```
 composer require league/iso3166

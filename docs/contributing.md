@@ -1,10 +1,10 @@
 ---
 layout: default
 permalink: /contributing
-title: Contributing
+title: Contributing to league/iso3166
 ---
 
-# Contributing
+# Contributing to league/iso3166
 
 Fork the [project](https://github.com/thephpleague/iso3166), create a feature branch, and send a pull request.
 
