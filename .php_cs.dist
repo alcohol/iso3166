@@ -28,9 +28,14 @@ $config
         'concat_without_spaces' => false,
         'header_comment' => ['header' => $header],
         'no_unused_imports' => false,
+        'no_useless_else' => true,
+        'no_useless_return' => true,
+        'ordered_imports' => true,
         'phpdoc_align' => false,
         'phpdoc_order' => true,
+        'phpdoc_params' => false,
         'phpdoc_summary' => false,
+        'short_array_syntax' => true,
         'simplified_null_return' => false,
     ])
     ->finder($finder)
