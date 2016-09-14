@@ -8,7 +8,7 @@ title: Using league/iso3166
 
 ### Interface
 
-The following methods are provided by the `League\ISO3166\DataProvider` interface.
+The following methods are provided by the `League\ISO3166\ISO3166DataProvider` interface.
 
 **Lookup data by alpha2 code:**
 

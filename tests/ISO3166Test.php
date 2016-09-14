@@ -30,7 +30,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $validator = new DataValidator();
+        $validator = new ISO3166DataValidator();
         $this->iso3166 = new ISO3166($validator->validate([$this->foo, $this->bar]));
     }
 
@@ -39,6 +39,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      * @dataProvider invalidAlpha2Provider
      *
      * @param string $alpha2
+     * @param string $expectedException
+     * @param string $exceptionPattern
      */
     public function testGetByAlpha2Invalid($alpha2, $expectedException, $exceptionPattern)
     {
@@ -79,6 +81,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      * @dataProvider invalidAlpha3Provider
      *
      * @param string $alpha3
+     * @param string $expectedException
+     * @param string $exceptionPattern
      */
     public function testGetByAlpha3Invalid($alpha3, $expectedException, $exceptionPattern)
     {
@@ -119,6 +123,8 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
      * @dataProvider invalidNumericProvider
      *
      * @param string $numeric
+     * @param string $expectedException
+     * @param string $exceptionPattern
      */
     public function testGetByNumericInvalid($numeric, $expectedException, $exceptionPattern)
     {

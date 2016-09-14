@@ -9,19 +9,23 @@
 
 namespace League\ISO3166;
 
-class DataValidatorTest extends \PHPUnit_Framework_TestCase
+class ISO3166DataValidatorTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var DataValidator */
+    /** @var ISO3166DataValidator */
     public $validator;
 
     public function setUp()
     {
-        $this->validator = new DataValidator();
+        $this->validator = new ISO3166DataValidator();
     }
 
     /**
      * @testdox Assert that each data entry has the required lookup keys.
      * @dataProvider testcases
+     *
+     * @param array $data
+     * @param string $expectedException
+     * @param string $exceptionPattern
      */
     public function testDataEntryHasRequiredKeys(array $data, $expectedException, $exceptionPattern)
     {

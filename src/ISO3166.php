@@ -9,9 +9,9 @@
 
 namespace League\ISO3166;
 
-final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
+final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvider
 {
-    use KeyValidators;
+    use ISO3166KeyValidators;
 
     /** @var string */
     const KEY_ALPHA2 = 'alpha2';
@@ -32,19 +32,6 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
         }
     }
 
-    /**
-     * Lookup ISO3166-1 data by alpha2 identifier.
-     *
-     * @api
-     *
-     * @param string $alpha2
-     *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like an alpha2 key.
-     * @throws \OutOfBoundsException if input does not exist in dataset.
-     *
-     * @return array
-     */
     public function alpha2($alpha2)
     {
         $this->guardAgainstInvalidAlpha2($alpha2);
@@ -52,19 +39,6 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
         return $this->lookup(self::KEY_ALPHA2, $alpha2);
     }
 
-    /**
-     * Lookup ISO3166-1 data by alpha3 identifier.
-     *
-     * @api
-     *
-     * @param string $alpha3
-     *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like an alpha3 key.
-     * @throws \OutOfBoundsException if input does not exist in dataset.
-     *
-     * @return array
-     */
     public function alpha3($alpha3)
     {
         $this->guardAgainstInvalidAlpha3($alpha3);
@@ -72,19 +46,6 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
         return $this->lookup(self::KEY_ALPHA3, $alpha3);
     }
 
-    /**
-     * Lookup ISO3166-1 data by numeric identifier (numerical string, that is).
-     *
-     * @api
-     *
-     * @param string $numeric
-     *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like a numeric key.
-     * @throws \OutOfBoundsException if input does not exist in dataset.
-     *
-     * @return array
-     */
     public function numeric($numeric)
     {
         $this->guardAgainstInvalidNumeric($numeric);
@@ -93,8 +54,6 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
     }
 
     /**
-     * @api
-     *
      * @return array
      */
     public function all()
@@ -103,8 +62,6 @@ final class ISO3166 implements \Countable, \IteratorAggregate, DataProvider
     }
 
     /**
-     * @api
-     *
      * @param string $key
      *
      * @return \Generator

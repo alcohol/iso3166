@@ -9,7 +9,7 @@
 
 namespace League\ISO3166;
 
-trait KeyValidators
+trait ISO3166KeyValidators
 {
     /**
      * Assert that input looks like an alpha2 key.
