@@ -20,6 +20,18 @@ A PHP library providing ISO 3166-1 data.
 $ composer require league/iso3166
 ```
 
+## Using
+
+See [using](https://iso3166.thephpleague.com/using) section of the documentation.
+
+Quick guide:
+
+``` php
+$data = (new League\ISO3166\ISO3166)->alpha2($alpha2);
+$data = (new League\ISO3166\ISO3166)->alpha3($alpha3);
+$data = (new League\ISO3166\ISO3166)->numeric($numeric);
+```
+
 ## Contributing
 
 Feel free to submit a pull request or create an issue.
