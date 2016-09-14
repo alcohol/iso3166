@@ -64,6 +64,8 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * @param string $key
      *
+     * @throws \DomainException if an invalid key is specified.
+     *
      * @return \Generator
      */
     public function iterator($key = self::KEY_ALPHA2)
@@ -115,7 +117,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      * @param string $key
      * @param string $value
      *
-     * @throws \OutOfBoundsException
+     * @throws \OutOfBoundsException if key does not exist in dataset.
      *
      * @return array
      */
