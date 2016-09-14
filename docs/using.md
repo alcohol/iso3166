@@ -4,9 +4,9 @@ permalink: /using
 title: Using league/iso3166
 ---
 
-# Using league/iso3166
+## Using league/iso3166
 
-## Interface
+### Interface
 
 The following methods are provided by the `League\ISO3166\DataProvider` interface.
 

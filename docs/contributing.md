@@ -4,7 +4,7 @@ permalink: /contributing
 title: Contributing to league/iso3166
 ---
 
-# Contributing to league/iso3166
+## Contributing to league/iso3166
 
 Fork the [project](https://github.com/thephpleague/iso3166), create a feature branch, and send a pull request.
 

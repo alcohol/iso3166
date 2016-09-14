@@ -4,7 +4,7 @@ permalink: /
 title: Introduction
 ---
 
-# Introduction
+## Introduction
 
 [![Author](//img.shields.io/badge/author-@phpalcohol-blue.svg?style=flat-square)](https://twitter.com/phpalcohol)
 [![Source Code](//img.shields.io/badge/source-thephpleague/iso3166-blue.svg?style=flat-square)](https://github.com/thephpleague/iso3166)
