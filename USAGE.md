@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /using
+permalink: USAGE
 title: Using league/iso3166
 ---
 

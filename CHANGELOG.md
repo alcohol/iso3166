@@ -15,6 +15,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * New: `ISO3166` now implements `Countable` interface ([#18]).
 * New: can now replace default dataset by injecting a new one into `ISO3166` through the constructor ([#18]).
 * New: `getBy[Alpha2,Alpha3,Numeric]` now throw `InvalidArgumentException` if anything other than a string is passed in ([#18]).
+* New: phpDoc documentation added to ./docs ([#5])
 
 ## [1.0.1] - 2016/07/01
 

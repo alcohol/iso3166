@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /installing
+permalink: INSTALL
 title: Installing league/iso3166
 ---
 
