@@ -25,4 +25,4 @@ install:
 
 script:
   - vendor/bin/phpunit
-  - vendor/bin/php-cs-fixer fix --cache-file "$HOME/.php-cs-fixer/.php_cs.cache" --dry-run --allow-risky --diff --verbose
+  - vendor/bin/php-cs-fixer fix --cache-file "$HOME/.php-cs-fixer/.php_cs.cache" --dry-run --allow-risky true --diff --verbose
