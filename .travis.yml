@@ -24,6 +24,9 @@ matrix:
 install:
   - composer install --no-interaction --no-progress --prefer-dist --optimize-autoloader
 
+before_script:
+  - mkdir -p "$HOME/.php-cs-fixer"
+
 script:
   - vendor/bin/phpunit
   - vendor/bin/php-cs-fixer fix --cache-file "$HOME/.php-cs-fixer/.php_cs.cache" --dry-run --allow-risky true --diff --verbose
