@@ -3,6 +3,7 @@ language: php
 cache:
   directories:
     - $HOME/.composer/cache/files
+    - $HOME/.php-cs-fixer
 
 git:
   depth: 5
