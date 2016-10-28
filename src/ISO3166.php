@@ -9,7 +9,7 @@
 
 namespace League\ISO3166;
 
-final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvider
+class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvider
 {
     use ISO3166KeyValidators;
 
@@ -121,7 +121,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      *
      * @return array
      */
-    private function lookup($key, $value)
+    protected function lookup($key, $value)
     {
         foreach ($this->countries as $country) {
             if (0 === strcasecmp($value, $country[$key])) {
