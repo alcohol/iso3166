@@ -24,7 +24,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     const KEY_NUMERIC = 'numeric';
 
     /** @var array */
-    const KEYS = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC];
+    private $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC];
 
     /**
      * @param array $countries Replace default dataset with given array.
@@ -83,11 +83,11 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      */
     public function iterator($key = self::KEY_ALPHA2)
     {
-        if (!in_array($key, self::KEYS, true)) {
+        if (!in_array($key, $this->keys, true)) {
             throw new DomainException(sprintf(
                 'Invalid value for $indexBy, got "%s", expected one of: %s',
                 $key,
-                implode(', ', self::KEYS)
+                implode(', ', $this->keys)
             ));
         }
 
