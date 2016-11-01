@@ -497,6 +497,15 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             ],
         ],
         [
+            'name' => 'Cabo Verde',
+            'alpha2' => 'CV',
+            'alpha3' => 'CPV',
+            'numeric' => '132',
+            'currency' => [
+                'CVE',
+            ],
+        ],
+        [
             'name' => 'Cambodia',
             'alpha2' => 'KH',
             'alpha3' => 'KHM',
@@ -521,15 +530,6 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '124',
             'currency' => [
                 'CAD',
-            ],
-        ],
-        [
-            'name' => 'Cabo Verde',
-            'alpha2' => 'CV',
-            'alpha3' => 'CPV',
-            'numeric' => '132',
-            'currency' => [
-                'CVE',
             ],
         ],
         [
@@ -696,7 +696,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             ],
         ],
         [
-            'name' => 'Czech Republic',
+            'name' => 'Czechia',
             'alpha2' => 'CZ',
             'alpha3' => 'CZE',
             'numeric' => '203',
@@ -1345,7 +1345,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             ],
         ],
         [
-            'name' => 'Macedonia, the former Yugoslav Republic of',
+            'name' => 'Macedonia (the former Yugoslav Republic of)',
             'alpha2' => 'MK',
             'alpha3' => 'MKD',
             'numeric' => '807',
