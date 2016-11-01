@@ -11,8 +11,6 @@ namespace League\ISO3166;
 
 final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvider
 {
-    use ISO3166KeyValidators;
-
     /** @var string */
     const KEY_ALPHA2 = 'alpha2';
 
@@ -32,23 +30,32 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         }
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function alpha2($alpha2)
     {
-        $this->guardAgainstInvalidAlpha2($alpha2);
+        Guards::guardAgainstInvalidAlpha2($alpha2);
 
         return $this->lookup(self::KEY_ALPHA2, $alpha2);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function alpha3($alpha3)
     {
-        $this->guardAgainstInvalidAlpha3($alpha3);
+        Guards::guardAgainstInvalidAlpha3($alpha3);
 
         return $this->lookup(self::KEY_ALPHA3, $alpha3);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function numeric($numeric)
     {
-        $this->guardAgainstInvalidNumeric($numeric);
+        Guards::guardAgainstInvalidNumeric($numeric);
 
         return $this->lookup(self::KEY_NUMERIC, $numeric);
     }

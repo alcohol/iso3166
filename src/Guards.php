@@ -9,7 +9,7 @@
 
 namespace League\ISO3166;
 
-trait ISO3166KeyValidators
+final class Guards
 {
     /**
      * Assert that input looks like an alpha2 key.
@@ -19,7 +19,7 @@ trait ISO3166KeyValidators
      * @throws \InvalidArgumentException if input is not a string.
      * @throws \DomainException if input does not look like an alpha2 key.
      */
-    private function guardAgainstInvalidAlpha2($alpha2)
+    public static function guardAgainstInvalidAlpha2($alpha2)
     {
         if (!is_string($alpha2)) {
             throw new \InvalidArgumentException(sprintf('Expected $alpha2 to be of type string, got: %s', gettype($alpha2)));
@@ -38,7 +38,7 @@ trait ISO3166KeyValidators
      * @throws \InvalidArgumentException if input is not a string.
      * @throws \DomainException if input does not look like an alpha3 key.
      */
-    private function guardAgainstInvalidAlpha3($alpha3)
+    public static function guardAgainstInvalidAlpha3($alpha3)
     {
         if (!is_string($alpha3)) {
             throw new \InvalidArgumentException(sprintf('Expected $alpha3 to be of type string, got: %s', gettype($alpha3)));
@@ -57,7 +57,7 @@ trait ISO3166KeyValidators
      * @throws \InvalidArgumentException if input is not a string.
      * @throws \DomainException if input does not look like a numeric key.
      */
-    private function guardAgainstInvalidNumeric($numeric)
+    public static function guardAgainstInvalidNumeric($numeric)
     {
         if (!is_string($numeric)) {
             throw new \InvalidArgumentException(sprintf('Expected $numeric to be of type string, got: %s', gettype($numeric)));

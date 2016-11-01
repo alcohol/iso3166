@@ -11,8 +11,6 @@ namespace League\ISO3166;
 
 final class ISO3166DataValidator
 {
-    use ISO3166KeyValidators;
-
     /**
      * @param array $data
      *
@@ -38,18 +36,18 @@ final class ISO3166DataValidator
             throw new \DomainException('Each data entry must have a valid alpha2 key.');
         }
 
-        $this->guardAgainstInvalidAlpha2($entry[ISO3166::KEY_ALPHA2]);
+        Guards::guardAgainstInvalidAlpha2($entry[ISO3166::KEY_ALPHA2]);
 
         if (!isset($entry[ISO3166::KEY_ALPHA3])) {
             throw new \DomainException('Each data entry must have a valid alpha3 key.');
         }
 
-        $this->guardAgainstInvalidAlpha3($entry[ISO3166::KEY_ALPHA3]);
+        Guards::guardAgainstInvalidAlpha3($entry[ISO3166::KEY_ALPHA3]);
 
         if (!isset($entry[ISO3166::KEY_NUMERIC])) {
             throw new \DomainException('Each data entry must have a valid numeric key.');
         }
 
-        $this->guardAgainstInvalidNumeric($entry[ISO3166::KEY_NUMERIC]);
+        Guards::guardAgainstInvalidNumeric($entry[ISO3166::KEY_NUMERIC]);
     }
 }
