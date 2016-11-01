@@ -9,6 +9,8 @@
 
 namespace League\ISO3166;
 
+use League\ISO3166\Exception\DomainException;
+
 class ISO3166DataValidatorTest extends \PHPUnit_Framework_TestCase
 {
     /** @var ISO3166DataValidator */
@@ -44,15 +46,15 @@ class ISO3166DataValidatorTest extends \PHPUnit_Framework_TestCase
         return [
             [
                 [[ISO3166::KEY_ALPHA3 => 'FOO', ISO3166::KEY_NUMERIC => '001']],
-                \DomainException::class,
+                DomainException::class,
                 '{^Each data entry must have a valid alpha2 key.$}',
             ], [
                 [[ISO3166::KEY_ALPHA2 => 'FO', ISO3166::KEY_NUMERIC => '001']],
-                \DomainException::class,
+                DomainException::class,
                 '{^Each data entry must have a valid alpha3 key.$}',
             ], [
                 [[ISO3166::KEY_ALPHA2 => 'FO', ISO3166::KEY_ALPHA3 => 'FOO']],
-                \DomainException::class,
+                DomainException::class,
                 '{^Each data entry must have a valid numeric key.$}',
             ], [
                 [[ISO3166::KEY_ALPHA2 => 'FO', ISO3166::KEY_ALPHA3 => 'FOO', ISO3166::KEY_NUMERIC => '001']],

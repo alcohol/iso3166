@@ -18,9 +18,9 @@ interface ISO3166DataProvider
      *
      * @param string $alpha2
      *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like an alpha2 key.
-     * @throws \OutOfBoundsException if input does not exist in dataset.
+     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string.
+     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha2 key.
+     * @throws \League\ISO3166\Exception\OutOfBoundsException if input does not exist in dataset.
      *
      * @return array
      */
@@ -33,9 +33,9 @@ interface ISO3166DataProvider
      *
      * @param string $alpha3
      *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like an alpha3 key.
-     * @throws \OutOfBoundsException if input does not exist in dataset.
+     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string.
+     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha3 key.
+     * @throws \League\ISO3166\Exception\OutOfBoundsException if input does not exist in dataset.
      *
      * @return array
      */
@@ -48,9 +48,9 @@ interface ISO3166DataProvider
      *
      * @param string $numeric
      *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like a numeric key.
-     * @throws \OutOfBoundsException if input does not exist in dataset.
+     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string.
+     * @throws \League\ISO3166\Exception\DomainException if input does not look like a numeric key.
+     * @throws \League\ISO3166\Exception\OutOfBoundsException if input does not exist in dataset.
      *
      * @return array
      */

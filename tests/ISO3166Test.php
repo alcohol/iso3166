@@ -9,6 +9,10 @@
 
 namespace League\ISO3166;
 
+use League\ISO3166\Exception\DomainException;
+use League\ISO3166\Exception\InvalidArgumentException;
+use League\ISO3166\Exception\OutOfBoundsException;
+
 class ISO3166Test extends \PHPUnit_Framework_TestCase
 {
     /** @var array */
@@ -59,11 +63,11 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_ALPHA2);
 
         return [
-            ['A', \DomainException::class, $invalidNumeric],
-            ['ABC', \DomainException::class, $invalidNumeric],
-            [1, \InvalidArgumentException::class, $expectedString],
-            [123, \InvalidArgumentException::class, $expectedString],
-            ['AB', \OutOfBoundsException::class, $noMatch],
+            ['A', DomainException::class, $invalidNumeric],
+            ['ABC', DomainException::class, $invalidNumeric],
+            [1, InvalidArgumentException::class, $expectedString],
+            [123, InvalidArgumentException::class, $expectedString],
+            ['AB', OutOfBoundsException::class, $noMatch],
         ];
     }
 
@@ -101,11 +105,11 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_ALPHA3);
 
         return [
-            ['AB', \DomainException::class, $invalidNumeric],
-            ['ABCD', \DomainException::class, $invalidNumeric],
-            [12, \InvalidArgumentException::class, $expectedString],
-            [1234, \InvalidArgumentException::class, $expectedString],
-            ['ABC', \OutOfBoundsException::class, $noMatch],
+            ['AB', DomainException::class, $invalidNumeric],
+            ['ABCD', DomainException::class, $invalidNumeric],
+            [12, InvalidArgumentException::class, $expectedString],
+            [1234, InvalidArgumentException::class, $expectedString],
+            ['ABC', OutOfBoundsException::class, $noMatch],
         ];
     }
 
@@ -143,15 +147,15 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NUMERIC);
 
         return [
-            ['00', \DomainException::class, $invalidNumeric],
-            ['0000', \DomainException::class, $invalidNumeric],
-            ['AB', \DomainException::class, $invalidNumeric],
-            ['ABC', \DomainException::class, $invalidNumeric],
-            ['ABCD', \DomainException::class, $invalidNumeric],
-            [12, \InvalidArgumentException::class, $expectedString],
-            [123, \InvalidArgumentException::class, $expectedString],
-            [1234, \InvalidArgumentException::class, $expectedString],
-            ['000', \OutOfBoundsException::class, $noMatch],
+            ['00', DomainException::class, $invalidNumeric],
+            ['0000', DomainException::class, $invalidNumeric],
+            ['AB', DomainException::class, $invalidNumeric],
+            ['ABC', DomainException::class, $invalidNumeric],
+            ['ABCD', DomainException::class, $invalidNumeric],
+            [12, InvalidArgumentException::class, $expectedString],
+            [123, InvalidArgumentException::class, $expectedString],
+            [1234, InvalidArgumentException::class, $expectedString],
+            ['000', OutOfBoundsException::class, $noMatch],
         ];
     }
 
@@ -195,7 +199,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
                 // void
             }
         } catch (\Exception $e) {
-            $this->assertInstanceOf('DomainException', $e);
+            $this->assertInstanceOf('League\ISO3166\Exception\DomainException', $e);
             $this->assertRegExp('{Invalid value for \$indexBy, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
         } finally {
             $this->assertTrue(isset($e));

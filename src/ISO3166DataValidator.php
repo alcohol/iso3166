@@ -9,6 +9,8 @@
 
 namespace League\ISO3166;
 
+use League\ISO3166\Exception\DomainException;
+
 final class ISO3166DataValidator
 {
     /**
@@ -28,24 +30,24 @@ final class ISO3166DataValidator
     /**
      * @param array $entry
      *
-     * @throws \DomainException if given data entry does not have all the required keys.
+     * @throws \League\ISO3166\Exception\DomainException if given data entry does not have all the required keys.
      */
     private function assertEntryHasRequiredKeys(array $entry)
     {
         if (!isset($entry[ISO3166::KEY_ALPHA2])) {
-            throw new \DomainException('Each data entry must have a valid alpha2 key.');
+            throw new DomainException('Each data entry must have a valid alpha2 key.');
         }
 
         Guards::guardAgainstInvalidAlpha2($entry[ISO3166::KEY_ALPHA2]);
 
         if (!isset($entry[ISO3166::KEY_ALPHA3])) {
-            throw new \DomainException('Each data entry must have a valid alpha3 key.');
+            throw new DomainException('Each data entry must have a valid alpha3 key.');
         }
 
         Guards::guardAgainstInvalidAlpha3($entry[ISO3166::KEY_ALPHA3]);
 
         if (!isset($entry[ISO3166::KEY_NUMERIC])) {
-            throw new \DomainException('Each data entry must have a valid numeric key.');
+            throw new DomainException('Each data entry must have a valid numeric key.');
         }
 
         Guards::guardAgainstInvalidNumeric($entry[ISO3166::KEY_NUMERIC]);

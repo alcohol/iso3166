@@ -9,6 +9,9 @@
 
 namespace League\ISO3166;
 
+use League\ISO3166\Exception\DomainException;
+use League\ISO3166\Exception\OutOfBoundsException;
+
 final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvider
 {
     /** @var string */
@@ -19,6 +22,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
 
     /** @var string */
     const KEY_NUMERIC = 'numeric';
+
+    /** @var array */
+    const KEYS = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC];
 
     /**
      * @param array $countries Replace default dataset with given array.
@@ -71,17 +77,17 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * @param string $key
      *
-     * @throws \DomainException if an invalid key is specified.
+     * @throws \League\ISO3166\Exception\DomainException if an invalid key is specified.
      *
      * @return \Generator
      */
     public function iterator($key = self::KEY_ALPHA2)
     {
-        if (!in_array($key, $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC], true)) {
-            throw new \DomainException(sprintf(
+        if (!in_array($key, self::KEYS, true)) {
+            throw new DomainException(sprintf(
                 'Invalid value for $indexBy, got "%s", expected one of: %s',
                 $key,
-                implode(', ', $keys)
+                implode(', ', self::KEYS)
             ));
         }
 
@@ -124,7 +130,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      * @param string $key
      * @param string $value
      *
-     * @throws \OutOfBoundsException if key does not exist in dataset.
+     * @throws \League\ISO3166\Exception\OutOfBoundsException if key does not exist in dataset.
      *
      * @return array
      */
@@ -136,7 +142,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             }
         }
 
-        throw new \OutOfBoundsException(sprintf('No "%s" key found matching: %s', $key, $value));
+        throw new OutOfBoundsException(
+            sprintf('No "%s" key found matching: %s', $key, $value)
+        );
     }
 
     /**

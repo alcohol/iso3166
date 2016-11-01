@@ -9,6 +9,9 @@
 
 namespace League\ISO3166;
 
+use League\ISO3166\Exception\DomainException;
+use League\ISO3166\Exception\InvalidArgumentException;
+
 final class Guards
 {
     /**
@@ -16,17 +19,21 @@ final class Guards
      *
      * @param string $alpha2
      *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like an alpha2 key.
+     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string.
+     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha2 key.
      */
     public static function guardAgainstInvalidAlpha2($alpha2)
     {
         if (!is_string($alpha2)) {
-            throw new \InvalidArgumentException(sprintf('Expected $alpha2 to be of type string, got: %s', gettype($alpha2)));
+            throw new InvalidArgumentException(
+                sprintf('Expected $alpha2 to be of type string, got: %s', gettype($alpha2))
+            );
         }
 
         if (!preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
-            throw new \DomainException(sprintf('Not a valid alpha2 key: %s', $alpha2));
+            throw new DomainException(
+                sprintf('Not a valid alpha2 key: %s', $alpha2)
+            );
         }
     }
 
@@ -35,17 +42,21 @@ final class Guards
      *
      * @param string $alpha3
      *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like an alpha3 key.
+     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string.
+     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha3 key.
      */
     public static function guardAgainstInvalidAlpha3($alpha3)
     {
         if (!is_string($alpha3)) {
-            throw new \InvalidArgumentException(sprintf('Expected $alpha3 to be of type string, got: %s', gettype($alpha3)));
+            throw new InvalidArgumentException(
+                sprintf('Expected $alpha3 to be of type string, got: %s', gettype($alpha3))
+            );
         }
 
         if (!preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
-            throw new \DomainException(sprintf('Not a valid alpha3 key: %s', $alpha3));
+            throw new DomainException(
+                sprintf('Not a valid alpha3 key: %s', $alpha3)
+            );
         }
     }
 
@@ -54,17 +65,21 @@ final class Guards
      *
      * @param string $numeric
      *
-     * @throws \InvalidArgumentException if input is not a string.
-     * @throws \DomainException if input does not look like a numeric key.
+     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string.
+     * @throws \League\ISO3166\Exception\DomainException if input does not look like a numeric key.
      */
     public static function guardAgainstInvalidNumeric($numeric)
     {
         if (!is_string($numeric)) {
-            throw new \InvalidArgumentException(sprintf('Expected $numeric to be of type string, got: %s', gettype($numeric)));
+            throw new InvalidArgumentException(
+                sprintf('Expected $numeric to be of type string, got: %s', gettype($numeric))
+            );
         }
 
         if (!preg_match('/^[0-9]{3}$/', $numeric)) {
-            throw new \DomainException(sprintf('Not a valid numeric key: %s', $numeric));
+            throw new DomainException(
+                sprintf('Not a valid numeric key: %s', $numeric)
+            );
         }
     }
 }
