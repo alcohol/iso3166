@@ -18,8 +18,6 @@ trait ISO3166KeyValidators
      *
      * @throws \InvalidArgumentException if input is not a string.
      * @throws \DomainException if input does not look like an alpha2 key.
-     *
-     * @return string
      */
     private function guardAgainstInvalidAlpha2($alpha2)
     {
@@ -39,8 +37,6 @@ trait ISO3166KeyValidators
      *
      * @throws \InvalidArgumentException if input is not a string.
      * @throws \DomainException if input does not look like an alpha3 key.
-     *
-     * @return string
      */
     private function guardAgainstInvalidAlpha3($alpha3)
     {
@@ -60,8 +56,6 @@ trait ISO3166KeyValidators
      *
      * @throws \InvalidArgumentException if input is not a string.
      * @throws \DomainException if input does not look like a numeric key.
-     *
-     * @return string
      */
     private function guardAgainstInvalidNumeric($numeric)
     {
