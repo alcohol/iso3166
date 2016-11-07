@@ -27,7 +27,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     private $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC];
 
     /**
-     * @param array $countries Replace default dataset with given array.
+     * @param array $countries replace default dataset with given array
      */
     public function __construct(array $countries = [])
     {
@@ -77,7 +77,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * @param string $key
      *
-     * @throws \League\ISO3166\Exception\DomainException if an invalid key is specified.
+     * @throws \League\ISO3166\Exception\DomainException if an invalid key is specified
      *
      * @return \Generator
      */
@@ -97,7 +97,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @see \Countable.
+     * @see \Countable
      *
      * @internal
      *
@@ -109,7 +109,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @see \IteratorAggregate.
+     * @see \IteratorAggregate
      *
      * @internal
      *
@@ -130,7 +130,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      * @param string $key
      * @param string $value
      *
-     * @throws \League\ISO3166\Exception\OutOfBoundsException if key does not exist in dataset.
+     * @throws \League\ISO3166\Exception\OutOfBoundsException if key does not exist in dataset
      *
      * @return array
      */
