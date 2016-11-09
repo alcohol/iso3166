@@ -11,7 +11,7 @@
         "php": "^5.6 || ^7.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "2.0.0-alpha || ^2.0",
+        "friendsofphp/php-cs-fixer": "^2.0@dev || ^2.0",
         "phpunit/phpunit": "^4.6 || ^5.0"
     },
     "scripts": {
