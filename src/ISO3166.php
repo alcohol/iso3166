@@ -363,7 +363,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'BLR',
             'numeric' => '112',
             'currency' => [
-                'BYR',
+                'BYN',
             ],
         ],
         [
