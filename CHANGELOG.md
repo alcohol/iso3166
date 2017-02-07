@@ -5,6 +5,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.2] - 2017/02/07
+
+* Changed: updated BYR -> BYN for Belarus (currency).
 
 ## [1.0.1] - 2016/07/01
 
@@ -16,6 +19,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * New: initial release of `league/iso3166`.
 
 
-[Unreleased]: https://github.com/thephpleague/iso3166/compare/1.0.1...HEAD
+[Unreleased]: https://github.com/thephpleague/iso3166/compare/1.0.2...HEAD
+[1.0.2]: https://github.com/thephpleague/iso3166/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
