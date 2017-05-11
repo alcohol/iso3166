@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.0.0] - 2017/05/11
+
 * Changed: renamed `getBy<Identifier>` methods to `<identifier>` ([#29]).
 * Changed: renamed `getAll` to `all` ([#29]).
 * Changed: renamed `listBy` to `iterator` ([#29]).
@@ -25,8 +27,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-
-[Unreleased]: https://github.com/thephpleague/iso3166/compare/1.0.1...HEAD
+[Unreleased]: https://github.com/thephpleague/iso3166/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/thephpleague/iso3166/compare/1.0.1...2.0.0
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
 
