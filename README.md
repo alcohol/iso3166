@@ -32,6 +32,20 @@ $data = (new League\ISO3166\ISO3166)->alpha3($alpha3);
 $data = (new League\ISO3166\ISO3166)->numeric($numeric);
 ```
 
+Data sample:
+
+``` php
+[
+    'name' => 'Netherlands',
+    'alpha2' => 'NL',
+    'alpha3' => 'NLD',
+    'numeric' => '528',
+    'currency' => [
+        'EUR',
+    ]
+]
+```
+
 ## Contributing
 
 Feel free to submit a pull request or create an issue.
