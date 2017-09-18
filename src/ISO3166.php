@@ -2433,5 +2433,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'ZAR',
             ],
         ],
+        [
+            'name' => 'Netherlands Antilles',
+            'alpha2' => 'AN',
+            'alpha3' => 'ANT',
+            'numeric' => '530',
+            'currency' => [
+                'ANG',
+            ],
+        ],
     ];
 }
