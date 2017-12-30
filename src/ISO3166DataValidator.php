@@ -34,6 +34,10 @@ final class ISO3166DataValidator
      */
     private function assertEntryHasRequiredKeys(array $entry)
     {
+        if (!isset($entry[ISO3166::KEY_NAME])) {
+            throw new DomainException('Each data entry must have a valid name key.');
+        }
+
         if (!isset($entry[ISO3166::KEY_ALPHA2])) {
             throw new DomainException('Each data entry must have a valid alpha2 key.');
         }
