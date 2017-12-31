@@ -19,7 +19,6 @@ interface ISO3166DataProvider
      * @param string $name
      *
      * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string
-     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha2 key
      * @throws \League\ISO3166\Exception\OutOfBoundsException if input does not exist in dataset
      *
      * @return array

@@ -25,7 +25,7 @@ final class Guards
     {
         if (!is_string($name)) {
             throw new InvalidArgumentException(
-                sprintf('Expected $alpha2 to be of type string, got: %s', gettype($name))
+                sprintf('Expected $name to be of type string, got: %s', gettype($name))
             );
         }
     }
