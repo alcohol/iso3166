@@ -10,6 +10,12 @@ title: Using league/iso3166
 
 The following methods are provided by the `League\ISO3166\ISO3166DataProvider` interface.
 
+**Lookup data by name:**
+
+``` php
+$data = (new League\ISO3166\ISO3166)->name($name);
+```
+
 **Lookup data by alpha2 code:**
 
 ``` php

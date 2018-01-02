@@ -12,6 +12,20 @@ namespace League\ISO3166;
 interface ISO3166DataProvider
 {
     /**
+     * Lookup ISO3166-1 data by name identifier.
+     *
+     * @api
+     *
+     * @param string $name
+     *
+     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string
+     * @throws \League\ISO3166\Exception\OutOfBoundsException if input does not exist in dataset
+     *
+     * @return array
+     */
+    public function name($name);
+
+    /**
      * Lookup ISO3166-1 data by alpha2 identifier.
      *
      * @api

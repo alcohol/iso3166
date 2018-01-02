@@ -15,6 +15,22 @@ use League\ISO3166\Exception\InvalidArgumentException;
 final class Guards
 {
     /**
+     * Assert that input looks like a name key.
+     *
+     * @param string $name
+     *
+     * @throws \League\ISO3166\Exception\InvalidArgumentException if input is not a string
+     */
+    public static function guardAgainstInvalidName($name)
+    {
+        if (!is_string($name)) {
+            throw new InvalidArgumentException(
+                sprintf('Expected $name to be of type string, got: %s', gettype($name))
+            );
+        }
+    }
+
+    /**
      * Assert that input looks like an alpha2 key.
      *
      * @param string $alpha2

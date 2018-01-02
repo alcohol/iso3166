@@ -27,9 +27,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      */
     const KEY_NUMERIC = 'numeric';
     /**
+     * @var string
+     */
+    const KEY_NAME = 'name';
+    /**
      * @var string[]
      */
-    private $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC];
+    private $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC, self::KEY_NAME];
 
     /**
      * @param array[] $countries replace default dataset with given array
@@ -39,6 +43,16 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         if ($countries) {
             $this->countries = $countries;
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function name($name)
+    {
+        Guards::guardAgainstInvalidName($name);
+
+        return $this->lookup(self::KEY_NAME, $name);
     }
 
     /**
