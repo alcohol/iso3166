@@ -838,6 +838,16 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             ],
         ],
         [
+            'name' => 'Eswatini, the Kingdom of',
+            'alpha2' => 'SZ',
+            'alpha3' => 'SWZ',
+            'numeric' => '748',
+            'currency' => [
+                'SZL',
+                'ZAR',
+            ],
+        ],
+        [
             'name' => 'Falkland Islands (Malvinas)',
             'alpha2' => 'FK',
             'alpha3' => 'FLK',
@@ -2116,16 +2126,6 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '744',
             'currency' => [
                 'NOK',
-            ],
-        ],
-        [
-            'name' => 'Swaziland',
-            'alpha2' => 'SZ',
-            'alpha3' => 'SWZ',
-            'numeric' => '748',
-            'currency' => [
-                'SZL',
-                'ZAR',
             ],
         ],
         [
