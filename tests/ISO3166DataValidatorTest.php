@@ -10,8 +10,9 @@
 namespace League\ISO3166;
 
 use League\ISO3166\Exception\DomainException;
+use PHPUnit\Framework\TestCase;
 
-class ISO3166DataValidatorTest extends \PHPUnit_Framework_TestCase
+class ISO3166DataValidatorTest extends TestCase
 {
     /** @var ISO3166DataValidator */
     public $validator;
@@ -22,17 +23,17 @@ class ISO3166DataValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @testdox Assert that each data entry has the required lookup keys.
-     * @dataProvider testcases
-     *
-     * @param array $data
-     * @param string $expectedException
-     * @param string $exceptionPattern
+     * @testdox Assert that each entry has all the required lookup keys:
+     * @dataProvider requiredKeysProvider
      */
-    public function testDataEntryHasRequiredKeys(array $data, $expectedException, $exceptionPattern)
-    {
-        if (false !== $expectedException) {
-            $this->setExpectedExceptionRegExp($expectedException, $exceptionPattern);
+    public function testDataEntryHasRequiredKeys(
+        array $data,
+        string $expectedException = null,
+        string $exceptionPattern = null
+    ) {
+        if (null !== $expectedException && null !== $exceptionPattern) {
+            $this->expectException($expectedException);
+            $this->expectExceptionMessageRegExp($exceptionPattern);
         }
 
         $this->assertEquals($data, $this->validator->validate($data));
@@ -41,25 +42,28 @@ class ISO3166DataValidatorTest extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    public function testcases()
+    public function requiredKeysProvider()
     {
         return [
-            [
+            'entry missing alpha2' => [
                 [[ISO3166::KEY_ALPHA3 => 'FOO', ISO3166::KEY_NUMERIC => '001']],
                 DomainException::class,
                 '{^Each data entry must have a valid alpha2 key.$}',
-            ], [
+            ],
+            'entry missing alpha3' => [
                 [[ISO3166::KEY_ALPHA2 => 'FO', ISO3166::KEY_NUMERIC => '001']],
                 DomainException::class,
                 '{^Each data entry must have a valid alpha3 key.$}',
-            ], [
+            ],
+            'entry missing numeric' => [
                 [[ISO3166::KEY_ALPHA2 => 'FO', ISO3166::KEY_ALPHA3 => 'FOO']],
                 DomainException::class,
                 '{^Each data entry must have a valid numeric key.$}',
-            ], [
+            ],
+            'entry is complete' => [
                 [[ISO3166::KEY_ALPHA2 => 'FO', ISO3166::KEY_ALPHA3 => 'FOO', ISO3166::KEY_NUMERIC => '001']],
-                false,
-                false,
+                null,
+                null,
             ],
         ];
     }

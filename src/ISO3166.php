@@ -14,25 +14,15 @@ use League\ISO3166\Exception\OutOfBoundsException;
 
 final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvider
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     const KEY_ALPHA2 = 'alpha2';
-    /**
-     * @var string
-     */
+    /** @var string */
     const KEY_ALPHA3 = 'alpha3';
-    /**
-     * @var string
-     */
+    /** @var string */
     const KEY_NUMERIC = 'numeric';
-    /**
-     * @var string
-     */
+    /** @var string */
     const KEY_NAME = 'name';
-    /**
-     * @var string[]
-     */
+    /** @var string[] */
     private $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC, self::KEY_NAME];
 
     /**
@@ -171,7 +161,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      *
      * @var array[]
      */
-    protected $countries = [
+    private $countries = [
         [
             'name' => 'Afghanistan',
             'alpha2' => 'AF',

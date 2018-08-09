@@ -12,14 +12,16 @@ namespace League\ISO3166;
 use League\ISO3166\Exception\DomainException;
 use League\ISO3166\Exception\InvalidArgumentException;
 use League\ISO3166\Exception\OutOfBoundsException;
+use PHPUnit\Framework\TestCase;
 
-class ISO3166Test extends \PHPUnit_Framework_TestCase
+class ISO3166Test extends TestCase
 {
     /** @var array */
     public $foo = [
         ISO3166::KEY_ALPHA2 => 'FO',
         ISO3166::KEY_ALPHA3 => 'FOO',
         ISO3166::KEY_NUMERIC => '001',
+        ISO3166::KEY_NAME => 'FOO',
     ];
 
     /** @var array */
@@ -27,6 +29,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
         ISO3166::KEY_ALPHA2 => 'BA',
         ISO3166::KEY_ALPHA3 => 'BAR',
         ISO3166::KEY_NUMERIC => '002',
+        ISO3166::KEY_NAME => 'BAR',
     ];
 
     /** @var ISO3166 */
@@ -41,14 +44,11 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     /**
      * @testdox Calling getByAlpha2 with bad input throws various exceptions.
      * @dataProvider invalidAlpha2Provider
-     *
-     * @param string $alpha2
-     * @param string $expectedException
-     * @param string $exceptionPattern
      */
-    public function testGetByAlpha2Invalid($alpha2, $expectedException, $exceptionPattern)
+    public function testGetByAlpha2Invalid($alpha2, string $expectedException, string $exceptionPattern)
     {
-        $this->setExpectedExceptionRegExp($expectedException, $exceptionPattern);
+        $this->expectException($expectedException);
+        $this->expectExceptionMessageRegExp($exceptionPattern);
 
         $this->iso3166->alpha2($alpha2);
     }
@@ -83,14 +83,11 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     /**
      * @testdox Calling getByAlpha3 with bad input throws various exceptions.
      * @dataProvider invalidAlpha3Provider
-     *
-     * @param string $alpha3
-     * @param string $expectedException
-     * @param string $exceptionPattern
      */
-    public function testGetByAlpha3Invalid($alpha3, $expectedException, $exceptionPattern)
+    public function testGetByAlpha3Invalid($alpha3, string $expectedException, string $exceptionPattern)
     {
-        $this->setExpectedExceptionRegExp($expectedException, $exceptionPattern);
+        $this->expectException($expectedException);
+        $this->expectExceptionMessageRegExp($exceptionPattern);
 
         $this->iso3166->alpha3($alpha3);
     }
@@ -125,14 +122,11 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     /**
      * @testdox Calling getByNumeric with bad input throws various exceptions.
      * @dataProvider invalidNumericProvider
-     *
-     * @param string $numeric
-     * @param string $expectedException
-     * @param string $exceptionPattern
      */
-    public function testGetByNumericInvalid($numeric, $expectedException, $exceptionPattern)
+    public function testGetByNumericInvalid($numeric, string $expectedException, string $exceptionPattern)
     {
-        $this->setExpectedExceptionRegExp($expectedException, $exceptionPattern);
+        $this->expectException($expectedException);
+        $this->expectExceptionMessageRegExp($exceptionPattern);
 
         $this->iso3166->numeric($numeric);
     }
@@ -169,6 +163,43 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @testdox Calling getByName with bad input throws various exceptions.
+     * @dataProvider invalidNameProvider
+     */
+    public function testGetByNameInvalid($name, string $expectedException, string $exceptionPattern)
+    {
+        $this->expectException($expectedException);
+        $this->expectExceptionMessageRegExp($exceptionPattern);
+
+        $this->iso3166->name($name);
+    }
+
+    /**
+     * @return array
+     */
+    public function invalidNameProvider()
+    {
+        $expectedString = sprintf('{^Expected \$%s to be of type string, got: .*$}', ISO3166::KEY_NAME);
+        $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);
+
+        return [
+            [12, InvalidArgumentException::class, $expectedString],
+            [123, InvalidArgumentException::class, $expectedString],
+            [1234, InvalidArgumentException::class, $expectedString],
+            ['000', OutOfBoundsException::class, $noMatch],
+        ];
+    }
+
+    /**
+     * @testdox Calling getByName with a known name returns matching data array.
+     */
+    public function testGetByName()
+    {
+        $this->assertEquals($this->foo, $this->iso3166->name($this->foo[ISO3166::KEY_NAME]));
+        $this->assertEquals($this->bar, $this->iso3166->name($this->bar[ISO3166::KEY_NAME]));
+    }
+
+    /**
      * @testdox Calling getAll returns an array with all elements.
      */
     public function testGetAll()
@@ -196,7 +227,7 @@ class ISO3166Test extends \PHPUnit_Framework_TestCase
     {
         try {
             foreach ($this->iso3166->iterator('foo') as $key => $value) {
-                // void
+                $this->assertTrue(true);
             }
         } catch (\Exception $e) {
             $this->assertInstanceOf('League\ISO3166\Exception\DomainException', $e);
