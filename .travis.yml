@@ -1,22 +1,23 @@
 language: php
 
-cache:
-  directories:
-    - $HOME/.composer/cache/files
-    - $HOME/.php-cs-fixer
+dist: trusty
 
 git:
   depth: 5
-
-sudo: false
+  quiet: true
 
 php:
   - 7.0
   - 7.1
   - 7.2
   - 7.3
-  - hhvm
   - nightly
+
+cache:
+  directories:
+    - $HOME/.composer
+    - $HOME/.php-cs-fixer
+    - vendor
 
 env:
   matrix:
@@ -26,7 +27,6 @@ env:
 matrix:
   fast_finish: true
   allow_failures:
-    - php: hhvm
     - php: nightly
 
 install:
