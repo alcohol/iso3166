@@ -28,6 +28,7 @@ See [using](https://iso3166.thephpleague.com/using) section of the documentation
 Quick guide:
 
 ``` php
+$data = (new League\ISO3166\ISO3166)->name($name);
 $data = (new League\ISO3166\ISO3166)->alpha2($alpha2);
 $data = (new League\ISO3166\ISO3166)->alpha3($alpha3);
 $data = (new League\ISO3166\ISO3166)->numeric($numeric);
