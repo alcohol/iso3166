@@ -5,6 +5,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.1.2] - 2017/05/11
+
+* Changed: update short names of Eswatini and Macedonia.
+
+## [2.1.1] - 2017/05/11
+
+* Changed: Swaziland was renamed to Eswatini.
+
+## [2.1.0] - 2017/05/11
+
+* New: can now lookup by `name` ([#44]).
+
 ## [2.0.0] - 2017/05/11
 
 * Changed: renamed `getBy<Identifier>` methods to `<identifier>` ([#29]).
@@ -27,7 +39,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-[Unreleased]: https://github.com/thephpleague/iso3166/compare/2.0.0...HEAD
+[Unreleased]: https://github.com/thephpleague/iso3166/compare/2.1.2...HEAD
+[2.1.2]: https://github.com/thephpleague/iso3166/compare/2.1.1...2.1.2
+[2.1.1]: https://github.com/thephpleague/iso3166/compare/2.1.0...2.1.1
+[2.1.0]: https://github.com/thephpleague/iso3166/compare/2.0.0...2.1.0
 [2.0.0]: https://github.com/thephpleague/iso3166/compare/1.0.1...2.0.0
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
