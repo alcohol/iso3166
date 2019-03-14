@@ -828,7 +828,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             ],
         ],
         [
-            'name' => 'Eswatini, the Kingdom of',
+            'name' => 'Eswatini',
             'alpha2' => 'SZ',
             'alpha3' => 'SWZ',
             'numeric' => '748',
@@ -1379,7 +1379,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             ],
         ],
         [
-            'name' => 'Macedonia (the former Yugoslav Republic of)',
+            'name' => 'North Macedonia',
             'alpha2' => 'MK',
             'alpha3' => 'MKD',
             'numeric' => '807',
