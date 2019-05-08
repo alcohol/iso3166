@@ -1,43 +1,45 @@
 language: php
 
-dist: trusty
+dist: xenial
 
 git:
   depth: 5
   quiet: true
 
 php:
-  - 7.0
-  - 7.1
-  - 7.2
-  - 7.3
-  - nightly
+- 7.0
+- 7.1
+- 7.2
+- 7.3
+- 7.4snapshot
+- nightly
 
 cache:
   directories:
-    - $HOME/.composer
-    - $HOME/.php-cs-fixer
-    - vendor
+  - $HOME/.composer
+  - $HOME/.php-cs-fixer
+  - vendor
 
 env:
   matrix:
-    - COMPOSER_FLAGS="--prefer-lowest"
-    - COMPOSER_FLAGS=""
+  - COMPOSER_FLAGS="--prefer-lowest"
+  - COMPOSER_FLAGS=""
 
 matrix:
   fast_finish: true
   allow_failures:
-    - php: nightly
+  - php: nightly
+  - php: 7.4snapshot
 
 install:
-  - composer update --no-interaction --no-progress --prefer-dist --optimize-autoloader $COMPOSER_FLAGS
+- composer update --no-interaction --no-progress --prefer-dist --optimize-autoloader $COMPOSER_FLAGS
 
 script:
-  - vendor/bin/phpunit --coverage-text --coverage-clover coverage.xml
+- vendor/bin/phpunit --coverage-text --coverage-clover coverage.xml
 
 after_script:
-  - mkdir -p "$HOME/.php-cs-fixer"
-  - vendor/bin/php-cs-fixer fix --cache-file "$HOME/.php-cs-fixer/.php_cs.cache" --dry-run --allow-risky true --diff --verbose
+- mkdir -p "$HOME/.php-cs-fixer"
+- vendor/bin/php-cs-fixer fix --cache-file "$HOME/.php-cs-fixer/.php_cs.cache" --dry-run --allow-risky true --diff --verbose
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
