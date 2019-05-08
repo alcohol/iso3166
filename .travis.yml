@@ -6,6 +6,12 @@ git:
   depth: 5
   quiet: true
 
+cache:
+  directories:
+  - $HOME/.composer
+  - $HOME/.php-cs-fixer
+  - vendor
+
 php:
 - 7.0
 - 7.1
@@ -13,12 +19,6 @@ php:
 - 7.3
 - 7.4snapshot
 - nightly
-
-cache:
-  directories:
-  - $HOME/.composer
-  - $HOME/.php-cs-fixer
-  - vendor
 
 env:
   matrix:
