@@ -243,4 +243,21 @@ class ISO3166Test extends TestCase
 
         $this->assertEquals(count($this->iso3166), $i, 'Compare iterated count to count($iso3166).');
     }
+
+    public function testCanBeInitializedWithADataSet()
+    {
+        $validator = new ISO3166DataValidator();
+        $countries = $validator->validate([$this->foo, $this->bar]);
+
+        $iso3166 = new ISO3166(new ArrayDataset($countries));
+
+        $this->assertEquals($this->foo, $iso3166->alpha2('FO'));
+    }
+
+    public function testCanBeInitializedWithTheDefaultDataset()
+    {
+        $iso3166 = new ISO3166();
+        $defaultDataset = new DefaultDataset();
+        $this->assertEquals($defaultDataset->lookup(ISO3166::KEY_ALPHA2, 'BR'), $iso3166->alpha2('BR'));
+    }
 }
