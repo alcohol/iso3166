@@ -815,7 +815,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'EST',
             'numeric' => '233',
             'currency' => [
-                'EEK',
+                'EUR',
             ],
         ],
         [
