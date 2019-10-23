@@ -5,19 +5,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [2.1.3] - 2017/05/11
+## [2.1.4] - 2019/10/23
+
+* Changed: update currency for Estonia to EUR
+
+## [2.1.3] - 2019/09/25
 
 * Changed: update currency for Latvia to EUR
 
-## [2.1.2] - 2017/05/11
+## [2.1.2] - 2019/03/14
 
 * Changed: update short names of Eswatini and Macedonia.
 
-## [2.1.1] - 2017/05/11
+## [2.1.1] - 2018/07/17
 
 * Changed: Swaziland was renamed to Eswatini.
 
-## [2.1.0] - 2017/05/11
+## [2.1.0] - 2018/01/02
 
 * New: can now lookup by `name` ([#44]).
 
@@ -43,7 +47,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-[Unreleased]: https://github.com/thephpleague/iso3166/compare/2.1.3...HEAD
+[Unreleased]: https://github.com/thephpleague/iso3166/compare/2.1.4...HEAD
+[2.1.4]: https://github.com/thephpleague/iso3166/compare/2.1.3...2.1.4
 [2.1.3]: https://github.com/thephpleague/iso3166/compare/2.1.2...2.1.3
 [2.1.2]: https://github.com/thephpleague/iso3166/compare/2.1.1...2.1.2
 [2.1.1]: https://github.com/thephpleague/iso3166/compare/2.1.0...2.1.1
