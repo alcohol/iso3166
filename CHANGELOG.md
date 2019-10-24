@@ -5,27 +5,27 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [2.1.4] - 2019/10/23
+## [2.1.4] - 2019-10-23
 
 * Changed: update currency for Estonia to EUR
 
-## [2.1.3] - 2019/09/25
+## [2.1.3] - 2019-09-25
 
 * Changed: update currency for Latvia to EUR
 
-## [2.1.2] - 2019/03/14
+## [2.1.2] - 2019-03-14
 
 * Changed: update short names of Eswatini and Macedonia.
 
-## [2.1.1] - 2018/07/17
+## [2.1.1] - 2018-07-17
 
 * Changed: Swaziland was renamed to Eswatini.
 
-## [2.1.0] - 2018/01/02
+## [2.1.0] - 2018-01-02
 
 * New: can now lookup by `name` ([#44]).
 
-## [2.0.0] - 2017/05/11
+## [2.0.0] - 2017-05-11
 
 * Changed: renamed `getBy<Identifier>` methods to `<identifier>` ([#29]).
 * Changed: renamed `getAll` to `all` ([#29]).
@@ -38,12 +38,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * New: can now replace default dataset by injecting a new one into `ISO3166` through the constructor ([#18]).
 * New: `getBy[Alpha2,Alpha3,Numeric]` now throw `InvalidArgumentException` if anything other than a string is passed in ([#18]).
 
-## [1.0.1] - 2016/07/01
+## [1.0.1] - 2016-07-01
 
 * Changed: updated Antarctica currencies ([#6]).
 * Deprecated: the `get()` method has been deprecated and will be removed in a future release ([#12]).
 
-## [1.0.0] - 2016/06/30
+## [1.0.0] - 2016-06-30
 
 * New: initial release of `league/iso3166`.
 
