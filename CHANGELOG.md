@@ -57,6 +57,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
 
+[#44]: https://github.com/thephpleague/iso3166/issues/44
 [#29]: https://github.com/thephpleague/iso3166/issues/29
 [#24]: https://github.com/thephpleague/iso3166/issues/24
 [#23]: https://github.com/thephpleague/iso3166/issues/23
