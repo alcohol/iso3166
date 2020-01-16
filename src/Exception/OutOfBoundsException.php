@@ -9,6 +9,6 @@
 
 namespace League\ISO3166\Exception;
 
-final class OutOfBoundsException extends \OutOfBoundsException
+final class OutOfBoundsException extends \OutOfBoundsException implements ISO3166Exception
 {
 }

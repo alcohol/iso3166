@@ -9,6 +9,6 @@
 
 namespace League\ISO3166\Exception;
 
-final class InvalidArgumentException extends \InvalidArgumentException
+final class InvalidArgumentException extends \InvalidArgumentException implements ISO3166Exception
 {
 }
