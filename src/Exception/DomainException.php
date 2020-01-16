@@ -9,6 +9,6 @@
 
 namespace League\ISO3166\Exception;
 
-final class DomainException extends \DomainException
+final class DomainException extends \DomainException implements ISO3166Exception
 {
 }
