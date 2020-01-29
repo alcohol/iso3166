@@ -5,13 +5,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.1.5] - 2020-01-29
+
+* Changed: added a common ISO3166Exception interface ([#53]).
+
 ## [2.1.4] - 2019-10-23
 
-* Changed: update currency for Estonia to EUR
+* Changed: update currency for Estonia to EUR.
 
 ## [2.1.3] - 2019-09-25
 
-* Changed: update currency for Latvia to EUR
+* Changed: update currency for Latvia to EUR.
 
 ## [2.1.2] - 2019-03-14
 
@@ -47,7 +51,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-[Unreleased]: https://github.com/thephpleague/iso3166/compare/2.1.4...HEAD
+[Unreleased]: https://github.com/thephpleague/iso3166/compare/2.1.5...HEAD
+[2.1.5]: https://github.com/thephpleague/iso3166/compare/2.1.4...2.1.5
 [2.1.4]: https://github.com/thephpleague/iso3166/compare/2.1.3...2.1.4
 [2.1.3]: https://github.com/thephpleague/iso3166/compare/2.1.2...2.1.3
 [2.1.2]: https://github.com/thephpleague/iso3166/compare/2.1.1...2.1.2
@@ -57,6 +62,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
 
+[#53]: https://github.com/thephpleague/iso3166/pull/53
 [#44]: https://github.com/thephpleague/iso3166/issues/44
 [#29]: https://github.com/thephpleague/iso3166/issues/29
 [#24]: https://github.com/thephpleague/iso3166/issues/24
