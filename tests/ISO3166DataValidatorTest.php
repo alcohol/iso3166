@@ -17,7 +17,7 @@ class ISO3166DataValidatorTest extends TestCase
     /** @var ISO3166DataValidator */
     public $validator;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->validator = new ISO3166DataValidator();
     }
@@ -33,7 +33,7 @@ class ISO3166DataValidatorTest extends TestCase
     ) {
         if (null !== $expectedException && null !== $exceptionPattern) {
             $this->expectException($expectedException);
-            $this->expectExceptionMessageRegExp($exceptionPattern);
+            $this->expectExceptionMessageMatches($exceptionPattern);
         }
 
         $this->assertEquals($data, $this->validator->validate($data));
