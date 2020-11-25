@@ -9,7 +9,7 @@ title: Introduction
 [![Author](//img.shields.io/badge/author-@phpalcohol-blue.svg?style=flat-square)](https://twitter.com/phpalcohol)
 [![Source Code](//img.shields.io/badge/source-thephpleague/iso3166-blue.svg?style=flat-square)](https://github.com/thephpleague/iso3166)
 [![License](//img.shields.io/packagist/l/league/iso3166.svg?style=flat-square)](https://packagist.org/packages/league/iso3166)
-[![Build Status](//img.shields.io/travis/thephpleague/iso3166/master.svg?style=flat-square)](https://travis-ci.org/thephpleague/iso3166)
+![Tests](https://github.com/thephpleague/iso3166/workflows/Tests/badge.svg)
 
 ISO 3166-1 is part of the ISO 3166 standard published by the International Organization for Standardization (ISO), and defines codes for the names of countries, dependent territories, and special areas of geographical interest. The official name of the standard is Codes for the representation of names of countries and their subdivisions – Part 1: Country codes. It defines three sets of country codes:
 

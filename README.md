@@ -2,7 +2,7 @@
 
 A PHP library providing ISO 3166-1 data.
 
-[![Build Status](https://travis-ci.com/thephpleague/iso3166.svg?branch=master)](https://travis-ci.com/thephpleague/iso3166)
+![Tests](https://github.com/thephpleague/iso3166/workflows/Tests/badge.svg)
 [![Code Coverage](https://codecov.io/gh/thephpleague/iso3166/branch/master/graph/badge.svg)](https://codecov.io/gh/thephpleague/iso3166)
 ![License](https://img.shields.io/github/license/thephpleague/iso3166.svg)
 
