@@ -35,7 +35,7 @@ class ISO3166Test extends TestCase
     /** @var ISO3166 */
     public $iso3166;
 
-    public function setUp()
+    public function setUp(): void
     {
         $validator = new ISO3166DataValidator();
         $this->iso3166 = new ISO3166($validator->validate([$this->foo, $this->bar]));
@@ -48,7 +48,7 @@ class ISO3166Test extends TestCase
     public function testGetByAlpha2Invalid($alpha2, string $expectedException, string $exceptionPattern)
     {
         $this->expectException($expectedException);
-        $this->expectExceptionMessageRegExp($exceptionPattern);
+        $this->expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->alpha2($alpha2);
     }
@@ -87,7 +87,7 @@ class ISO3166Test extends TestCase
     public function testGetByAlpha3Invalid($alpha3, string $expectedException, string $exceptionPattern)
     {
         $this->expectException($expectedException);
-        $this->expectExceptionMessageRegExp($exceptionPattern);
+        $this->expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->alpha3($alpha3);
     }
@@ -126,7 +126,7 @@ class ISO3166Test extends TestCase
     public function testGetByNumericInvalid($numeric, string $expectedException, string $exceptionPattern)
     {
         $this->expectException($expectedException);
-        $this->expectExceptionMessageRegExp($exceptionPattern);
+        $this->expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->numeric($numeric);
     }
@@ -169,7 +169,7 @@ class ISO3166Test extends TestCase
     public function testGetByNameInvalid($name, string $expectedException, string $exceptionPattern)
     {
         $this->expectException($expectedException);
-        $this->expectExceptionMessageRegExp($exceptionPattern);
+        $this->expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->name($name);
     }
@@ -204,7 +204,7 @@ class ISO3166Test extends TestCase
      */
     public function testGetAll()
     {
-        $this->assertInternalType('array', $this->iso3166->all(), 'getAll() should return an array.');
+        $this->assertIsArray($this->iso3166->all());
     }
 
     /**
