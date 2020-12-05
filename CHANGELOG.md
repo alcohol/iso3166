@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.0.0] - 2020-12-05
+
+* Deprecated: dropped support for PHP < 7.3
+* Added: support for PHP 8
+
 ## [2.1.5] - 2020-01-29
 
 * Changed: added a common ISO3166Exception interface ([#53]).
@@ -51,7 +56,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-[Unreleased]: https://github.com/thephpleague/iso3166/compare/2.1.5...HEAD
+[Unreleased]: https://github.com/thephpleague/iso3166/compare/3.0.0...HEAD
+[3.0.0]: https://github.com/thephpleague/iso3166/compare/2.1.5...3.0.0
 [2.1.5]: https://github.com/thephpleague/iso3166/compare/2.1.4...2.1.5
 [2.1.4]: https://github.com/thephpleague/iso3166/compare/2.1.3...2.1.4
 [2.1.3]: https://github.com/thephpleague/iso3166/compare/2.1.2...2.1.3
