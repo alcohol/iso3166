@@ -14,7 +14,6 @@ $finder
     ->in(__DIR__)
 ;
 
-/* Based on dev-master|^2.0 of php-cs-fixer */
 $config
     ->setRules([
         // default
