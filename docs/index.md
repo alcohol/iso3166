@@ -6,7 +6,7 @@ title: Introduction
 
 ## Introduction
 
-[![Author](//img.shields.io/badge/author-@phpalcohol-blue.svg?style=flat-square)](https://twitter.com/phpalcohol)
+[![Author](//img.shields.io/badge/author-@rob_bast-blue.svg?style=flat-square)](https://twitter.com/rob_bast)
 [![Source Code](//img.shields.io/badge/source-thephpleague/iso3166-blue.svg?style=flat-square)](https://github.com/thephpleague/iso3166)
 [![License](//img.shields.io/packagist/l/league/iso3166.svg?style=flat-square)](https://packagist.org/packages/league/iso3166)
 ![Tests](https://github.com/thephpleague/iso3166/workflows/Tests/badge.svg)
