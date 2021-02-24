@@ -1,23 +1,13 @@
-name: Check & fix styling
+name: php-cs-fixer
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
+
   php-cs-fixer:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: docker://oskarstark/php-cs-fixer-ga
         with:
-          ref: ${{ github.head_ref }}
-
-      - name: Run PHP CS Fixer
-        uses: docker://oskarstark/php-cs-fixer-ga
-        with:
-          args: --config=.php_cs.dist --allow-risky=yes
-
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Fix styling
+          args: --config=.php_cs.dist --allow-risky=yes --diff --dry-run
