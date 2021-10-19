@@ -12,16 +12,15 @@
         </testsuite>
     </testsuites>
 
-    <filter>
-        <whitelist>
+    <coverage>
+        <include>
             <directory>src</directory>
-        </whitelist>
-    </filter>
-
-    <logging>
-        <log type="coverage-text" target="php://stderr" />
-        <log type="coverage-html" target="build/coverage" showUncoveredFiles="true"/>
-        <log type="coverage-clover" target="build/coverage.xml" showUncoveredFiles="true"/>
-    </logging>
+        </include>
+        <report>
+            <clover outputFile="build/coverage.xml"/>
+            <html outputDirectory="build/coverage"/>
+            <text outputFile="php://stderr"/>
+        </report>
+    </coverage>
 
 </phpunit>
