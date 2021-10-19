@@ -15,13 +15,13 @@ use League\ISO3166\Exception\OutOfBoundsException;
 final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvider
 {
     /** @var string */
-    const KEY_ALPHA2 = 'alpha2';
+    public const KEY_ALPHA2 = 'alpha2';
     /** @var string */
-    const KEY_ALPHA3 = 'alpha3';
+    public const KEY_ALPHA3 = 'alpha3';
     /** @var string */
-    const KEY_NUMERIC = 'numeric';
+    public const KEY_NUMERIC = 'numeric';
     /** @var string */
-    const KEY_NAME = 'name';
+    public const KEY_NAME = 'name';
     /** @var string[] */
     private $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC, self::KEY_NAME];
 

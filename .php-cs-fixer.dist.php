@@ -7,12 +7,10 @@ For the full copyright and license information, please view
 the LICENSE file that was distributed with this source code.
 EOF;
 
-$finder = new PhpCsFixer\Finder();
-$config = new PhpCsFixer\Config('ISO3166', 'ISO3166 style guide');
-
-$finder
+$finder = PhpCsFixer\Finder::create()
     ->in(__DIR__)
 ;
+$config = new PhpCsFixer\Config('ISO3166', 'ISO3166 style guide');
 
 $config
     ->setRules([
