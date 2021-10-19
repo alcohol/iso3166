@@ -35,40 +35,26 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function name($name)
+    public function name(string $name): array
     {
-        Guards::guardAgainstInvalidName($name);
-
         return $this->lookup(self::KEY_NAME, $name);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function alpha2($alpha2)
+    public function alpha2(string $alpha2): array
     {
         Guards::guardAgainstInvalidAlpha2($alpha2);
 
         return $this->lookup(self::KEY_ALPHA2, $alpha2);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function alpha3($alpha3)
+    public function alpha3(string $alpha3): array
     {
         Guards::guardAgainstInvalidAlpha3($alpha3);
 
         return $this->lookup(self::KEY_ALPHA3, $alpha3);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function numeric($numeric)
+    public function numeric(string $numeric): array
     {
         Guards::guardAgainstInvalidNumeric($numeric);
 
@@ -78,19 +64,15 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * @return array[]
      */
-    public function all()
+    public function all(): array
     {
         return $this->countries;
     }
 
     /**
-     * @param string $key
-     *
      * @throws \League\ISO3166\Exception\DomainException if an invalid key is specified
-     *
-     * @return \Generator
      */
-    public function iterator($key = self::KEY_ALPHA2)
+    public function iterator(string $key = self::KEY_ALPHA2): \Generator
     {
         if (!in_array($key, $this->keys, true)) {
             throw new DomainException(sprintf('Invalid value for $indexBy, got "%s", expected one of: %s', $key, implode(', ', $this->keys)));
@@ -128,14 +110,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      *
      * Looks for a match against the given key for each entry in the dataset.
      *
-     * @param string $key
-     * @param string $value
-     *
      * @throws \League\ISO3166\Exception\OutOfBoundsException if key does not exist in dataset
-     *
-     * @return array
      */
-    private function lookup($key, $value)
+    private function lookup(string $key, string $value): array
     {
         foreach ($this->countries as $country) {
             if (0 === strcasecmp($value, $country[$key])) {

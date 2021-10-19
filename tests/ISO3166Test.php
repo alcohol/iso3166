@@ -10,7 +10,6 @@
 namespace League\ISO3166;
 
 use League\ISO3166\Exception\DomainException;
-use League\ISO3166\Exception\InvalidArgumentException;
 use League\ISO3166\Exception\OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
 
@@ -59,14 +58,11 @@ class ISO3166Test extends TestCase
     public function invalidAlpha2Provider()
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_ALPHA2);
-        $expectedString = sprintf('{^Expected \$%s to be of type string, got: .*$}', ISO3166::KEY_ALPHA2);
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_ALPHA2);
 
         return [
             ['A', DomainException::class, $invalidNumeric],
             ['ABC', DomainException::class, $invalidNumeric],
-            [1, InvalidArgumentException::class, $expectedString],
-            [123, InvalidArgumentException::class, $expectedString],
             ['AB', OutOfBoundsException::class, $noMatch],
         ];
     }
@@ -98,14 +94,11 @@ class ISO3166Test extends TestCase
     public function invalidAlpha3Provider()
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_ALPHA3);
-        $expectedString = sprintf('{^Expected \$%s to be of type string, got: .*$}', ISO3166::KEY_ALPHA3);
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_ALPHA3);
 
         return [
             ['AB', DomainException::class, $invalidNumeric],
             ['ABCD', DomainException::class, $invalidNumeric],
-            [12, InvalidArgumentException::class, $expectedString],
-            [1234, InvalidArgumentException::class, $expectedString],
             ['ABC', OutOfBoundsException::class, $noMatch],
         ];
     }
@@ -137,7 +130,6 @@ class ISO3166Test extends TestCase
     public function invalidNumericProvider()
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_NUMERIC);
-        $expectedString = sprintf('{^Expected \$%s to be of type string, got: .*$}', ISO3166::KEY_NUMERIC);
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NUMERIC);
 
         return [
@@ -146,9 +138,6 @@ class ISO3166Test extends TestCase
             ['AB', DomainException::class, $invalidNumeric],
             ['ABC', DomainException::class, $invalidNumeric],
             ['ABCD', DomainException::class, $invalidNumeric],
-            [12, InvalidArgumentException::class, $expectedString],
-            [123, InvalidArgumentException::class, $expectedString],
-            [1234, InvalidArgumentException::class, $expectedString],
             ['000', OutOfBoundsException::class, $noMatch],
         ];
     }
@@ -174,18 +163,11 @@ class ISO3166Test extends TestCase
         $this->iso3166->name($name);
     }
 
-    /**
-     * @return array
-     */
-    public function invalidNameProvider()
+    public function invalidNameProvider(): array
     {
-        $expectedString = sprintf('{^Expected \$%s to be of type string, got: .*$}', ISO3166::KEY_NAME);
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);
 
         return [
-            [12, InvalidArgumentException::class, $expectedString],
-            [123, InvalidArgumentException::class, $expectedString],
-            [1234, InvalidArgumentException::class, $expectedString],
             ['000', OutOfBoundsException::class, $noMatch],
         ];
     }
@@ -193,7 +175,7 @@ class ISO3166Test extends TestCase
     /**
      * @testdox Calling getByName with a known name returns matching data array.
      */
-    public function testGetByName()
+    public function testGetByName(): void
     {
         $this->assertEquals($this->foo, $this->iso3166->name($this->foo[ISO3166::KEY_NAME]));
         $this->assertEquals($this->bar, $this->iso3166->name($this->bar[ISO3166::KEY_NAME]));
