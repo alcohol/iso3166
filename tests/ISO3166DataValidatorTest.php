@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Rob Bast <rob.bast@gmail.com>
  *
@@ -17,7 +19,7 @@ class ISO3166DataValidatorTest extends TestCase
     /** @var ISO3166DataValidator */
     public $validator;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->validator = new ISO3166DataValidator();
     }
@@ -30,7 +32,7 @@ class ISO3166DataValidatorTest extends TestCase
         array $data,
         string $expectedException = null,
         string $exceptionPattern = null
-    ) {
+    ): void {
         if (null !== $expectedException && null !== $exceptionPattern) {
             $this->expectException($expectedException);
             $this->expectExceptionMessageMatches($exceptionPattern);
@@ -39,10 +41,7 @@ class ISO3166DataValidatorTest extends TestCase
         $this->assertEquals($data, $this->validator->validate($data));
     }
 
-    /**
-     * @return array
-     */
-    public function requiredKeysProvider()
+    public function requiredKeysProvider(): array
     {
         return [
             'entry missing alpha2' => [
