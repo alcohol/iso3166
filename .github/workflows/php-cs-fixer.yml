@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: docker://oskarstark/php-cs-fixer-ga
+      - name: Install PHP with extensions
+        uses: shivammathur/setup-php@v2
         with:
-          args: --config=.php_cs.dist --allow-risky=yes --diff --dry-run
+          php-version: '8.0'
+          coverage: none
+          tools: php-cs-fixer:3
+      - name: Run PHP-CS-Fixer
+        run: "php-cs-fixer fix --allow-risky=yes --diff --dry-run"
