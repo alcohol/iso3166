@@ -13,10 +13,7 @@ use League\ISO3166\Exception\DomainException;
 
 final class ISO3166DataValidator
 {
-    /**
-     * @return array
-     */
-    public function validate(array $data)
+    public function validate(array $data): array
     {
         foreach ($data as $entry) {
             $this->assertEntryHasRequiredKeys($entry);
@@ -28,7 +25,7 @@ final class ISO3166DataValidator
     /**
      * @throws \League\ISO3166\Exception\DomainException if given data entry does not have all the required keys
      */
-    private function assertEntryHasRequiredKeys(array $entry)
+    private function assertEntryHasRequiredKeys(array $entry): void
     {
         if (!isset($entry[ISO3166::KEY_ALPHA2])) {
             throw new DomainException('Each data entry must have a valid alpha2 key.');
