@@ -231,7 +231,7 @@ class ISO3166Test extends TestCase
             }
         } catch (\Exception $e) {
             $this->assertInstanceOf('League\ISO3166\Exception\DomainException', $e);
-            $this->assertRegExp('{Invalid value for \$indexBy, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
+            $this->assertMatchesRegularExpression('{Invalid value for \$indexBy, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
         } finally {
             $this->assertTrue(isset($e));
         }
