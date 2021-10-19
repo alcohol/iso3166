@@ -19,6 +19,7 @@ $config
         '@Symfony' => true,
         // additionally
         'array_syntax' => ['syntax' => 'short'],
+        'declare_strict_types' => true,
         'concat_space' => false,
         'header_comment' => ['header' => $header],
         'no_unused_imports' => false,
@@ -27,7 +28,6 @@ $config
         'ordered_imports' => true,
         'phpdoc_align' => false,
         'phpdoc_order' => true,
-        'phpdoc_align' => false,
         'phpdoc_summary' => false,
         'simplified_null_return' => false,
         'ternary_to_null_coalescing' => true,

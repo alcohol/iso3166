@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Rob Bast <rob.bast@gmail.com>
  *
@@ -34,7 +36,7 @@ class ISO3166Test extends TestCase
     /** @var ISO3166 */
     public $iso3166;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $validator = new ISO3166DataValidator();
         $this->iso3166 = new ISO3166($validator->validate([$this->foo, $this->bar]));
@@ -44,7 +46,7 @@ class ISO3166Test extends TestCase
      * @testdox Calling getByAlpha2 with bad input throws various exceptions.
      * @dataProvider invalidAlpha2Provider
      */
-    public function testGetByAlpha2Invalid($alpha2, string $expectedException, string $exceptionPattern)
+    public function testGetByAlpha2Invalid($alpha2, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
         $this->expectExceptionMessageMatches($exceptionPattern);
@@ -52,10 +54,7 @@ class ISO3166Test extends TestCase
         $this->iso3166->alpha2($alpha2);
     }
 
-    /**
-     * @return array
-     */
-    public function invalidAlpha2Provider()
+    public function invalidAlpha2Provider(): array
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_ALPHA2);
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_ALPHA2);
@@ -70,7 +69,7 @@ class ISO3166Test extends TestCase
     /**
      * @testdox Calling getByAlpha2 with a known alpha2 returns matching data array.
      */
-    public function testGetByAlpha2()
+    public function testGetByAlpha2(): void
     {
         $this->assertEquals($this->foo, $this->iso3166->alpha2($this->foo[ISO3166::KEY_ALPHA2]));
         $this->assertEquals($this->bar, $this->iso3166->alpha2($this->bar[ISO3166::KEY_ALPHA2]));
@@ -80,7 +79,7 @@ class ISO3166Test extends TestCase
      * @testdox Calling getByAlpha3 with bad input throws various exceptions.
      * @dataProvider invalidAlpha3Provider
      */
-    public function testGetByAlpha3Invalid($alpha3, string $expectedException, string $exceptionPattern)
+    public function testGetByAlpha3Invalid($alpha3, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
         $this->expectExceptionMessageMatches($exceptionPattern);
@@ -88,10 +87,7 @@ class ISO3166Test extends TestCase
         $this->iso3166->alpha3($alpha3);
     }
 
-    /**
-     * @return array
-     */
-    public function invalidAlpha3Provider()
+    public function invalidAlpha3Provider(): array
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_ALPHA3);
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_ALPHA3);
@@ -106,7 +102,7 @@ class ISO3166Test extends TestCase
     /**
      * @testdox Calling getByAlpha3 with a known alpha3 returns matching data array.
      */
-    public function testGetByAlpha3()
+    public function testGetByAlpha3(): void
     {
         $this->assertEquals($this->foo, $this->iso3166->alpha3($this->foo[ISO3166::KEY_ALPHA3]));
         $this->assertEquals($this->bar, $this->iso3166->alpha3($this->bar[ISO3166::KEY_ALPHA3]));
@@ -116,7 +112,7 @@ class ISO3166Test extends TestCase
      * @testdox Calling getByNumeric with bad input throws various exceptions.
      * @dataProvider invalidNumericProvider
      */
-    public function testGetByNumericInvalid($numeric, string $expectedException, string $exceptionPattern)
+    public function testGetByNumericInvalid($numeric, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
         $this->expectExceptionMessageMatches($exceptionPattern);
@@ -124,10 +120,7 @@ class ISO3166Test extends TestCase
         $this->iso3166->numeric($numeric);
     }
 
-    /**
-     * @return array
-     */
-    public function invalidNumericProvider()
+    public function invalidNumericProvider(): array
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_NUMERIC);
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NUMERIC);
@@ -145,7 +138,7 @@ class ISO3166Test extends TestCase
     /**
      * @testdox Calling getByNumeric with a known numeric returns matching data array.
      */
-    public function testGetByNumeric()
+    public function testGetByNumeric(): void
     {
         $this->assertEquals($this->foo, $this->iso3166->numeric($this->foo[ISO3166::KEY_NUMERIC]));
         $this->assertEquals($this->bar, $this->iso3166->numeric($this->bar[ISO3166::KEY_NUMERIC]));
@@ -155,7 +148,7 @@ class ISO3166Test extends TestCase
      * @testdox Calling getByName with bad input throws various exceptions.
      * @dataProvider invalidNameProvider
      */
-    public function testGetByNameInvalid($name, string $expectedException, string $exceptionPattern)
+    public function testGetByNameInvalid($name, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
         $this->expectExceptionMessageMatches($exceptionPattern);
@@ -184,7 +177,7 @@ class ISO3166Test extends TestCase
     /**
      * @testdox Calling getAll returns an array with all elements.
      */
-    public function testGetAll()
+    public function testGetAll(): void
     {
         $this->assertIsArray($this->iso3166->all());
     }
@@ -192,27 +185,27 @@ class ISO3166Test extends TestCase
     /**
      * @testdox Iterating over $instance should behave as expected.
      */
-    public function testIterator()
+    public function testIterator(): void
     {
         $i = 0;
         foreach ($this->iso3166 as $key => $value) {
             ++$i;
         }
 
-        $this->assertEquals(count($this->iso3166->all()), $i, 'Compare iterated count to count(getAll()).');
+        $this->assertEquals(\count($this->iso3166->all()), $i, 'Compare iterated count to count(getAll()).');
     }
 
     /**
      * @testdox Iterating over $instance->listBy() should behave as expected.
      */
-    public function testListBy()
+    public function testListBy(): void
     {
         try {
             foreach ($this->iso3166->iterator('foo') as $key => $value) {
                 $this->assertTrue(true);
             }
         } catch (\Exception $e) {
-            $this->assertInstanceOf('League\ISO3166\Exception\DomainException', $e);
+            $this->assertInstanceOf(DomainException::class, $e);
             $this->assertMatchesRegularExpression('{Invalid value for \$indexBy, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
         } finally {
             $this->assertTrue(isset($e));
@@ -223,6 +216,6 @@ class ISO3166Test extends TestCase
             ++$i;
         }
 
-        $this->assertEquals(count($this->iso3166), $i, 'Compare iterated count to count($iso3166).');
+        $this->assertEquals(\count($this->iso3166), $i, 'Compare iterated count to count($iso3166).');
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Rob Bast <rob.bast@gmail.com>
  *
@@ -44,7 +46,7 @@ final class Guards
      */
     public static function guardAgainstInvalidNumeric(string $numeric): void
     {
-        if (!preg_match('/^[0-9]{3}$/', $numeric)) {
+        if (!preg_match('/^\d{3}$/', $numeric)) {
             throw new DomainException(sprintf('Not a valid numeric key: %s', $numeric));
         }
     }
