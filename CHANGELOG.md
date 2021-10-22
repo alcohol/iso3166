@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-* Changed: Added return types ([#63])
+* Changed: Added return types ([#63] & [#65])
 
 ## [3.0.0] - 2020-12-05
 
@@ -70,6 +70,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
 
+[#65]: https://github.com/thephpleague/iso3166/pull/65
 [#63]: https://github.com/thephpleague/iso3166/pull/63
 [#53]: https://github.com/thephpleague/iso3166/pull/53
 [#44]: https://github.com/thephpleague/iso3166/issues/44
