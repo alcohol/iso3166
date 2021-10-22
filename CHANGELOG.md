@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+* Nothing as of yet
+
+## [4.0.0] - 2021-10-22
+
 * Changed: Added return types ([#63] & [#65])
 
 ## [3.0.0] - 2020-12-05
@@ -58,7 +62,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-[Unreleased]: https://github.com/thephpleague/iso3166/compare/3.0.0...HEAD
+[Unreleased]: https://github.com/thephpleague/iso3166/compare/4.0.0...HEAD
+[4.0.0]: https://github.com/thephpleague/iso3166/compare/3.0.0...4.0.0
 [3.0.0]: https://github.com/thephpleague/iso3166/compare/2.1.5...3.0.0
 [2.1.5]: https://github.com/thephpleague/iso3166/compare/2.1.4...2.1.5
 [2.1.4]: https://github.com/thephpleague/iso3166/compare/2.1.3...2.1.4
