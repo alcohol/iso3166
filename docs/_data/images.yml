@@ -1,3 +1,5 @@
+# yamllint disable-file
+
 # Path to project specific favicon.ico, leave blank to use default
 favicon:
 
