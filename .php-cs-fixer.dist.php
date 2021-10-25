@@ -33,6 +33,7 @@ $config
         'ternary_to_null_coalescing' => true,
     ])
     ->setFinder($finder)
+    ->setRiskyAllowed(true)
 ;
 
 return $config;

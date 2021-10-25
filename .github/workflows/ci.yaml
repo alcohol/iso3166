@@ -1,0 +1,64 @@
+name: Continuous Integration
+
+on: [push, pull_request]
+
+jobs:
+
+  php-cs-fixer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install PHP with extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          coverage: none
+          tools: cs2pr, php-cs-fixer:3
+      - name: Run PHP-CS-Fixer
+        run: php-cs-fixer fix --diff --dry-run --format=checkstyle | cs2pr
+
+  phpstan:
+    runs-on: ubuntu-latest
+    name: phpstan
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          coverage: none
+          tools: cs2pr, phpstan
+      - run: phpstan --error-format=checkstyle | cs2pr
+
+  phpunit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [8.1, 8.0, 7.4, 7.3]
+        stability: [prefer-lowest, prefer-stable]
+    name: phpunit on PHP ${{ matrix.php }}@${{ matrix.stability }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring
+          coverage: xdebug
+      - run: |
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+      - run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+      - run: vendor/bin/phpunit
+
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ibiqlik/action-yamllint@v3
+        with:
+          format: github
+          config_data: |
+            extends: default
+            rules:
+              truthy:
+                check-keys: false
