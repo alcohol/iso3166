@@ -27,6 +27,9 @@ class ISO3166DataValidatorTest extends TestCase
     /**
      * @testdox Assert that each entry has all the required lookup keys:
      * @dataProvider requiredKeysProvider
+     *
+     * @param array<array<string, string|array<string>>> $data
+     * @param class-string<\Throwable> $expectedException
      */
     public function testDataEntryHasRequiredKeys(
         array $data,
@@ -41,6 +44,9 @@ class ISO3166DataValidatorTest extends TestCase
         $this->assertEquals($data, $this->validator->validate($data));
     }
 
+    /**
+     * @return array<string, array<array<array<string, string|array<string>>>|class-string<\Throwable>|string|null>>
+     */
     public function requiredKeysProvider(): array
     {
         return [

@@ -1,0 +1,27 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Generator expects key type string, array\\<string\\>\\|string given\\.$#"
+			count: 1
+			path: src/ISO3166.php
+
+		-
+			message: "#^Parameter \\#2 \\$string2 of function strcasecmp expects string, array\\<string\\>\\|string given\\.$#"
+			count: 1
+			path: src/ISO3166.php
+
+		-
+			message: "#^Parameter \\#1 \\$alpha2 of static method League\\\\ISO3166\\\\Guards\\:\\:guardAgainstInvalidAlpha2\\(\\) expects string, array\\<string\\>\\|string given\\.$#"
+			count: 1
+			path: src/ISO3166DataValidator.php
+
+		-
+			message: "#^Parameter \\#1 \\$alpha3 of static method League\\\\ISO3166\\\\Guards\\:\\:guardAgainstInvalidAlpha3\\(\\) expects string, array\\<string\\>\\|string given\\.$#"
+			count: 1
+			path: src/ISO3166DataValidator.php
+
+		-
+			message: "#^Parameter \\#1 \\$numeric of static method League\\\\ISO3166\\\\Guards\\:\\:guardAgainstInvalidNumeric\\(\\) expects string, array\\<string\\>\\|string given\\.$#"
+			count: 1
+			path: src/ISO3166DataValidator.php
+

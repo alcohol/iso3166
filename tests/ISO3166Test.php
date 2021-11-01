@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 
 class ISO3166Test extends TestCase
 {
-    /** @var array */
+    /** @var array<string, string> */
     public $foo = [
         ISO3166::KEY_ALPHA2 => 'FO',
         ISO3166::KEY_ALPHA3 => 'FOO',
@@ -25,7 +25,7 @@ class ISO3166Test extends TestCase
         ISO3166::KEY_NAME => 'FOO',
     ];
 
-    /** @var array */
+    /** @var array<string, string> */
     public $bar = [
         ISO3166::KEY_ALPHA2 => 'BA',
         ISO3166::KEY_ALPHA3 => 'BAR',
@@ -45,8 +45,10 @@ class ISO3166Test extends TestCase
     /**
      * @testdox Calling getByAlpha2 with bad input throws various exceptions.
      * @dataProvider invalidAlpha2Provider
+     *
+     * @param class-string<\Throwable> $expectedException
      */
-    public function testGetByAlpha2Invalid($alpha2, string $expectedException, string $exceptionPattern): void
+    public function testGetByAlpha2Invalid(string $alpha2, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
         $this->expectExceptionMessageMatches($exceptionPattern);
@@ -54,6 +56,9 @@ class ISO3166Test extends TestCase
         $this->iso3166->alpha2($alpha2);
     }
 
+    /**
+     * @return array<array<string|class-string<\Throwable>|string>>
+     */
     public function invalidAlpha2Provider(): array
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_ALPHA2);
@@ -78,8 +83,10 @@ class ISO3166Test extends TestCase
     /**
      * @testdox Calling getByAlpha3 with bad input throws various exceptions.
      * @dataProvider invalidAlpha3Provider
+     *
+     * @param class-string<\Throwable> $expectedException
      */
-    public function testGetByAlpha3Invalid($alpha3, string $expectedException, string $exceptionPattern): void
+    public function testGetByAlpha3Invalid(string $alpha3, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
         $this->expectExceptionMessageMatches($exceptionPattern);
@@ -87,6 +94,9 @@ class ISO3166Test extends TestCase
         $this->iso3166->alpha3($alpha3);
     }
 
+    /**
+     * @return array<array<string|class-string<\Throwable>|string>>
+     */
     public function invalidAlpha3Provider(): array
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_ALPHA3);
@@ -111,8 +121,10 @@ class ISO3166Test extends TestCase
     /**
      * @testdox Calling getByNumeric with bad input throws various exceptions.
      * @dataProvider invalidNumericProvider
+     *
+     * @param class-string<\Throwable> $expectedException
      */
-    public function testGetByNumericInvalid($numeric, string $expectedException, string $exceptionPattern): void
+    public function testGetByNumericInvalid(string $numeric, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
         $this->expectExceptionMessageMatches($exceptionPattern);
@@ -120,6 +132,10 @@ class ISO3166Test extends TestCase
         $this->iso3166->numeric($numeric);
     }
 
+
+    /**
+     * @return array<array<string|class-string<\Throwable>|string>>
+     */
     public function invalidNumericProvider(): array
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_NUMERIC);
@@ -147,8 +163,10 @@ class ISO3166Test extends TestCase
     /**
      * @testdox Calling getByName with bad input throws various exceptions.
      * @dataProvider invalidNameProvider
+     *
+     * @param class-string<\Throwable> $expectedException
      */
-    public function testGetByNameInvalid($name, string $expectedException, string $exceptionPattern): void
+    public function testGetByNameInvalid(string $name, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
         $this->expectExceptionMessageMatches($exceptionPattern);
@@ -156,6 +174,9 @@ class ISO3166Test extends TestCase
         $this->iso3166->name($name);
     }
 
+    /**
+     * @return array<array<string|class-string<\Throwable>|string>>
+     */
     public function invalidNameProvider(): array
     {
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);

@@ -1,6 +1,10 @@
+includes:
+	- phpstan-baseline.neon
+
 parameters:
-	level: 5
+	level: 9
 	tmpDir: .
+	checkGenericClassInNonGenericObjectType: false
 	paths:
 		- src
 		- tests

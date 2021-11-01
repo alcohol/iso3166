@@ -28,7 +28,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     private $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC, self::KEY_NAME];
 
     /**
-     * @param array[] $countries replace default dataset with given array
+     * @param array<array<string, string|array<string>>> $countries replace default dataset with given array
      */
     public function __construct(array $countries = [])
     {
@@ -37,11 +37,17 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         }
     }
 
+    /**
+     * @return array<string, string|array<string>>
+     */
     public function name(string $name): array
     {
         return $this->lookup(self::KEY_NAME, $name);
     }
 
+    /**
+     * @return array<string, string|array<string>>
+     */
     public function alpha2(string $alpha2): array
     {
         Guards::guardAgainstInvalidAlpha2($alpha2);
@@ -49,6 +55,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         return $this->lookup(self::KEY_ALPHA2, $alpha2);
     }
 
+    /**
+     * @return array<string, string|array<string>>
+     */
     public function alpha3(string $alpha3): array
     {
         Guards::guardAgainstInvalidAlpha3($alpha3);
@@ -56,6 +65,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         return $this->lookup(self::KEY_ALPHA3, $alpha3);
     }
 
+    /**
+     * @return array<string, string|array<string>>
+     */
     public function numeric(string $numeric): array
     {
         Guards::guardAgainstInvalidNumeric($numeric);
@@ -64,7 +76,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array[]
+     * @return array<array<string, string|array<string>>>
      */
     public function all(): array
     {
@@ -72,6 +84,8 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
+     * @return \Generator<string, array<string, string|array<string>>>
+     *
      * @throws \League\ISO3166\Exception\DomainException if an invalid key is specified
      */
     public function iterator(string $key = self::KEY_ALPHA2): \Generator
@@ -96,6 +110,8 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
+     * @return \Generator<array<string, string|array<string>>>
+     *
      * @see \IteratorAggregate
      *
      * @internal
@@ -111,6 +127,8 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      * Lookup ISO3166-1 data by given identifier.
      *
      * Looks for a match against the given key for each entry in the dataset.
+     *
+     * @return array<string, string|array<string>>
      *
      * @throws \League\ISO3166\Exception\OutOfBoundsException if key does not exist in dataset
      */
@@ -128,7 +146,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * Default dataset.
      *
-     * @var array[]
+     * @var array<array<string, string|array<string>>>
      */
     private $countries = [
         [
