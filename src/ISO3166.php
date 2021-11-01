@@ -77,7 +77,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     public function iterator(string $key = self::KEY_ALPHA2): \Generator
     {
         if (!in_array($key, $this->keys, true)) {
-            throw new DomainException(sprintf('Invalid value for $indexBy, got "%s", expected one of: %s', $key, implode(', ', $this->keys)));
+            throw new DomainException(sprintf('Invalid value for $key, got "%s", expected one of: %s', $key, implode(', ', $this->keys)));
         }
 
         foreach ($this->countries as $country) {

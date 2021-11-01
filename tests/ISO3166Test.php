@@ -206,7 +206,7 @@ class ISO3166Test extends TestCase
             }
         } catch (\Exception $e) {
             $this->assertInstanceOf(DomainException::class, $e);
-            $this->assertMatchesRegularExpression('{Invalid value for \$indexBy, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
+            $this->assertMatchesRegularExpression('{Invalid value for \$key, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
         } finally {
             $this->assertTrue(isset($e));
         }
