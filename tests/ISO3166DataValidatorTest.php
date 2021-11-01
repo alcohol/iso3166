@@ -45,7 +45,7 @@ class ISO3166DataValidatorTest extends TestCase
     }
 
     /**
-     * @return array<string, array<array<array<string, string|array<string>>>|class-string<\Throwable>|string|null>>
+     * @phpstan-return array<string, array<array<array<string, string|array<string>>>|class-string<\Throwable>|string|null>>
      */
     public function requiredKeysProvider(): array
     {

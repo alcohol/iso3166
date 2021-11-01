@@ -132,7 +132,6 @@ class ISO3166Test extends TestCase
         $this->iso3166->numeric($numeric);
     }
 
-
     /**
      * @return array<array<string|class-string<\Throwable>|string>>
      */

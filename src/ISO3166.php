@@ -84,9 +84,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return \Generator<string, array<string, string|array<string>>>
-     *
      * @throws \League\ISO3166\Exception\DomainException if an invalid key is specified
+     *
+     * @return \Generator<string, array<string, string|array<string>>>
      */
     public function iterator(string $key = self::KEY_ALPHA2): \Generator
     {
@@ -128,9 +128,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      *
      * Looks for a match against the given key for each entry in the dataset.
      *
-     * @return array<string, string|array<string>>
-     *
      * @throws \League\ISO3166\Exception\OutOfBoundsException if key does not exist in dataset
+     *
+     * @return array<string, string|array<string>>
      */
     private function lookup(string $key, string $value): array
     {
