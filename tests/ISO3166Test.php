@@ -46,7 +46,7 @@ class ISO3166Test extends TestCase
      * @testdox Calling getByAlpha2 with bad input throws various exceptions.
      * @dataProvider invalidAlpha2Provider
      *
-     * @param class-string<\Throwable> $expectedException
+     * @phpstan-param class-string<\Throwable> $expectedException
      */
     public function testGetByAlpha2Invalid(string $alpha2, string $expectedException, string $exceptionPattern): void
     {
@@ -84,7 +84,7 @@ class ISO3166Test extends TestCase
      * @testdox Calling getByAlpha3 with bad input throws various exceptions.
      * @dataProvider invalidAlpha3Provider
      *
-     * @param class-string<\Throwable> $expectedException
+     * @phpstan-param class-string<\Throwable> $expectedException
      */
     public function testGetByAlpha3Invalid(string $alpha3, string $expectedException, string $exceptionPattern): void
     {
@@ -133,7 +133,7 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @return array<array<string|class-string<\Throwable>|string>>
+     * @phpstan-return array<array<string|class-string<\Throwable>|string>>
      */
     public function invalidNumericProvider(): array
     {
@@ -174,7 +174,7 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @return array<array<string|class-string<\Throwable>|string>>
+     * @phpstan-return array<array<string|class-string<\Throwable>|string>>
      */
     public function invalidNameProvider(): array
     {

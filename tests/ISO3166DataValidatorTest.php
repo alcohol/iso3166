@@ -29,7 +29,7 @@ class ISO3166DataValidatorTest extends TestCase
      * @dataProvider requiredKeysProvider
      *
      * @param array<array<string, string|array<string>>> $data
-     * @param class-string<\Throwable> $expectedException
+     * @phpstan-param class-string<\Throwable> $expectedException
      */
     public function testDataEntryHasRequiredKeys(
         array $data,
@@ -45,7 +45,7 @@ class ISO3166DataValidatorTest extends TestCase
     }
 
     /**
-     * @phpstan-return array<string, array<array<array<string, string|array<string>>>|class-string<\Throwable>|string|null>>
+     * @phpstan-return array<string, array<array<array<string, string>>|class-string<\Throwable>|string|null>>
      */
     public function requiredKeysProvider(): array
     {
