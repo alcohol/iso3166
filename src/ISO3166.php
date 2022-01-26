@@ -104,6 +104,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      *
      * @internal
      */
+    #[\ReturnTypeWillChange]
     public function count(): int
     {
         return count($this->countries);
@@ -116,6 +117,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      *
      * @internal
      */
+    #[\ReturnTypeWillChange]
     public function getIterator(): \Generator
     {
         foreach ($this->countries as $country) {
