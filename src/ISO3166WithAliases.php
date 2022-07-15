@@ -44,6 +44,7 @@ class ISO3166WithAliases implements ISO3166DataProvider
             'United Kingdom' => 'United Kingdom of Great Britain and Northern Ireland',
             'United States' => 'United States of America',
             'Venezuela' => 'Venezuela (Bolivarian Republic of)',
+            'Vietnam' => 'Viet Nam',
         ];
 
         foreach ($aliases as $alias => $full) {
