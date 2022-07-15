@@ -46,7 +46,14 @@ class ISO3166WithAliases implements ISO3166DataProvider
             'Venezuela' => 'Venezuela (Bolivarian Republic of)',
         ];
 
-        return $this->source->name(array_key_exists($name, $aliases) ? $aliases[$name] : $name);
+        foreach ($aliases as $alias => $full) {
+            if (0 === strcasecmp($alias, $name)) {
+                $name = $full;
+                break;
+            }
+        }
+
+        return $this->source->name($name);
     }
 
     public function alpha2($alpha2): array
