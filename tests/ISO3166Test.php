@@ -242,4 +242,13 @@ class ISO3166Test extends TestCase
 
         static::assertEquals(\count($this->iso3166), $i, 'Compare iterated count to count($iso3166).');
     }
+
+    /**
+     * @testdox Make sure string compare is unicode.
+     */
+    public function testCountryNameCompare(): void
+    {
+        $country = (new ISO3166)->name('CÔTE D\'IVOIRE');
+        $this->assertEquals('CIV', $country['alpha3']);
+    }
 }
