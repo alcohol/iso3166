@@ -27,6 +27,7 @@ class ISO3166WithAliases implements ISO3166DataProvider
     {
         $aliases = [
             'Bolivia' => 'Bolivia (Plurinational State of)',
+            'Bolivia, Plurinational State of' => 'Bolivia (Plurinational State of)',
             'Congo-Kinshasa' => 'Congo (Democratic Republic of the)',
             'Czech Republic' => 'Czechia',
             'Iran' => 'Iran (Islamic Republic of)',
