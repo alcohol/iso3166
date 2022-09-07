@@ -59,8 +59,3 @@ jobs:
       - uses: ibiqlik/action-yamllint@v3
         with:
           format: github
-          config_data: |
-            extends: default
-            rules:
-              truthy:
-                check-keys: false
