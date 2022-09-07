@@ -43,7 +43,7 @@ class ISO3166DataValidatorTest extends TestCase
             $this->expectExceptionMessageMatches($exceptionPattern);
         }
 
-        $this->assertEquals($data, $this->validator->validate($data));
+        static::assertEquals($data, $this->validator->validate($data));
     }
 
     /**

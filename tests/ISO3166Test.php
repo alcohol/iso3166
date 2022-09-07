@@ -51,8 +51,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByAlpha2Invalid(string $alpha2, string $expectedException, string $exceptionPattern): void
     {
-        $this->expectException($expectedException);
-        $this->expectExceptionMessageMatches($exceptionPattern);
+        static::expectException($expectedException);
+        static::expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->alpha2($alpha2);
     }
@@ -77,8 +77,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByAlpha2(): void
     {
-        $this->assertEquals($this->foo, $this->iso3166->alpha2($this->foo[ISO3166::KEY_ALPHA2]));
-        $this->assertEquals($this->bar, $this->iso3166->alpha2($this->bar[ISO3166::KEY_ALPHA2]));
+        static::assertEquals($this->foo, $this->iso3166->alpha2($this->foo[ISO3166::KEY_ALPHA2]));
+        static::assertEquals($this->bar, $this->iso3166->alpha2($this->bar[ISO3166::KEY_ALPHA2]));
     }
 
     /**
@@ -90,8 +90,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByAlpha3Invalid(string $alpha3, string $expectedException, string $exceptionPattern): void
     {
-        $this->expectException($expectedException);
-        $this->expectExceptionMessageMatches($exceptionPattern);
+        static::expectException($expectedException);
+        static::expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->alpha3($alpha3);
     }
@@ -116,8 +116,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByAlpha3(): void
     {
-        $this->assertEquals($this->foo, $this->iso3166->alpha3($this->foo[ISO3166::KEY_ALPHA3]));
-        $this->assertEquals($this->bar, $this->iso3166->alpha3($this->bar[ISO3166::KEY_ALPHA3]));
+        static::assertEquals($this->foo, $this->iso3166->alpha3($this->foo[ISO3166::KEY_ALPHA3]));
+        static::assertEquals($this->bar, $this->iso3166->alpha3($this->bar[ISO3166::KEY_ALPHA3]));
     }
 
     /**
@@ -129,8 +129,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByNumericInvalid(string $numeric, string $expectedException, string $exceptionPattern): void
     {
-        $this->expectException($expectedException);
-        $this->expectExceptionMessageMatches($exceptionPattern);
+        static::expectException($expectedException);
+        static::expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->numeric($numeric);
     }
@@ -158,8 +158,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByNumeric(): void
     {
-        $this->assertEquals($this->foo, $this->iso3166->numeric($this->foo[ISO3166::KEY_NUMERIC]));
-        $this->assertEquals($this->bar, $this->iso3166->numeric($this->bar[ISO3166::KEY_NUMERIC]));
+        static::assertEquals($this->foo, $this->iso3166->numeric($this->foo[ISO3166::KEY_NUMERIC]));
+        static::assertEquals($this->bar, $this->iso3166->numeric($this->bar[ISO3166::KEY_NUMERIC]));
     }
 
     /**
@@ -171,8 +171,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByNameInvalid(string $name, string $expectedException, string $exceptionPattern): void
     {
-        $this->expectException($expectedException);
-        $this->expectExceptionMessageMatches($exceptionPattern);
+        static::expectException($expectedException);
+        static::expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->name($name);
     }
@@ -194,8 +194,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByName(): void
     {
-        $this->assertEquals($this->foo, $this->iso3166->name($this->foo[ISO3166::KEY_NAME]));
-        $this->assertEquals($this->bar, $this->iso3166->name($this->bar[ISO3166::KEY_NAME]));
+        static::assertEquals($this->foo, $this->iso3166->name($this->foo[ISO3166::KEY_NAME]));
+        static::assertEquals($this->bar, $this->iso3166->name($this->bar[ISO3166::KEY_NAME]));
     }
 
     /**
@@ -203,7 +203,7 @@ class ISO3166Test extends TestCase
      */
     public function testGetAll(): void
     {
-        $this->assertIsArray($this->iso3166->all());
+        static::assertIsArray($this->iso3166->all());
     }
 
     /**
@@ -216,7 +216,7 @@ class ISO3166Test extends TestCase
             ++$i;
         }
 
-        $this->assertEquals(\count($this->iso3166->all()), $i, 'Compare iterated count to count(getAll()).');
+        static::assertEquals(\count($this->iso3166->all()), $i, 'Compare iterated count to count(getAll()).');
     }
 
     /**
@@ -226,13 +226,13 @@ class ISO3166Test extends TestCase
     {
         try {
             foreach ($this->iso3166->iterator('foo') as $key => $value) {
-                $this->assertTrue(true);
+                static::assertTrue(true);
             }
         } catch (\Exception $e) {
-            $this->assertInstanceOf(DomainException::class, $e);
-            $this->assertMatchesRegularExpression('{Invalid value for \$key, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
+            static::assertInstanceOf(DomainException::class, $e);
+            static::assertMatchesRegularExpression('{Invalid value for \$key, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
         } finally {
-            $this->assertTrue(isset($e));
+            static::assertTrue(isset($e));
         }
 
         $i = 0;
@@ -240,6 +240,6 @@ class ISO3166Test extends TestCase
             ++$i;
         }
 
-        $this->assertEquals(\count($this->iso3166), $i, 'Compare iterated count to count($iso3166).');
+        static::assertEquals(\count($this->iso3166), $i, 'Compare iterated count to count($iso3166).');
     }
 }
