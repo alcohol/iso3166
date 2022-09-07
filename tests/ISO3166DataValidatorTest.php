@@ -26,9 +26,11 @@ class ISO3166DataValidatorTest extends TestCase
 
     /**
      * @testdox Assert that each entry has all the required lookup keys:
+     *
      * @dataProvider requiredKeysProvider
      *
      * @param array<array<string, string|array<string>>> $data
+     *
      * @phpstan-param class-string<\Throwable> $expectedException
      */
     public function testDataEntryHasRequiredKeys(

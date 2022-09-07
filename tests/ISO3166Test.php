@@ -44,6 +44,7 @@ class ISO3166Test extends TestCase
 
     /**
      * @testdox Calling getByAlpha2 with bad input throws various exceptions.
+     *
      * @dataProvider invalidAlpha2Provider
      *
      * @phpstan-param class-string<\Throwable> $expectedException
@@ -82,6 +83,7 @@ class ISO3166Test extends TestCase
 
     /**
      * @testdox Calling getByAlpha3 with bad input throws various exceptions.
+     *
      * @dataProvider invalidAlpha3Provider
      *
      * @phpstan-param class-string<\Throwable> $expectedException
@@ -120,6 +122,7 @@ class ISO3166Test extends TestCase
 
     /**
      * @testdox Calling getByNumeric with bad input throws various exceptions.
+     *
      * @dataProvider invalidNumericProvider
      *
      * @param class-string<\Throwable> $expectedException
@@ -161,6 +164,7 @@ class ISO3166Test extends TestCase
 
     /**
      * @testdox Calling getByName with bad input throws various exceptions.
+     *
      * @dataProvider invalidNameProvider
      *
      * @param class-string<\Throwable> $expectedException

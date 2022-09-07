@@ -1,3 +1,4 @@
+---
 name: Continuous Integration
 
 on: [push, pull_request]
@@ -7,28 +8,28 @@ jobs:
   php-cs-fixer:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install PHP with extensions
-        uses: shivammathur/setup-php@v2
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
           coverage: none
-          tools: cs2pr, php-cs-fixer:3
-      - name: Run PHP-CS-Fixer
-        run: php-cs-fixer fix --diff --dry-run --format=checkstyle | cs2pr
+          tools: cs2pr, composer
+      - run: composer --working-dir=tools/php-cs-fixer install
+      - run: tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --diff --dry-run --format=checkstyle | cs2pr
 
   phpstan:
     runs-on: ubuntu-latest
     name: phpstan
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
           coverage: none
-          tools: cs2pr, composer, phpstan
+          tools: cs2pr, composer
       - run: composer update
-      - run: phpstan --error-format=checkstyle | cs2pr
+      - run: composer --working-dir=tools/phpstan install
+      - run: tools/phpstan/vendor/bin/phpstan --error-format=checkstyle | cs2pr
 
   phpunit:
     runs-on: ubuntu-latest
@@ -37,9 +38,9 @@ jobs:
       matrix:
         php: [8.1, 8.0, 7.4, 7.3]
         stability: [prefer-lowest, prefer-stable]
-    name: phpunit on PHP ${{ matrix.php }}@${{ matrix.stability }}
+    name: PHPUnit on PHP ${{ matrix.php }}@${{ matrix.stability }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
@@ -54,7 +55,7 @@ jobs:
   yamllint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ibiqlik/action-yamllint@v3
         with:
           format: github

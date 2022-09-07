@@ -8,7 +8,7 @@ the LICENSE file that was distributed with this source code.
 EOF;
 
 $finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__)
+    ->in('src', 'tests')
 ;
 $config = new PhpCsFixer\Config('ISO3166', 'ISO3166 style guide');
 

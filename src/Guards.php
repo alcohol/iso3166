@@ -22,7 +22,7 @@ final class Guards
      */
     public static function guardAgainstInvalidAlpha2(string $alpha2): void
     {
-        if (!preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
+        if (1 !== preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
             throw new DomainException(sprintf('Not a valid alpha2 key: %s', $alpha2));
         }
     }
@@ -34,7 +34,7 @@ final class Guards
      */
     public static function guardAgainstInvalidAlpha3(string $alpha3): void
     {
-        if (!preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
+        if (1 !== preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
             throw new DomainException(sprintf('Not a valid alpha3 key: %s', $alpha3));
         }
     }
@@ -46,7 +46,7 @@ final class Guards
      */
     public static function guardAgainstInvalidNumeric(string $numeric): void
     {
-        if (!preg_match('/^\d{3}$/', $numeric)) {
+        if (1 !== preg_match('/^\d{3}$/', $numeric)) {
             throw new DomainException(sprintf('Not a valid numeric key: %s', $numeric));
         }
     }
