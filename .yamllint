@@ -1,0 +1,22 @@
+extends: default
+rules:
+  braces:
+    min-spaces-inside: 1
+    max-spaces-inside: 1
+    min-spaces-inside-empty: 0
+    max-spaces-inside-empty: 0
+  brackets:
+    min-spaces-inside: 0
+    max-spaces-inside: 0
+    min-spaces-inside-empty: 0
+    max-spaces-inside-empty: 0
+  comments:
+    min-spaces-from-content: 1
+  document-start: disable
+  line-length:
+    level: warning
+    max: 140
+    allow-non-breakable-inline-mappings: true
+    allow-non-breakable-words: true
+  truthy:
+    check-keys: false
