@@ -249,6 +249,7 @@ class ISO3166Test extends TestCase
     public function testCountryNameCompare(): void
     {
         $country = (new ISO3166)->name('CÔTE D\'IVOIRE');
-        $this->assertEquals('CIV', $country['alpha3']);
+
+        static::assertEquals('CIV', $country['alpha3']);
     }
 }
