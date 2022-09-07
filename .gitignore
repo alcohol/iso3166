@@ -1,7 +1,10 @@
 /build/
+/cache/
 /vendor/
+/tools/*/vendor/
 /.php_cs
 /.php-cs-fixer.cache
 /composer.lock
 /phpunit.xml
 /.phpunit.result.cache
+/resultCache.php

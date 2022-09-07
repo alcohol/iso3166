@@ -1,10 +1,12 @@
 includes:
-	- phpstan-baseline.neon
+  - tools/phpstan/vendor/phpstan/phpstan-deprecation-rules/rules.neon
+  - tools/phpstan/vendor/phpstan/phpstan-php-parser/extension.neon
+  - tools/phpstan/vendor/phpstan/phpstan-strict-rules/rules.neon
 
 parameters:
-	level: 9
-	tmpDir: .
-	checkGenericClassInNonGenericObjectType: false
-	paths:
-		- src
-		- tests
+  level: 9
+  tmpDir: .
+  checkGenericClassInNonGenericObjectType: true
+  paths:
+    - src
+    - tests

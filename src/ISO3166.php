@@ -14,6 +14,7 @@ namespace League\ISO3166;
 use League\ISO3166\Exception\DomainException;
 use League\ISO3166\Exception\OutOfBoundsException;
 
+/** @implements \IteratorAggregate<string, array> */
 final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvider
 {
     /** @var string */
@@ -28,17 +29,17 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     private $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC, self::KEY_NAME];
 
     /**
-     * @param array<array<string, string|array<string>>> $countries replace default dataset with given array
+     * @param array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}> $countries replace default dataset with given array
      */
     public function __construct(array $countries = [])
     {
-        if ($countries) {
+        if ([] !== $countries) {
             $this->countries = $countries;
         }
     }
 
     /**
-     * @return array<string, string|array<string>>
+     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
      */
     public function name(string $name): array
     {
@@ -46,7 +47,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array<string, string|array<string>>
+     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
      */
     public function alpha2(string $alpha2): array
     {
@@ -56,7 +57,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array<string, string|array<string>>
+     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
      */
     public function alpha3(string $alpha3): array
     {
@@ -66,7 +67,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array<string, string|array<string>>
+     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
      */
     public function numeric(string $numeric): array
     {
@@ -76,7 +77,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array<array<string, string|array<string>>>
+     * @return array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>
      */
     public function all(): array
     {
@@ -86,7 +87,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * @throws \League\ISO3166\Exception\DomainException if an invalid key is specified
      *
-     * @return \Generator<string, array<string, string|array<string>>>
+     * @param 'name'|'alpha2'|'alpha3'|'numeric' $key
+     *
+     * @return \Generator<string, array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>
      */
     public function iterator(string $key = self::KEY_ALPHA2): \Generator
     {
@@ -128,15 +131,17 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      *
      * Looks for a match against the given key for each entry in the dataset.
      *
+     * @param 'name'|'alpha2'|'alpha3'|'numeric' $key
+     *
      * @throws \League\ISO3166\Exception\OutOfBoundsException if key does not exist in dataset
      *
-     * @return array<string, string|array<string>>
+     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
      */
     private function lookup(string $key, string $value): array
     {
         foreach ($this->countries as $country) {
             if (0 === strcasecmp($value, $country[$key])
-            ||  0 === strncasecmp($value, $country[$key], strlen($value))) {
+            || 0 === strncasecmp($value, $country[$key], strlen($value))) {
                 return $country;
             }
         }
@@ -147,7 +152,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * Default dataset.
      *
-     * @var array<array<string, string|array<string>>>
+     * @var array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>>
      */
     private $countries = [
         [
