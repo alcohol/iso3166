@@ -139,7 +139,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         foreach ($this->countries as $country) {
             $comparison = mb_strtolower($country[$key]);
             
-            if ($value === $comparison || $value === mb_substr($comparison, 0, mb_strlen($value)) {
+            if ($value === $comparison || $value === mb_substr($comparison, 0, mb_strlen($value))) {
                 return $country;
             }
         }
