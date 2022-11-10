@@ -1104,6 +1104,15 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             ],
         ],
         [
+            'name' => 'Canary Islands',
+            'alpha2' => 'IC',
+            'alpha3' => null,
+            'numeric' => null,
+            'currency' => [
+                'EUR',
+            ],
+        ],
+        [
             'name' => 'Iceland',
             'alpha2' => 'IS',
             'alpha3' => 'ISL',
