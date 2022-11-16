@@ -10,6 +10,7 @@
 # don't add these files/directories to github release tarballs (composer dist install)
 /docs/ export-ignore
 /tests/ export-ignore
+/tools/ export-ignore
 /.github/ export-ignore
 /.gitattributes export-ignore
 /.gitignore export-ignore
