@@ -2433,5 +2433,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'ZAR',
             ],
         ],
+        [
+            'name' => 'The Canary Islands',
+            'alpha2' => 'IC',
+            'alpha3' => null,
+            'numeric' => null,
+            'currency' => [
+                'EUR',
+            ],
+        ],
     ];
 }
