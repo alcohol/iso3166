@@ -166,6 +166,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AFN',
             ],
+            'adjectival' => [
+                'Afghan',
+            ],
+            'demonym' => [
+                'Afghans',
+            ],
         ],
         [
             'name' => 'Åland Islands',
@@ -174,6 +180,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '248',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Åland Island',
+            ],
+            'demonym' => [
+                'Ålanders',
             ],
         ],
         [
@@ -184,6 +196,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ALL',
             ],
+            'adjectival' => [
+                'Albanian',
+            ],
+            'demonym' => [
+                'Albanians',
+            ],
         ],
         [
             'name' => 'Algeria',
@@ -192,6 +210,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '012',
             'currency' => [
                 'DZD',
+            ],
+            'adjectival' => [
+                'Algerian',
+            ],
+            'demonym' => [
+                'Algerians',
             ],
         ],
         [
@@ -202,6 +226,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'adjectival' => [
+                'American Samoan',
+            ],
+            'demonym' => [
+                'American Samoans',
+            ],
         ],
         [
             'name' => 'Andorra',
@@ -210,6 +240,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '020',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Andorran',
+            ],
+            'demonym' => [
+                'Andorrans',
             ],
         ],
         [
@@ -220,6 +256,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AOA',
             ],
+            'adjectival' => [
+                'Angolan',
+            ],
+            'demonym' => [
+                'Angolans',
+            ],
         ],
         [
             'name' => 'Anguilla',
@@ -228,6 +270,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '660',
             'currency' => [
                 'XCD',
+            ],
+            'adjectival' => [
+                'Anguillan',
+            ],
+            'demonym' => [
+                'Anguillans',
             ],
         ],
         [
@@ -262,6 +310,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'UYU',
                 'ZAR',
             ],
+            'adjectival' => [
+                'Antarctic',
+            ],
+            'demonym' => [
+                'Antarcticans',
+                'Antarctic residents',
+            ],
         ],
         [
             'name' => 'Antigua and Barbuda',
@@ -270,6 +325,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '028',
             'currency' => [
                 'XCD',
+            ],
+            'adjectival' => [
+                'Antiguan',
+                'Barbudan',
+            ],
+            'demonym' => [
+                'Antiguans',
+                'Barbudans',
             ],
         ],
         [
@@ -280,6 +343,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ARS',
             ],
+            'adjectival' => [
+                'Argentinian',
+                'Argentine',
+            ],
+            'demonym' => [
+                'Argentinians',
+                'Argentines',
+            ],
         ],
         [
             'name' => 'Armenia',
@@ -288,6 +359,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '051',
             'currency' => [
                 'AMD',
+            ],
+            'adjectival' => [
+                'Armenian',
+            ],
+            'demonym' => [
+                'Armenians',
             ],
         ],
         [
@@ -298,6 +375,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AWG',
             ],
+            'adjectival' => [
+                'Aruban',
+            ],
+            'demonym' => [
+                'Arubans',
+            ],
         ],
         [
             'name' => 'Australia',
@@ -306,6 +389,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '036',
             'currency' => [
                 'AUD',
+            ],
+            'adjectival' => [
+                'Australian',
+            ],
+            'demonym' => [
+                'Australians',
             ],
         ],
         [
@@ -316,6 +405,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Austrian',
+            ],
+            'demonym' => [
+                'Austrians',
+            ],
         ],
         [
             'name' => 'Azerbaijan',
@@ -324,6 +419,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '031',
             'currency' => [
                 'AZN',
+            ],
+            'adjectival' => [
+                'Azerbaijani',
+                'Azeri',
+            ],
+            'demonym' => [
+                'Azerbaijanis',
+                'Azeris',
             ],
         ],
         [
@@ -334,6 +437,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BSD',
             ],
+            'adjectival' => [
+                'Bahamian',
+            ],
+            'demonym' => [
+                'Bahamians',
+            ],
         ],
         [
             'name' => 'Bahrain',
@@ -342,6 +451,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '048',
             'currency' => [
                 'BHD',
+            ],
+            'adjectival' => [
+                'Bahraini',
+            ],
+            'demonym' => [
+                'Bahrainis',
             ],
         ],
         [
@@ -352,6 +467,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BDT',
             ],
+            'adjectival' => [
+                'Bangladeshi',
+            ],
+            'demonym' => [
+                'Bangladeshis',
+            ],
         ],
         [
             'name' => 'Barbados',
@@ -360,6 +481,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '052',
             'currency' => [
                 'BBD',
+            ],
+            'adjectival' => [
+                'Barbadian',
+            ],
+            'demonym' => [
+                'Barbadians',
             ],
         ],
         [
@@ -370,6 +497,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BYN',
             ],
+            'adjectival' => [
+                'Belarusian',
+            ],
+            'demonym' => [
+                'Belarusians',
+            ],
         ],
         [
             'name' => 'Belgium',
@@ -378,6 +511,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '056',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Belgian',
+            ],
+            'demonym' => [
+                'Belgians',
             ],
         ],
         [
@@ -388,6 +527,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BZD',
             ],
+            'adjectival' => [
+                'Belizean',
+            ],
+            'demonym' => [
+                'Belizeans',
+            ],
         ],
         [
             'name' => 'Benin',
@@ -396,6 +541,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '204',
             'currency' => [
                 'XOF',
+            ],
+            'adjectival' => [
+                'Beninese',
+                'Beninois',
+            ],
+            'demonym' => [
+                'Beninese',
+                'Beninois',
             ],
         ],
         [
@@ -406,6 +559,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BMD',
             ],
+            'adjectival' => [
+                'Bermudian',
+                'Bermudan',
+            ],
+            'demonym' => [
+                'Bermudians',
+                'Bermudans',
+            ],
         ],
         [
             'name' => 'Bhutan',
@@ -414,6 +575,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '064',
             'currency' => [
                 'BTN',
+            ],
+            'adjectival' => [
+                'Bhutanese',
+            ],
+            'demonym' => [
+                'Bhutanese',
             ],
         ],
         [
@@ -424,6 +591,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BOB',
             ],
+            'adjectival' => [
+                'Bolivian',
+            ],
+            'demonym' => [
+                'Bolivians',
+            ],
         ],
         [
             'name' => 'Bonaire, Sint Eustatius and Saba',
@@ -432,6 +605,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '535',
             'currency' => [
                 'USD',
+            ],
+            'adjectival' => [
+                'Bonaire',
+                'Bonairean',
+            ],
+            'demonym' => [
+                'Bonaire',
+                'Dutch',
             ],
         ],
         [
@@ -442,6 +623,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BAM',
             ],
+            'adjectival' => [
+                'Bosnian',
+                'Herzegovinian',
+            ],
+            'demonym' => [
+                'Bosnians',
+                'Herzegovinians',
+            ],
         ],
         [
             'name' => 'Botswana',
@@ -450,6 +639,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '072',
             'currency' => [
                 'BWP',
+            ],
+            'adjectival' => [
+                'Botswana',
+            ],
+            'demonym' => [
+                'Botswana',
+                'Motswana',
             ],
         ],
         [
@@ -460,6 +656,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NOK',
             ],
+            'adjectival' => [
+                'Bouvet Island',
+            ],
+            'demonym' => [
+                'Bouvet Islanders',
+            ],
         ],
         [
             'name' => 'Brazil',
@@ -469,6 +671,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BRL',
             ],
+            'adjectival' => [
+                'Brazilian',
+            ],
+            'demonym' => [
+                'Brazilians',
+            ],
         ],
         [
             'name' => 'British Indian Ocean Territory',
@@ -477,6 +685,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '086',
             'currency' => [
                 'GBP',
+            ],
+            'adjectival' => [
+                'BIOT',
+            ],
+            'demonym' => [
+                'British',
             ],
         ],
         [
@@ -488,6 +702,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'BND',
                 'SGD',
             ],
+            'adjectival' => [
+                'Bruneian',
+            ],
+            'demonym' => [
+                'Bruneians',
+            ],
         ],
         [
             'name' => 'Bulgaria',
@@ -496,6 +716,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '100',
             'currency' => [
                 'BGN',
+            ],
+            'adjectival' => [
+                'Bulgarian',
+            ],
+            'demonym' => [
+                'Bulgarians',
             ],
         ],
         [
@@ -506,6 +732,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'adjectival' => [
+                'Burkinabé',
+            ],
+            'demonym' => [
+                'Burkinabè',
+                'Burkinabé',
+            ],
         ],
         [
             'name' => 'Burundi',
@@ -514,6 +747,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '108',
             'currency' => [
                 'BIF',
+            ],
+            'adjectival' => [
+                'Burundian',
+            ],
+            'demonym' => [
+                'Burundians',
+                'Barundi',
             ],
         ],
         [
@@ -524,6 +764,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CVE',
             ],
+            'adjectival' => [
+                'Cabo Verdean',
+            ],
+            'demonym' => [
+                'Cabo Verdeans',
+            ],
         ],
         [
             'name' => 'Cambodia',
@@ -532,6 +778,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '116',
             'currency' => [
                 'KHR',
+            ],
+            'adjectival' => [
+                'Cambodian',
+            ],
+            'demonym' => [
+                'Cambodians',
             ],
         ],
         [
@@ -542,6 +794,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XAF',
             ],
+            'adjectival' => [
+                'Cameroonian',
+            ],
+            'demonym' => [
+                'Cameroonians',
+            ],
         ],
         [
             'name' => 'Canada',
@@ -550,6 +808,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '124',
             'currency' => [
                 'CAD',
+            ],
+            'adjectival' => [
+                'Canadian',
+            ],
+            'demonym' => [
+                'Canadians',
             ],
         ],
         [
@@ -560,6 +824,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KYD',
             ],
+            'adjectival' => [
+                'Caymanian',
+            ],
+            'demonym' => [
+                'Caymanians',
+            ],
         ],
         [
             'name' => 'Central African Republic',
@@ -568,6 +838,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '140',
             'currency' => [
                 'XAF',
+            ],
+            'adjectival' => [
+                'Central African',
+            ],
+            'demonym' => [
+                'Central Africans',
             ],
         ],
         [
@@ -578,6 +854,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XAF',
             ],
+            'adjectival' => [
+                'Chadian',
+            ],
+            'demonym' => [
+                'Chadians',
+            ],
         ],
         [
             'name' => 'Chile',
@@ -586,6 +868,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '152',
             'currency' => [
                 'CLP',
+            ],
+            'adjectival' => [
+                'Chilean',
+            ],
+            'demonym' => [
+                'Chileans',
             ],
         ],
         [
@@ -596,6 +884,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CNY',
             ],
+            'adjectival' => [
+                'Chinese',
+            ],
+            'demonym' => [
+                'Chinese',
+            ],
         ],
         [
             'name' => 'Christmas Island',
@@ -604,6 +898,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '162',
             'currency' => [
                 'AUD',
+            ],
+            'adjectival' => [
+                'Christmas Island',
+            ],
+            'demonym' => [
+                'Christmas Islanders',
             ],
         ],
         [
@@ -614,6 +914,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'adjectival' => [
+                'Cocos Island',
+            ],
+            'demonym' => [
+                'Cocos Islanders',
+            ],
         ],
         [
             'name' => 'Colombia',
@@ -622,6 +928,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '170',
             'currency' => [
                 'COP',
+            ],
+            'adjectival' => [
+                'Colombian',
+            ],
+            'demonym' => [
+                'Colombians',
             ],
         ],
         [
@@ -632,6 +944,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KMF',
             ],
+            'adjectival' => [
+                'Comoran',
+                'Comorian',
+            ],
+            'demonym' => [
+                'Comorans',
+                'Comorians',
+            ],
         ],
         [
             'name' => 'Congo',
@@ -640,6 +960,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '178',
             'currency' => [
                 'XAF',
+            ],
+            'adjectival' => [
+                'Congolese',
+            ],
+            'demonym' => [
+                'Congolese',
             ],
         ],
         [
@@ -650,6 +976,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CDF',
             ],
+            'adjectival' => [
+                'Congolese',
+            ],
+            'demonym' => [
+                'Congolese',
+            ],
         ],
         [
             'name' => 'Cook Islands',
@@ -658,6 +990,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '184',
             'currency' => [
                 'NZD',
+            ],
+            'adjectival' => [
+                'Cook Island',
+            ],
+            'demonym' => [
+                'Cook Islanders',
             ],
         ],
         [
@@ -668,6 +1006,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CRC',
             ],
+            'adjectival' => [
+                'Costa Rican',
+            ],
+            'demonym' => [
+                'Costa Ricans',
+            ],
         ],
         [
             'name' => 'Côte d\'Ivoire',
@@ -677,6 +1021,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'adjectival' => [
+                'Ivorian',
+            ],
+            'demonym' => [
+                'Ivorians',
+            ],
         ],
         [
             'name' => 'Croatia',
@@ -685,6 +1035,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '191',
             'currency' => [
                 'HRK',
+            ],
+            'adjectival' => [
+                'Croatian',
+            ],
+            'demonym' => [
+                'Croatians',
+                'Croats',
             ],
         ],
         [
@@ -696,6 +1053,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'CUC',
                 'CUP',
             ],
+            'adjectival' => [
+                'Cuban',
+            ],
+            'demonym' => [
+                'Cubans',
+            ],
         ],
         [
             'name' => 'Curaçao',
@@ -704,6 +1067,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '531',
             'currency' => [
                 'ANG',
+            ],
+            'adjectival' => [
+                'Curaçaoan',
+            ],
+            'demonym' => [
+                'Curaçaoans',
             ],
         ],
         [
@@ -714,14 +1083,26 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Cypriot',
+            ],
+            'demonym' => [
+                'Cypriots',
+            ],
         ],
         [
-            'name' => 'Czechia',
+            'name' => 'Czech Republic',
             'alpha2' => 'CZ',
             'alpha3' => 'CZE',
             'numeric' => '203',
             'currency' => [
                 'CZK',
+            ],
+            'adjectival' => [
+                'Czech',
+            ],
+            'demonym' => [
+                'Czechs',
             ],
         ],
         [
@@ -732,6 +1113,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'DKK',
             ],
+            'adjectival' => [
+                'Danish',
+            ],
+            'demonym' => [
+                'Danes',
+            ],
         ],
         [
             'name' => 'Djibouti',
@@ -740,6 +1127,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '262',
             'currency' => [
                 'DJF',
+            ],
+            'adjectival' => [
+                'Djiboutian',
+            ],
+            'demonym' => [
+                'Djiboutians',
             ],
         ],
         [
@@ -750,6 +1143,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'adjectival' => [
+                'Dominican',
+            ],
+            'demonym' => [
+                'Dominicans',
+            ],
         ],
         [
             'name' => 'Dominican Republic',
@@ -758,6 +1157,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '214',
             'currency' => [
                 'DOP',
+            ],
+            'adjectival' => [
+                'Dominican',
+            ],
+            'demonym' => [
+                'Dominicans',
             ],
         ],
         [
@@ -768,6 +1173,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'adjectival' => [
+                'Ecuadorian',
+            ],
+            'demonym' => [
+                'Ecuadorians',
+            ],
         ],
         [
             'name' => 'Egypt',
@@ -776,6 +1187,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '818',
             'currency' => [
                 'EGP',
+            ],
+            'adjectival' => [
+                'Egyptian',
+            ],
+            'demonym' => [
+                'Egyptians',
             ],
         ],
         [
@@ -786,6 +1203,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'adjectival' => [
+                'Salvadoran',
+            ],
+            'demonym' => [
+                'Salvadorans',
+                'Salvadorians',
+                'Salvadoreans',
+            ],
         ],
         [
             'name' => 'Equatorial Guinea',
@@ -794,6 +1219,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '226',
             'currency' => [
                 'XAF',
+            ],
+            'adjectival' => [
+                'Equatorial Guinean',
+                'Equatoguinean',
+            ],
+            'demonym' => [
+                'Equatorial Guineans',
+                'Equatoguineans',
             ],
         ],
         [
@@ -804,6 +1237,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ERN',
             ],
+            'adjectival' => [
+                'Eritrean',
+            ],
+            'demonym' => [
+                'Eritreans',
+            ],
         ],
         [
             'name' => 'Estonia',
@@ -813,6 +1252,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Estonian',
+            ],
+            'demonym' => [
+                'Estonians',
+            ],
         ],
         [
             'name' => 'Ethiopia',
@@ -821,6 +1266,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '231',
             'currency' => [
                 'ETB',
+            ],
+            'adjectival' => [
+                'Ethiopian',
+            ],
+            'demonym' => [
+                'Ethiopians',
+                'Habesha',
             ],
         ],
         [
@@ -832,6 +1284,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'SZL',
                 'ZAR',
             ],
+            'adjectival' => [
+                'Swazi',
+                'Swati',
+            ],
+            'demonym' => [
+                'Swazis',
+            ],
         ],
         [
             'name' => 'Falkland Islands (Malvinas)',
@@ -840,6 +1299,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '238',
             'currency' => [
                 'FKP',
+            ],
+            'adjectival' => [
+                'Falkland Island',
+            ],
+            'demonym' => [
+                'Falkland Islanders',
             ],
         ],
         [
@@ -850,6 +1315,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'DKK',
             ],
+            'adjectival' => [
+                'Faroese',
+            ],
+            'demonym' => [
+                'Faroese',
+            ],
         ],
         [
             'name' => 'Fiji',
@@ -858,6 +1329,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '242',
             'currency' => [
                 'FJD',
+            ],
+            'adjectival' => [
+                'Fijian',
+            ],
+            'demonym' => [
+                'Fijians',
             ],
         ],
         [
@@ -868,6 +1345,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Finnish',
+            ],
+            'demonym' => [
+                'Finns',
+            ],
         ],
         [
             'name' => 'France',
@@ -876,6 +1359,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '250',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'French',
+            ],
+            'demonym' => [
+                'French',
+                'Frenchmen',
+                'Frenchwomen',
             ],
         ],
         [
@@ -886,6 +1377,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'French Guianese',
+            ],
+            'demonym' => [
+                'French Guianese',
+            ],
         ],
         [
             'name' => 'French Polynesia',
@@ -894,6 +1391,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '258',
             'currency' => [
                 'XPF',
+            ],
+            'adjectival' => [
+                'French Polynesian',
+            ],
+            'demonym' => [
+                'French Polynesians',
             ],
         ],
         [
@@ -904,6 +1407,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'French Southern Territories',
+            ],
+            'demonym' => [
+                'French',
+            ],
         ],
         [
             'name' => 'Gabon',
@@ -912,6 +1421,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '266',
             'currency' => [
                 'XAF',
+            ],
+            'adjectival' => [
+                'Gabonese',
+            ],
+            'demonym' => [
+                'Gabonese',
+                'Gabonaise',
             ],
         ],
         [
@@ -922,6 +1438,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GMD',
             ],
+            'adjectival' => [
+                'Gambian',
+            ],
+            'demonym' => [
+                'Gambians',
+            ],
         ],
         [
             'name' => 'Georgia',
@@ -930,6 +1452,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '268',
             'currency' => [
                 'GEL',
+            ],
+            'adjectival' => [
+                'Georgian',
+            ],
+            'demonym' => [
+                'Georgians',
             ],
         ],
         [
@@ -940,6 +1468,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'German',
+            ],
+            'demonym' => [
+                'Germans',
+            ],
         ],
         [
             'name' => 'Ghana',
@@ -948,6 +1482,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '288',
             'currency' => [
                 'GHS',
+            ],
+            'adjectival' => [
+                'Ghanaian',
+            ],
+            'demonym' => [
+                'Ghanaians',
             ],
         ],
         [
@@ -958,6 +1498,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GIP',
             ],
+            'adjectival' => [
+                'Gibraltar',
+            ],
+            'demonym' => [
+                'Gibraltarians',
+            ],
         ],
         [
             'name' => 'Greece',
@@ -966,6 +1512,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '300',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Greek',
+                'Hellenic',
+            ],
+            'demonym' => [
+                'Greeks',
+                'Hellenes',
             ],
         ],
         [
@@ -976,6 +1530,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'DKK',
             ],
+            'adjectival' => [
+                'Greenland',
+            ],
+            'demonym' => [
+                'Greenlanders',
+            ],
         ],
         [
             'name' => 'Grenada',
@@ -984,6 +1544,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '308',
             'currency' => [
                 'XCD',
+            ],
+            'adjectival' => [
+                'Grenadian',
+            ],
+            'demonym' => [
+                'Grenadians',
             ],
         ],
         [
@@ -994,6 +1560,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Guadeloupe',
+            ],
+            'demonym' => [
+                'Guadeloupians',
+                'Guadeloupeans',
+            ],
         ],
         [
             'name' => 'Guam',
@@ -1002,6 +1575,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '316',
             'currency' => [
                 'USD',
+            ],
+            'adjectival' => [
+                'Guamanian',
+            ],
+            'demonym' => [
+                'Guamanians',
             ],
         ],
         [
@@ -1012,6 +1591,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GTQ',
             ],
+            'adjectival' => [
+                'Guatemalan',
+            ],
+            'demonym' => [
+                'Guatemalans',
+            ],
         ],
         [
             'name' => 'Guernsey',
@@ -1020,6 +1605,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '831',
             'currency' => [
                 'GBP',
+            ],
+            'adjectival' => [
+                'Guernsey',
+            ],
+            'demonym' => [
+                'Guernseymen',
+                'Guernseywomen',
             ],
         ],
         [
@@ -1030,6 +1622,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GNF',
             ],
+            'adjectival' => [
+                'Guinean',
+            ],
+            'demonym' => [
+                'Guineans',
+            ],
         ],
         [
             'name' => 'Guinea-Bissau',
@@ -1038,6 +1636,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '624',
             'currency' => [
                 'XOF',
+            ],
+            'adjectival' => [
+                'Bissau-Guinean',
+            ],
+            'demonym' => [
+                'Bissau-Guineans',
             ],
         ],
         [
@@ -1048,6 +1652,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GYD',
             ],
+            'adjectival' => [
+                'Guyanese',
+            ],
+            'demonym' => [
+                'Guyanese',
+            ],
         ],
         [
             'name' => 'Haiti',
@@ -1056,6 +1666,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '332',
             'currency' => [
                 'HTG',
+            ],
+            'adjectival' => [
+                'Haitian',
+            ],
+            'demonym' => [
+                'Haitians',
             ],
         ],
         [
@@ -1066,6 +1682,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'adjectival' => [
+                'Heard Island',
+                'McDonald Island',
+            ],
+            'demonym' => [
+                'Heard Islanders',
+                'McDonald Islanders',
+            ],
         ],
         [
             'name' => 'Holy See',
@@ -1074,6 +1698,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '336',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Vatican',
+            ],
+            'demonym' => [
+                'Vaticans',
             ],
         ],
         [
@@ -1084,6 +1714,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'HNL',
             ],
+            'adjectival' => [
+                'Honduran',
+            ],
+            'demonym' => [
+                'Hondurans',
+            ],
         ],
         [
             'name' => 'Hong Kong',
@@ -1092,6 +1728,15 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '344',
             'currency' => [
                 'HKD',
+            ],
+            'adjectival' => [
+                'Hong Kong',
+                'Cantonese',
+                'Hong Konger',
+            ],
+            'demonym' => [
+                'Hongkongers',
+                'Hong Kongese',
             ],
         ],
         [
@@ -1102,6 +1747,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'HUF',
             ],
+            'adjectival' => [
+                'Hungarian',
+                'Magyar',
+            ],
+            'demonym' => [
+                'Hungarians',
+                'Magyars',
+            ],
         ],
         [
             'name' => 'Iceland',
@@ -1110,6 +1763,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '352',
             'currency' => [
                 'ISK',
+            ],
+            'adjectival' => [
+                'Icelandic',
+            ],
+            'demonym' => [
+                'Icelanders',
             ],
         ],
         [
@@ -1120,6 +1779,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'INR',
             ],
+            'adjectival' => [
+                'Indian',
+            ],
+            'demonym' => [
+                'Indians',
+            ],
         ],
         [
             'name' => 'Indonesia',
@@ -1128,6 +1793,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '360',
             'currency' => [
                 'IDR',
+            ],
+            'adjectival' => [
+                'Indonesian',
+            ],
+            'demonym' => [
+                'Indonesians',
             ],
         ],
         [
@@ -1138,6 +1809,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'IRR',
             ],
+            'adjectival' => [
+                'Iranian',
+                'Persian',
+            ],
+            'demonym' => [
+                'Iranians',
+                'Persians',
+            ],
         ],
         [
             'name' => 'Iraq',
@@ -1146,6 +1825,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '368',
             'currency' => [
                 'IQD',
+            ],
+            'adjectival' => [
+                'Iraqi',
+            ],
+            'demonym' => [
+                'Iraqis',
             ],
         ],
         [
@@ -1156,6 +1841,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Irish',
+            ],
+            'demonym' => [
+                'Irish',
+                'Irishmen',
+                'Irishwomen',
+            ],
         ],
         [
             'name' => 'Isle of Man',
@@ -1164,6 +1857,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '833',
             'currency' => [
                 'GBP',
+            ],
+            'adjectival' => [
+                'Manx',
+            ],
+            'demonym' => [
+                'Manx',
             ],
         ],
         [
@@ -1174,6 +1873,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ILS',
             ],
+            'adjectival' => [
+                'Israeli',
+                'Israelite',
+            ],
+            'demonym' => [
+                'Israelis',
+            ],
         ],
         [
             'name' => 'Italy',
@@ -1182,6 +1888,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '380',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Italian',
+            ],
+            'demonym' => [
+                'Italians',
             ],
         ],
         [
@@ -1192,6 +1904,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'JMD',
             ],
+            'adjectival' => [
+                'Jamaican',
+            ],
+            'demonym' => [
+                'Jamaicans',
+            ],
         ],
         [
             'name' => 'Japan',
@@ -1200,6 +1918,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '392',
             'currency' => [
                 'JPY',
+            ],
+            'adjectival' => [
+                'Japanese',
+            ],
+            'demonym' => [
+                'Japanese',
             ],
         ],
         [
@@ -1210,6 +1934,15 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GBP',
             ],
+            'adjectival' => [
+                'Jersey',
+            ],
+            'demonym' => [
+                'Jerseymen',
+                'Jerseywomen',
+                'Jersian',
+                'Jèrriais',
+            ],
         ],
         [
             'name' => 'Jordan',
@@ -1218,6 +1951,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '400',
             'currency' => [
                 'JOD',
+            ],
+            'adjectival' => [
+                'Jordanian',
+            ],
+            'demonym' => [
+                'Jordanians',
             ],
         ],
         [
@@ -1228,6 +1967,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KZT',
             ],
+            'adjectival' => [
+                'Kazakhstani',
+                'Kazakh',
+            ],
+            'demonym' => [
+                'Kazakhstanis',
+                'Kazakhs',
+            ],
         ],
         [
             'name' => 'Kenya',
@@ -1236,6 +1983,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '404',
             'currency' => [
                 'KES',
+            ],
+            'adjectival' => [
+                'Kenyan',
+            ],
+            'demonym' => [
+                'Kenyans',
             ],
         ],
         [
@@ -1246,6 +1999,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'adjectival' => [
+                'Kiribati',
+            ],
+            'demonym' => [
+                'I-Kiribati',
+            ],
         ],
         [
             'name' => 'Korea (Democratic People\'s Republic of)',
@@ -1254,6 +2013,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '408',
             'currency' => [
                 'KPW',
+            ],
+            'adjectival' => [
+                'North Korean',
+            ],
+            'demonym' => [
+                'Koreans',
+                'North Koreans',
             ],
         ],
         [
@@ -1264,6 +2030,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KRW',
             ],
+            'adjectival' => [
+                'South Korean',
+            ],
+            'demonym' => [
+                'Koreans',
+                'South Koreans',
+            ],
         ],
         [
             'name' => 'Kuwait',
@@ -1272,6 +2045,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '414',
             'currency' => [
                 'KWD',
+            ],
+            'adjectival' => [
+                'Kuwaiti',
+            ],
+            'demonym' => [
+                'Kuwaitis',
             ],
         ],
         [
@@ -1282,6 +2061,18 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KGS',
             ],
+            'adjectival' => [
+                'Kyrgyzstani',
+                'Kyrgyz',
+                'Kirgiz',
+                'Kirghiz',
+            ],
+            'demonym' => [
+                'Kyrgyzstanis',
+                'Kyrgyz',
+                'Kirgiz',
+                'Kirghiz',
+            ],
         ],
         [
             'name' => 'Lao People\'s Democratic Republic',
@@ -1290,6 +2081,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '418',
             'currency' => [
                 'LAK',
+            ],
+            'adjectival' => [
+                'Lao',
+                'Laotian',
+            ],
+            'demonym' => [
+                'Laos',
+                'Laotians',
             ],
         ],
         [
@@ -1300,6 +2099,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Latvian',
+                'Lettish',
+            ],
+            'demonym' => [
+                'Latvians',
+                'Letts',
+            ],
         ],
         [
             'name' => 'Lebanon',
@@ -1308,6 +2115,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '422',
             'currency' => [
                 'LBP',
+            ],
+            'adjectival' => [
+                'Lebanese',
+            ],
+            'demonym' => [
+                'Lebanese',
             ],
         ],
         [
@@ -1319,6 +2132,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'LSL',
                 'ZAR',
             ],
+            'adjectival' => [
+                'Basotho',
+            ],
+            'demonym' => [
+                'Basotho',
+                'Mosotho',
+            ],
         ],
         [
             'name' => 'Liberia',
@@ -1327,6 +2147,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '430',
             'currency' => [
                 'LRD',
+            ],
+            'adjectival' => [
+                'Liberian',
+            ],
+            'demonym' => [
+                'Liberians',
             ],
         ],
         [
@@ -1337,6 +2163,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'LYD',
             ],
+            'adjectival' => [
+                'Libyan',
+            ],
+            'demonym' => [
+                'Libyans',
+            ],
         ],
         [
             'name' => 'Liechtenstein',
@@ -1345,6 +2177,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '438',
             'currency' => [
                 'CHF',
+            ],
+            'adjectival' => [
+                'Liechtensteiner',
+            ],
+            'demonym' => [
+                'Liechtensteiners',
             ],
         ],
         [
@@ -1355,6 +2193,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Lithuanian',
+            ],
+            'demonym' => [
+                'Lithuanians',
+            ],
         ],
         [
             'name' => 'Luxembourg',
@@ -1363,6 +2207,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '442',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Luxembourg',
+                'Luxembourgish',
+            ],
+            'demonym' => [
+                'Luxembourgers',
             ],
         ],
         [
@@ -1373,6 +2224,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MOP',
             ],
+            'adjectival' => [
+                'Macanese',
+            ],
+            'demonym' => [
+                'Macanese',
+            ],
         ],
         [
             'name' => 'North Macedonia',
@@ -1381,6 +2238,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '807',
             'currency' => [
                 'MKD',
+            ],
+            'adjectival' => [
+                'Macedonian',
+            ],
+            'demonym' => [
+                'Macedonians',
             ],
         ],
         [
@@ -1391,6 +2254,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MGA',
             ],
+            'adjectival' => [
+                'Malagasy',
+                'Madagascan',
+            ],
+            'demonym' => [
+                'Malagasy',
+                'Madagascans',
+            ],
         ],
         [
             'name' => 'Malawi',
@@ -1399,6 +2270,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '454',
             'currency' => [
                 'MWK',
+            ],
+            'adjectival' => [
+                'Malawian',
+            ],
+            'demonym' => [
+                'Malawians',
             ],
         ],
         [
@@ -1409,6 +2286,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MYR',
             ],
+            'adjectival' => [
+                'Malaysian',
+            ],
+            'demonym' => [
+                'Malaysians',
+            ],
         ],
         [
             'name' => 'Maldives',
@@ -1417,6 +2300,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '462',
             'currency' => [
                 'MVR',
+            ],
+            'adjectival' => [
+                'Maldivian',
+            ],
+            'demonym' => [
+                'Maldivians',
             ],
         ],
         [
@@ -1427,6 +2316,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'adjectival' => [
+                'Malian',
+                'Malinese',
+            ],
+            'demonym' => [
+                'Malians',
+            ],
         ],
         [
             'name' => 'Malta',
@@ -1435,6 +2331,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '470',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Maltese',
+            ],
+            'demonym' => [
+                'Maltese',
             ],
         ],
         [
@@ -1445,6 +2347,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'adjectival' => [
+                'Marshallese',
+            ],
+            'demonym' => [
+                'Marshallese',
+            ],
         ],
         [
             'name' => 'Martinique',
@@ -1453,6 +2361,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '474',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Martiniquais',
+                'Martinican',
+            ],
+            'demonym' => [
+                'Martiniquais',
+                'Martiniquaises',
             ],
         ],
         [
@@ -1463,6 +2379,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MRO',
             ],
+            'adjectival' => [
+                'Mauritanian',
+            ],
+            'demonym' => [
+                'Mauritanians',
+            ],
         ],
         [
             'name' => 'Mauritius',
@@ -1471,6 +2393,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '480',
             'currency' => [
                 'MUR',
+            ],
+            'adjectival' => [
+                'Mauritian',
+            ],
+            'demonym' => [
+                'Mauritians',
             ],
         ],
         [
@@ -1481,6 +2409,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Mahoran',
+            ],
+            'demonym' => [
+                'Mahorans',
+            ],
         ],
         [
             'name' => 'Mexico',
@@ -1489,6 +2423,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '484',
             'currency' => [
                 'MXN',
+            ],
+            'adjectival' => [
+                'Mexican',
+            ],
+            'demonym' => [
+                'Mexicans',
             ],
         ],
         [
@@ -1499,6 +2439,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'adjectival' => [
+                'Micronesian',
+            ],
+            'demonym' => [
+                'Micronesians',
+            ],
         ],
         [
             'name' => 'Moldova (Republic of)',
@@ -1507,6 +2453,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '498',
             'currency' => [
                 'MDL',
+            ],
+            'adjectival' => [
+                'Moldovan',
+            ],
+            'demonym' => [
+                'Moldovans',
             ],
         ],
         [
@@ -1517,6 +2469,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Monégasque',
+                'Monacan',
+            ],
+            'demonym' => [
+                'Monégasques',
+                'Monacans',
+            ],
         ],
         [
             'name' => 'Mongolia',
@@ -1525,6 +2485,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '496',
             'currency' => [
                 'MNT',
+            ],
+            'adjectival' => [
+                'Mongolian',
+            ],
+            'demonym' => [
+                'Mongolians',
+                'Mongols',
             ],
         ],
         [
@@ -1535,6 +2502,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Montenegrin',
+            ],
+            'demonym' => [
+                'Montenegrins',
+            ],
         ],
         [
             'name' => 'Montserrat',
@@ -1543,6 +2516,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '500',
             'currency' => [
                 'XCD',
+            ],
+            'adjectival' => [
+                'Montserratian',
+            ],
+            'demonym' => [
+                'Montserratians',
             ],
         ],
         [
@@ -1553,6 +2532,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MAD',
             ],
+            'adjectival' => [
+                'Moroccan',
+            ],
+            'demonym' => [
+                'Moroccans',
+            ],
         ],
         [
             'name' => 'Mozambique',
@@ -1562,6 +2547,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MZN',
             ],
+            'adjectival' => [
+                'Mozambican',
+            ],
+            'demonym' => [
+                'Mozambicans',
+            ],
         ],
         [
             'name' => 'Myanmar',
@@ -1570,6 +2561,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '104',
             'currency' => [
                 'MMK',
+            ],
+            'adjectival' => [
+                'Myanma',
+                'Burmese',
+            ],
+            'demonym' => [
+                'Myanmar',
             ],
         ],
         [
@@ -1581,6 +2579,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'NAD',
                 'ZAR',
             ],
+            'adjectival' => [
+                'Namibian',
+            ],
+            'demonym' => [
+                'Namibians',
+            ],
         ],
         [
             'name' => 'Nauru',
@@ -1589,6 +2593,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '520',
             'currency' => [
                 'AUD',
+            ],
+            'adjectival' => [
+                'Nauruan',
+            ],
+            'demonym' => [
+                'Nauruans',
             ],
         ],
         [
@@ -1599,6 +2609,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NPR',
             ],
+            'adjectival' => [
+                'Nepali',
+                'Nepalese',
+            ],
+            'demonym' => [
+                'Nepalis',
+                'Nepalese',
+            ],
         ],
         [
             'name' => 'Netherlands',
@@ -1607,6 +2625,15 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '528',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Dutch',
+            ],
+            'demonym' => [
+                'Dutch',
+                'Dutchmen',
+                'Dutchwomen',
+                'Netherlanders',
             ],
         ],
         [
@@ -1617,6 +2644,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XPF',
             ],
+            'adjectival' => [
+                'New Caledonian',
+            ],
+            'demonym' => [
+                'New Caledonians',
+            ],
         ],
         [
             'name' => 'New Zealand',
@@ -1625,6 +2658,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '554',
             'currency' => [
                 'NZD',
+            ],
+            'adjectival' => [
+                'New Zealand',
+            ],
+            'demonym' => [
+                'New Zealanders',
             ],
         ],
         [
@@ -1635,6 +2674,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NIO',
             ],
+            'adjectival' => [
+                'Nicaraguan',
+            ],
+            'demonym' => [
+                'Nicaraguans',
+            ],
         ],
         [
             'name' => 'Niger',
@@ -1643,6 +2688,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '562',
             'currency' => [
                 'XOF',
+            ],
+            'adjectival' => [
+                'Nigerien',
+            ],
+            'demonym' => [
+                'Nigeriens',
             ],
         ],
         [
@@ -1653,6 +2704,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NGN',
             ],
+            'adjectival' => [
+                'Nigerian',
+            ],
+            'demonym' => [
+                'Nigerians',
+            ],
         ],
         [
             'name' => 'Niue',
@@ -1661,6 +2718,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '570',
             'currency' => [
                 'NZD',
+            ],
+            'adjectival' => [
+                'Niuean',
+            ],
+            'demonym' => [
+                'Niueans',
             ],
         ],
         [
@@ -1671,6 +2734,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'adjectival' => [
+                'Norfolk Island',
+            ],
+            'demonym' => [
+                'Norfolk Islanders',
+            ],
         ],
         [
             'name' => 'Northern Mariana Islands',
@@ -1679,6 +2748,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '580',
             'currency' => [
                 'USD',
+            ],
+            'adjectival' => [
+                'Northern Marianan',
+            ],
+            'demonym' => [
+                'Northern Marianans',
             ],
         ],
         [
@@ -1689,6 +2764,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NOK',
             ],
+            'adjectival' => [
+                'Norwegian',
+            ],
+            'demonym' => [
+                'Norwegians',
+            ],
         ],
         [
             'name' => 'Oman',
@@ -1697,6 +2778,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '512',
             'currency' => [
                 'OMR',
+            ],
+            'adjectival' => [
+                'Omani',
+            ],
+            'demonym' => [
+                'Omanis',
             ],
         ],
         [
@@ -1707,6 +2794,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'PKR',
             ],
+            'adjectival' => [
+                'Pakistani',
+            ],
+            'demonym' => [
+                'Pakistanis',
+            ],
         ],
         [
             'name' => 'Palau',
@@ -1715,6 +2808,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '585',
             'currency' => [
                 'USD',
+            ],
+            'adjectival' => [
+                'Palauan',
+            ],
+            'demonym' => [
+                'Palauans',
             ],
         ],
         [
@@ -1725,6 +2824,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ILS',
             ],
+            'adjectival' => [
+                'Palestinian',
+            ],
+            'demonym' => [
+                'Palestinians',
+            ],
         ],
         [
             'name' => 'Panama',
@@ -1733,6 +2838,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '591',
             'currency' => [
                 'PAB',
+            ],
+            'adjectival' => [
+                'Panamanian',
+            ],
+            'demonym' => [
+                'Panamanians',
             ],
         ],
         [
@@ -1743,6 +2854,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'PGK',
             ],
+            'adjectival' => [
+                'Papua New GuineanPapuan',
+            ],
+            'demonym' => [
+                'Papua New Guineans',
+                'Papuans',
+            ],
         ],
         [
             'name' => 'Paraguay',
@@ -1751,6 +2869,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '600',
             'currency' => [
                 'PYG',
+            ],
+            'adjectival' => [
+                'Paraguayan',
+            ],
+            'demonym' => [
+                'Paraguayans',
             ],
         ],
         [
@@ -1761,6 +2885,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'PEN',
             ],
+            'adjectival' => [
+                'Peruvian',
+            ],
+            'demonym' => [
+                'Peruvians',
+            ],
         ],
         [
             'name' => 'Philippines',
@@ -1769,6 +2899,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '608',
             'currency' => [
                 'PHP',
+            ],
+            'adjectival' => [
+                'Filipino',
+                'Philippine',
+            ],
+            'demonym' => [
+                'Filipinos',
+                'Filipinas',
             ],
         ],
         [
@@ -1779,6 +2917,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NZD',
             ],
+            'adjectival' => [
+                'Pitcairn'
+            ],
+            'demonym' => [
+                'Pitcairns'
+            ],
         ],
         [
             'name' => 'Poland',
@@ -1787,6 +2931,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '616',
             'currency' => [
                 'PLN',
+            ],
+            'adjectival' => [
+                'Polish',
+            ],
+            'demonym' => [
+                'Poles',
             ],
         ],
         [
@@ -1797,6 +2947,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Portuguese',
+            ],
+            'demonym' => [
+                'Portuguese',
+            ],
         ],
         [
             'name' => 'Puerto Rico',
@@ -1805,6 +2961,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '630',
             'currency' => [
                 'USD',
+            ],
+            'adjectival' => [
+                'Puerto Rican',
+            ],
+            'demonym' => [
+                'Puerto Ricans',
             ],
         ],
         [
@@ -1815,6 +2977,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'QAR',
             ],
+            'adjectival' => [
+                'Qatari',
+            ],
+            'demonym' => [
+                'Qataris',
+            ],
         ],
         [
             'name' => 'Réunion',
@@ -1823,6 +2991,15 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '638',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Réunionese',
+                'Réunionnais',
+            ],
+            'demonym' => [
+                'Réunionese',
+                'Réunionnais',
+                'Réunionnaises',
             ],
         ],
         [
@@ -1833,6 +3010,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'RON',
             ],
+            'adjectival' => [
+                'Romanian',
+            ],
+            'demonym' => [
+                'Romanians',
+            ],
         ],
         [
             'name' => 'Russian Federation',
@@ -1841,6 +3024,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '643',
             'currency' => [
                 'RUB',
+            ],
+            'adjectival' => [
+                'Russian',
+            ],
+            'demonym' => [
+                'Russians',
             ],
         ],
         [
@@ -1851,6 +3040,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'RWF',
             ],
+            'adjectival' => [
+                'Rwandan',
+            ],
+            'demonym' => [
+                'Rwandans',
+                'Banyarwanda',
+            ],
         ],
         [
             'name' => 'Saint Barthélemy',
@@ -1859,6 +3055,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '652',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Barthélemois',
+            ],
+            'demonym' => [
+                'Barthélemois',
+                'Barthélemoises',
             ],
         ],
         [
@@ -1869,6 +3072,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SHP',
             ],
+            'adjectival' => [
+                'Saint Helenian',
+            ],
+            'demonym' => [
+                'Saint Helenians',
+            ],
         ],
         [
             'name' => 'Saint Kitts and Nevis',
@@ -1878,6 +3087,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'adjectival' => [
+                'Kittitian',
+                'Nevisian',
+            ],
+            'demonym' => [
+                'Kittitians',
+                'Nevisians',
+            ],
         ],
         [
             'name' => 'Saint Lucia',
@@ -1886,6 +3103,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '662',
             'currency' => [
                 'XCD',
+            ],
+            'adjectival' => [
+                'Saint Lucian',
+            ],
+            'demonym' => [
+                'Saint Lucians',
             ],
         ],
         [
@@ -1897,6 +3120,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'EUR',
                 'USD',
             ],
+            'adjectival' => [
+                'Saint-Martinoise',
+            ],
+            'demonym' => [
+                'Saint-Martinois',
+                'Saint-Martinoises',
+            ],
         ],
         [
             'name' => 'Saint Pierre and Miquelon',
@@ -1905,6 +3135,16 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '666',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Saint-Pierrais',
+                'Miquelonnais',
+            ],
+            'demonym' => [
+                'Saint-Pierrais',
+                'Saint-Pierraises',
+                'Miquelonnais',
+                'Miquelonnaises',
             ],
         ],
         [
@@ -1915,6 +3155,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'adjectival' => [
+                'Saint Vincentian',
+                'Vincentian',
+            ],
+            'demonym' => [
+                'Saint Vincentians',
+                'Vincentians',
+            ],
         ],
         [
             'name' => 'Samoa',
@@ -1923,6 +3171,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '882',
             'currency' => [
                 'WST',
+            ],
+            'adjectival' => [
+                'Samoan',
+            ],
+            'demonym' => [
+                'Samoans',
             ],
         ],
         [
@@ -1933,6 +3187,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Sammarinese',
+            ],
+            'demonym' => [
+                'Sammarinese',
+            ],
         ],
         [
             'name' => 'Sao Tome and Principe',
@@ -1941,6 +3201,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '678',
             'currency' => [
                 'STD',
+            ],
+            'adjectival' => [
+                'São Toméan',
+            ],
+            'demonym' => [
+                'São Toméans',
             ],
         ],
         [
@@ -1951,6 +3217,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SAR',
             ],
+            'adjectival' => [
+                'Saudi',
+                'Saudi Arabian',
+            ],
+            'demonym' => [
+                'Saudis',
+                'Saudi Arabians',
+            ],
         ],
         [
             'name' => 'Senegal',
@@ -1959,6 +3233,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '686',
             'currency' => [
                 'XOF',
+            ],
+            'adjectival' => [
+                'Senegalese',
+            ],
+            'demonym' => [
+                'Senegalese',
             ],
         ],
         [
@@ -1969,6 +3249,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'RSD',
             ],
+            'adjectival' => [
+                'Serbian',
+            ],
+            'demonym' => [
+                'Serbs',
+                'Serbians',
+            ],
         ],
         [
             'name' => 'Seychelles',
@@ -1977,6 +3264,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '690',
             'currency' => [
                 'SCR',
+            ],
+            'adjectival' => [
+                'Seychellois',
+            ],
+            'demonym' => [
+                'Seychellois',
+                'Seychelloises',
             ],
         ],
         [
@@ -1987,6 +3281,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SLL',
             ],
+            'adjectival' => [
+                'Sierra Leonean',
+            ],
+            'demonym' => [
+                'Sierra Leoneans',
+            ],
         ],
         [
             'name' => 'Singapore',
@@ -1995,6 +3295,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '702',
             'currency' => [
                 'SGD',
+            ],
+            'adjectival' => [
+                'Singaporean',
+            ],
+            'demonym' => [
+                'Singaporeans',
             ],
         ],
         [
@@ -2005,6 +3311,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ANG',
             ],
+            'adjectival' => [
+                'Sint Maarten',
+            ],
+            'demonym' => [
+                'Sint Maarteners',
+            ],
         ],
         [
             'name' => 'Slovakia',
@@ -2013,6 +3325,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '703',
             'currency' => [
                 'EUR',
+            ],
+            'adjectival' => [
+                'Slovak',
+            ],
+            'demonym' => [
+                'Slovaks',
+                'Slovakians',
             ],
         ],
         [
@@ -2023,6 +3342,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Slovenian',
+                'Slovene',
+            ],
+            'demonym' => [
+                'Slovenes',
+                'Slovenians',
+            ],
         ],
         [
             'name' => 'Solomon Islands',
@@ -2031,6 +3358,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '090',
             'currency' => [
                 'SBD',
+            ],
+            'adjectival' => [
+                'Solomon Island',
+            ],
+            'demonym' => [
+                'Solomon Islanders',
             ],
         ],
         [
@@ -2041,6 +3374,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SOS',
             ],
+            'adjectival' => [
+                'Somali',
+            ],
+            'demonym' => [
+                'Somalis',
+            ],
         ],
         [
             'name' => 'South Africa',
@@ -2049,6 +3388,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '710',
             'currency' => [
                 'ZAR',
+            ],
+            'adjectival' => [
+                'South African',
+            ],
+            'demonym' => [
+                'South Africans',
             ],
         ],
         [
@@ -2059,6 +3404,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GBP',
             ],
+            'adjectival' => [
+                'South Georgia Island',
+                'South Sandwich Island',
+            ],
+            'demonym' => [
+                'South Georgia Islanders',
+                'South Sandwich Islanders',
+            ],
         ],
         [
             'name' => 'South Sudan',
@@ -2067,6 +3420,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '728',
             'currency' => [
                 'SSP',
+            ],
+            'adjectival' => [
+                'South Sudanese',
+            ],
+            'demonym' => [
+                'South Sudanese',
             ],
         ],
         [
@@ -2077,6 +3436,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'adjectival' => [
+                'Spanish',
+            ],
+            'demonym' => [
+                'Spaniards',
+            ],
         ],
         [
             'name' => 'Sri Lanka',
@@ -2085,6 +3450,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '144',
             'currency' => [
                 'LKR',
+            ],
+            'adjectival' => [
+                'Sri Lankan',
+            ],
+            'demonym' => [
+                'Sri Lankans',
             ],
         ],
         [
@@ -2095,6 +3466,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SDG',
             ],
+            'adjectival' => [
+                'Sudanese',
+            ],
+            'demonym' => [
+                'Sudanese',
+            ],
         ],
         [
             'name' => 'Suriname',
@@ -2103,6 +3480,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '740',
             'currency' => [
                 'SRD',
+            ],
+            'adjectival' => [
+                'Surinamese',
+            ],
+            'demonym' => [
+                'Surinamers',
             ],
         ],
         [
@@ -2113,6 +3496,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NOK',
             ],
+            'adjectival' => [
+                'Svalbard',
+            ],
+            'demonym' => [
+                'Svalbard residents',
+            ],
         ],
         [
             'name' => 'Sweden',
@@ -2121,6 +3510,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '752',
             'currency' => [
                 'SEK',
+            ],
+            'adjectival' => [
+                'Swedish',
+            ],
+            'demonym' => [
+                'Swedes',
             ],
         ],
         [
@@ -2131,6 +3526,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CHF',
             ],
+            'adjectival' => [
+                'Swiss',
+            ],
+            'demonym' => [
+                'Swiss',
+            ],
         ],
         [
             'name' => 'Syrian Arab Republic',
@@ -2139,6 +3540,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '760',
             'currency' => [
                 'SYP',
+            ],
+            'adjectival' => [
+                'Syrian',
+            ],
+            'demonym' => [
+                'Syrians',
             ],
         ],
         [
@@ -2149,6 +3556,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TWD',
             ],
+            'adjectival' => [
+                'Taiwanese',
+                'Formosan',
+            ],
+            'demonym' => [
+                'Taiwanese',
+                'Formosans',
+            ],
         ],
         [
             'name' => 'Tajikistan',
@@ -2157,6 +3572,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '762',
             'currency' => [
                 'TJS',
+            ],
+            'adjectival' => [
+                'Tajikistani',
+            ],
+            'demonym' => [
+                'Tajikistanis',
+                'Tajiks',
             ],
         ],
         [
@@ -2167,6 +3589,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TZS',
             ],
+            'adjectival' => [
+                'Tanzanian',
+            ],
+            'demonym' => [
+                'Tanzanians',
+            ],
         ],
         [
             'name' => 'Thailand',
@@ -2175,6 +3603,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '764',
             'currency' => [
                 'THB',
+            ],
+            'adjectival' => [
+                'Thai',
+            ],
+            'demonym' => [
+                'Thai',
             ],
         ],
         [
@@ -2185,6 +3619,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'adjectival' => [
+                'Timorese',
+            ],
+            'demonym' => [
+                'Timorese',
+            ],
         ],
         [
             'name' => 'Togo',
@@ -2193,6 +3633,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '768',
             'currency' => [
                 'XOF',
+            ],
+            'adjectival' => [
+                'Togolese',
+            ],
+            'demonym' => [
+                'Togolese',
             ],
         ],
         [
@@ -2203,6 +3649,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NZD',
             ],
+            'adjectival' => [
+                'Tokelauan',
+            ],
+            'demonym' => [
+                'Tokelauans',
+            ],
         ],
         [
             'name' => 'Tonga',
@@ -2211,6 +3663,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '776',
             'currency' => [
                 'TOP',
+            ],
+            'adjectival' => [
+                'Tongan',
+            ],
+            'demonym' => [
+                'Tongans',
             ],
         ],
         [
@@ -2221,6 +3679,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TTD',
             ],
+            'adjectival' => [
+                'Trinidadian',
+                'Tobagonian',
+            ],
+            'demonym' => [
+                'Trinidadians',
+                'Tobagonians',
+            ],
         ],
         [
             'name' => 'Tunisia',
@@ -2229,6 +3695,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '788',
             'currency' => [
                 'TND',
+            ],
+            'adjectival' => [
+                'Tunisian',
+            ],
+            'demonym' => [
+                'Tunisians',
             ],
         ],
         [
@@ -2239,6 +3711,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TRY',
             ],
+            'adjectival' => [
+                'Turkish',
+            ],
+            'demonym' => [
+                'Turks',
+            ],
         ],
         [
             'name' => 'Turkmenistan',
@@ -2247,6 +3725,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '795',
             'currency' => [
                 'TMT',
+            ],
+            'adjectival' => [
+                'Turkmen',
+            ],
+            'demonym' => [
+                'Turkmens',
             ],
         ],
         [
@@ -2257,6 +3741,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'adjectival' => [
+                'Turks and Caicos Island',
+            ],
+            'demonym' => [
+                'Turks and Caicos Islanders',
+            ],
         ],
         [
             'name' => 'Tuvalu',
@@ -2265,6 +3755,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '798',
             'currency' => [
                 'AUD',
+            ],
+            'adjectival' => [
+                'Tuvaluan',
+            ],
+            'demonym' => [
+                'Tuvaluans',
             ],
         ],
         [
@@ -2275,6 +3771,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'UGX',
             ],
+            'adjectival' => [
+                'Ugandan',
+            ],
+            'demonym' => [
+                'Ugandans',
+            ],
         ],
         [
             'name' => 'Ukraine',
@@ -2283,6 +3785,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '804',
             'currency' => [
                 'UAH',
+            ],
+            'adjectival' => [
+                'Ukrainian',
+            ],
+            'demonym' => [
+                'Ukrainians',
             ],
         ],
         [
@@ -2293,6 +3801,16 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AED',
             ],
+            'adjectival' => [
+                'Emirati',
+                'Emirian',
+                'Emiri',
+            ],
+            'demonym' => [
+                'Emiratis',
+                'Emirians',
+                'Emiri',
+            ],
         ],
         [
             'name' => 'United Kingdom of Great Britain and Northern Ireland',
@@ -2301,6 +3819,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '826',
             'currency' => [
                 'GBP',
+            ],
+            'adjectival' => [
+                'British',
+            ],
+            'demonym' => [
+                'Britons',
+                'British people',
             ],
         ],
         [
@@ -2311,6 +3836,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'adjectival' => [
+                'American',
+            ],
+            'demonym' => [
+                'Americans',
+            ],
         ],
         [
             'name' => 'United States Minor Outlying Islands',
@@ -2319,6 +3850,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '581',
             'currency' => [
                 'USD',
+            ],
+            'adjectival' => [
+
+            ],
+            'demonym' => [
+
             ],
         ],
         [
@@ -2329,6 +3866,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'UYU',
             ],
+            'adjectival' => [
+                'Uruguayan',
+            ],
+            'demonym' => [
+                'Uruguayans',
+            ],
         ],
         [
             'name' => 'Uzbekistan',
@@ -2337,6 +3880,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '860',
             'currency' => [
                 'UZS',
+            ],
+            'adjectival' => [
+                'Uzbekistani',
+                'Uzbek',
+            ],
+            'demonym' => [
+                'Uzbekistanis',
+                'Uzbeks',
             ],
         ],
         [
@@ -2347,6 +3898,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'VUV',
             ],
+            'adjectival' => [
+                'Ni-Vanuatu',
+                'Vanuatuan',
+            ],
+            'demonym' => [
+                'Ni-Vanuatu',
+            ],
         ],
         [
             'name' => 'Venezuela (Bolivarian Republic of)',
@@ -2355,6 +3913,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '862',
             'currency' => [
                 'VEF',
+            ],
+            'adjectival' => [
+                'Venezuelan',
+            ],
+            'demonym' => [
+                'Venezuelans',
             ],
         ],
         [
@@ -2365,6 +3929,13 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'VND',
             ],
+            'adjectival' => [
+                'Vietnamese',
+
+            ],
+            'demonym' => [
+                'Vietnamese',
+            ],
         ],
         [
             'name' => 'Virgin Islands (British)',
@@ -2373,6 +3944,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '092',
             'currency' => [
                 'USD',
+            ],
+            'adjectival' => [
+                'British Virgin Island',
+            ],
+            'demonym' => [
+                'British Virgin Islanders',
             ],
         ],
         [
@@ -2383,6 +3960,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'adjectival' => [
+                'U.S. Virgin Island',
+            ],
+            'demonym' => [
+                'U.S. Virgin Islanders',
+            ],
         ],
         [
             'name' => 'Wallis and Futuna',
@@ -2391,6 +3974,18 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '876',
             'currency' => [
                 'XPF',
+            ],
+            'adjectival' => [
+                'Wallis',
+                'Futuna',
+                'Wallisian',
+                'Futunan',
+            ],
+            'demonym' => [
+                'Wallis islanders',
+                'Futuna islanders',
+                'Wallisians',
+                'Futunans',
             ],
         ],
         [
@@ -2401,6 +3996,15 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MAD',
             ],
+            'adjectival' => [
+                'Sahrawi',
+                'Sahrawian',
+                'Sahraouian',
+            ],
+            'demonym' => [
+                'Sahrawis',
+                'Sahraouis',
+            ],
         ],
         [
             'name' => 'Yemen',
@@ -2410,6 +4014,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'YER',
             ],
+            'adjectival' => [
+                'Yemeni',
+            ],
+            'demonym' => [
+                'Yemenis',
+            ],
         ],
         [
             'name' => 'Zambia',
@@ -2418,6 +4028,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '894',
             'currency' => [
                 'ZMW',
+            ],
+            'adjectival' => [
+                'Zambian',
+            ],
+            'demonym' => [
+                'Zambians',
             ],
         ],
         [
@@ -2431,6 +4047,12 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'GBP',
                 'USD',
                 'ZAR',
+            ],
+            'adjectival' => [
+                'Zimbabwean',
+            ],
+            'demonym' => [
+                'Zimbabweans',
             ],
         ],
     ];
