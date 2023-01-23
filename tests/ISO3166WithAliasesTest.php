@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace League\ISO3166;
 
+use League\ISO3166\ISO3166DataProvider;
 use League\ISO3166\Exception\DomainException;
 use League\ISO3166\Exception\OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
