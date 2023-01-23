@@ -17,8 +17,7 @@ use PHPUnit\Framework\TestCase;
 
 class ISO3166WithAliasesTest extends TestCase
 {
-    /** @var ISO3166WithAliases */
-    public $iso3166;
+    public ISO3166DataProvider $iso3166;
 
     protected function setUp(): void
     {
