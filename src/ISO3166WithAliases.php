@@ -16,7 +16,8 @@ use League\ISO3166\ISO3166DataProvider;
 
 class ISO3166WithAliases implements ISO3166DataProvider
 {
-    private ISO3166DataProvider $source;
+    /** @var ISO3166DataProvider */
+    private $source;
 
     public function __construct(ISO3166DataProvider $iso3166)
     {
