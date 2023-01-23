@@ -23,7 +23,7 @@ class ISO3166WithAliases implements ISO3166DataProvider
         $this->source = $iso3166;
     }
 
-    public function name($name): array
+    public function name(string $name): array
     {
         $aliases = [
             'Bolivia' => 'Bolivia (Plurinational State of)',
@@ -58,17 +58,17 @@ class ISO3166WithAliases implements ISO3166DataProvider
         return $this->source->name($name);
     }
 
-    public function alpha2($alpha2): array
+    public function alpha2(string $alpha2): array
     {
         return $this->source->alpha2($alpha2);
     }
 
-    public function alpha3($alpha3): array
+    public function alpha3(string $alpha3): array
     {
         return $this->source->alpha3($alpha3);
     }
 
-    public function numeric($numeric): array
+    public function numeric(string $numeric): array
     {
         return $this->source->numeric($numeric);
     }
