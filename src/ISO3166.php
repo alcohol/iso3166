@@ -684,7 +684,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'HRV',
             'numeric' => '191',
             'currency' => [
-                'HRK',
+                'EUR',
             ],
         ],
         [
