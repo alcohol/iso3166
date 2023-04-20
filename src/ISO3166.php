@@ -157,7 +157,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      *
      * @var array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>>
      */
-    private $countries = [
+    protected $countries = [
         [
             'name' => 'Afghanistan',
             'alpha2' => 'AF',
