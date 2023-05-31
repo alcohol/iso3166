@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace League\ISO3166;
 
 use League\ISO3166\Exception\DomainException;
+use League\ISO3166\Exception\MultipleValueException;
 use League\ISO3166\Exception\OutOfBoundsException;
 use PHPUnit\Framework\TestCase;
 
@@ -33,13 +34,21 @@ class ISO3166Test extends TestCase
         ISO3166::KEY_NAME => 'BAR',
     ];
 
+    /** @var array<string, string> */
+    public $baz = [
+        ISO3166::KEY_ALPHA2 => 'BZ',
+        ISO3166::KEY_ALPHA3 => 'BAZ',
+        ISO3166::KEY_NUMERIC => '003',
+        ISO3166::KEY_NAME => 'BAZ',
+    ];
+
     /** @var ISO3166 */
     public $iso3166;
 
     protected function setUp(): void
     {
         $validator = new ISO3166DataValidator();
-        $this->iso3166 = new ISO3166($validator->validate([$this->foo, $this->bar]));
+        $this->iso3166 = new ISO3166($validator->validate([$this->foo, $this->bar, $this->baz]));
     }
 
     /**
@@ -183,9 +192,11 @@ class ISO3166Test extends TestCase
     public function invalidNameProvider(): array
     {
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);
+        $duplicateName = sprintf('{^Duplicate "%s" key found: .*$}', ISO3166::KEY_NAME);
 
         return [
             ['000', OutOfBoundsException::class, $noMatch],
+            ['BA', MultipleValueException::class, $duplicateName],
         ];
     }
 
@@ -248,7 +259,7 @@ class ISO3166Test extends TestCase
      */
     public function testCountryNameCompare(): void
     {
-        $country = (new ISO3166)->name('CÔTE D\'IVOIRE');
+        $country = (new ISO3166())->name('CÔTE D\'IVOIRE');
 
         static::assertEquals('CIV', $country['alpha3']);
     }

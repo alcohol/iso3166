@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace League\ISO3166;
 
 use League\ISO3166\Exception\DomainException;
+use League\ISO3166\Exception\MultipleValueException;
 use League\ISO3166\Exception\OutOfBoundsException;
 
 /** @implements \IteratorAggregate<string, array> */
@@ -140,13 +141,22 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     private function lookup(string $key, string $value): array
     {
         $value = mb_strtolower($value);
+        $foundCountries = [];
 
         foreach ($this->countries as $country) {
             $comparison = mb_strtolower($country[$key]);
 
             if ($value === $comparison || $value === mb_substr($comparison, 0, mb_strlen($value))) {
-                return $country;
+                $foundCountries[] = $country;
+
+                if (count($foundCountries) > 1) {
+                    throw new MultipleValueException(sprintf('Duplicate "%s" key found: %s', $key, $value));
+                }
             }
+        }
+
+        if ($foundCountry = array_shift($foundCountries)) {
+            return $foundCountry;
         }
 
         throw new OutOfBoundsException(sprintf('No "%s" key found matching: %s', $key, $value));
