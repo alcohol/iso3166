@@ -30,6 +30,7 @@ class ISO3166WithAliases implements ISO3166DataProvider
             'Bolivia' => 'Bolivia (Plurinational State of)',
             'Bolivia, Plurinational State of' => 'Bolivia (Plurinational State of)',
             'Congo-Kinshasa' => 'Congo (Democratic Republic of the)',
+            'Congo, the Democratic Republic of the' => 'Congo (Democratic Republic of the)',
             'Czech Republic' => 'Czechia',
             'Iran' => 'Iran (Islamic Republic of)',
             'North Korea' => 'Korea (Democratic People\'s Republic of)',
