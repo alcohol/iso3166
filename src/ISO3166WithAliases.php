@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace League\ISO3166;
 
-use League\ISO3166\ISO3166;
 use League\ISO3166\ISO3166DataProvider;
 
 class ISO3166WithAliases implements ISO3166DataProvider

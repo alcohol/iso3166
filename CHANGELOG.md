@@ -7,6 +7,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Nothing as of yet
 
+## [4.3.0] - 2023-06-05
+
+* Added: added `exactName` (#95)
+
+## [4.2.1] - 2023-01-31
+
+* Changed: Croatia adopted the EUR on 2023-01-01
+
 ## [4.2.0] - 2023-01-23
 
 * Added: a dataprovider with often requested aliases ([#76])
@@ -70,7 +78,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-[Unreleased]: https://github.com/thephpleague/iso3166/compare/4.2.0...HEAD
+[Unreleased]: https://github.com/thephpleague/iso3166/compare/4.3.0...HEAD
+[4.3.0]: https://github.com/thephpleague/iso3166/compare/4.2.1...4.3.0
+[4.2.1]: https://github.com/thephpleague/iso3166/compare/4.2.0...4.2.1
 [4.2.0]: https://github.com/thephpleague/iso3166/compare/4.1.0...4.2.0
 [4.1.0]: https://github.com/thephpleague/iso3166/compare/4.0.0...4.1.0
 [4.0.0]: https://github.com/thephpleague/iso3166/compare/3.0.0...4.0.0
@@ -85,6 +95,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
 
+[#95]: https://github.com/thephpleague/iso3166/pull/95
 [#78]: https://github.com/thephpleague/iso3166/pull/78
 [#76]: https://github.com/thephpleague/iso3166/pull/76
 [#74]: https://github.com/thephpleague/iso3166/pull/74

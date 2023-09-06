@@ -199,6 +199,43 @@ class ISO3166Test extends TestCase
     }
 
     /**
+     * @testdox Calling getByExactName with bad input throws various exceptions.
+     *
+     * @dataProvider invalidExactNameProvider
+     *
+     * @param class-string<\Throwable> $expectedException
+     */
+    public function testGetByExactNameInvalid(string $name, string $expectedException, string $exceptionPattern): void
+    {
+        static::expectException($expectedException);
+        static::expectExceptionMessageMatches($exceptionPattern);
+
+        $this->iso3166->exactName($name);
+    }
+
+    /**
+     * @phpstan-return array<array<string|class-string<\Throwable>|string>>
+     */
+    public function invalidExactNameProvider(): array
+    {
+        $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);
+
+        return [
+            ['FO', OutOfBoundsException::class, $noMatch],
+            ['BA', OutOfBoundsException::class, $noMatch],
+        ];
+    }
+
+    /**
+     * @testdox Calling getByExactName with a known name returns matching data array.
+     */
+    public function testGetByExactName(): void
+    {
+        static::assertEquals($this->foo, $this->iso3166->exactName($this->foo[ISO3166::KEY_NAME]));
+        static::assertEquals($this->bar, $this->iso3166->exactName($this->bar[ISO3166::KEY_NAME]));
+    }
+
+    /**
      * @testdox Calling getAll returns an array with all elements.
      */
     public function testGetAll(): void
@@ -248,7 +285,7 @@ class ISO3166Test extends TestCase
      */
     public function testCountryNameCompare(): void
     {
-        $country = (new ISO3166)->name('CÔTE D\'IVOIRE');
+        $country = (new ISO3166())->name('CÔTE D\'IVOIRE');
 
         static::assertEquals('CIV', $country['alpha3']);
     }

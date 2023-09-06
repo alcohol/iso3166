@@ -77,6 +77,24 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
+     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
+     */
+    public function exactName(string $name): array
+    {
+        $value = mb_strtolower($name);
+
+        foreach ($this->countries as $country) {
+            $comparison = mb_strtolower($country[self::KEY_NAME]);
+
+            if ($value === $comparison) {
+                return $country;
+            }
+        }
+
+        throw new OutOfBoundsException(sprintf('No "%s" key found matching: %s', self::KEY_NAME, $value));
+    }
+
+    /**
      * @return array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>
      */
     public function all(): array
@@ -684,7 +702,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'HRV',
             'numeric' => '191',
             'currency' => [
-                'HRK',
+                'EUR',
             ],
         ],
         [
