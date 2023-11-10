@@ -25,6 +25,18 @@ interface ISO3166DataProvider
     public function name(string $name): array;
 
     /**
+     * Lookup ISO3166-1 data by alpha2 or alpha3 identifier.
+     *
+     * @api
+     *
+     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha2 or alpha3 key
+     * @throws \League\ISO3166\Exception\OutOfBoundsException if input does not exist in dataset
+     *
+     * @return array<string, mixed>
+     */
+    public function alpha(string $alpha): array;
+
+    /**
      * Lookup ISO3166-1 data by alpha2 identifier.
      *
      * @api

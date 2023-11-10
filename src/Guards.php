@@ -16,6 +16,18 @@ use League\ISO3166\Exception\DomainException;
 final class Guards
 {
     /**
+     * Assert that input looks like an alpha2 or alpha3 key.
+     *
+     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha2 or alpha3 key
+     */
+    public static function guardAgainstInvalidAlpha(string $alpha): void
+    {
+        if (1 !== preg_match('/^[a-zA-Z]{2,3}$/', $alpha)) {
+            throw new DomainException(sprintf('Not a valid alpha2 or alpha3 key: %s', $alpha));
+        }
+    }
+
+    /**
      * Assert that input looks like an alpha2 key.
      *
      * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha2 key

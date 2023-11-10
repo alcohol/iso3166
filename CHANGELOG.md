@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-* Nothing as of yet
+* Added: method ISO3166DataProvider::alpha
 
 ## [4.3.1] - 2023-09-11
 

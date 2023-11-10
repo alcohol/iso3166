@@ -59,6 +59,11 @@ class ISO3166WithAliases implements ISO3166DataProvider
         return $this->source->name($name);
     }
 
+    public function alpha(string $alpha): array
+    {
+        return $this->source->alpha($alpha);
+    }
+
     public function alpha2(string $alpha2): array
     {
         return $this->source->alpha2($alpha2);

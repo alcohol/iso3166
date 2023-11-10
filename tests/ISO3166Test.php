@@ -43,6 +43,54 @@ class ISO3166Test extends TestCase
     }
 
     /**
+     * @testdox Calling getByAlpha with bad input throws various exceptions.
+     *
+     * @dataProvider invalidAlphaProvider
+     *
+     * @phpstan-param class-string<\Throwable> $expectedException
+     */
+    public function testGetByAlphaInvalid(string $alpha, string $expectedException, string $exceptionPattern): void
+    {
+        static::expectException($expectedException);
+        static::expectExceptionMessageMatches($exceptionPattern);
+
+        $this->iso3166->alpha($alpha);
+    }
+
+    /**
+     * @return array<array<string|class-string<\Throwable>|string>>
+     */
+    public function invalidAlphaProvider(): array
+    {
+        $invalidNumeric = sprintf('{^Not a valid %s or %s key: .*$}', ISO3166::KEY_ALPHA2, ISO3166::KEY_ALPHA3);
+        $noMatch = sprintf('{^No "%s" key found matching: .* and No "%s" key found matching: .*$}', ISO3166::KEY_ALPHA2, ISO3166::KEY_ALPHA3);
+
+        return [
+            ['A', DomainException::class, $invalidNumeric],
+            ['ABC', OutOfBoundsException::class, $noMatch],
+            ['AB', OutOfBoundsException::class, $noMatch],
+        ];
+    }
+
+    /**
+     * @testdox Calling getByAlpha with a known alpha2 returns matching data array.
+     */
+    public function testGetByAlphaUsingAlpha2(): void
+    {
+        static::assertEquals($this->foo, $this->iso3166->alpha($this->foo[ISO3166::KEY_ALPHA2]));
+        static::assertEquals($this->bar, $this->iso3166->alpha($this->bar[ISO3166::KEY_ALPHA2]));
+    }
+
+    /**
+     * @testdox Calling getByAlpha with a known alpha3 returns matching data array.
+     */
+    public function testGetByAlphaUsingAlpha3(): void
+    {
+        static::assertEquals($this->foo, $this->iso3166->alpha($this->foo[ISO3166::KEY_ALPHA3]));
+        static::assertEquals($this->bar, $this->iso3166->alpha($this->bar[ISO3166::KEY_ALPHA3]));
+    }
+
+    /**
      * @testdox Calling getByAlpha2 with bad input throws various exceptions.
      *
      * @dataProvider invalidAlpha2Provider

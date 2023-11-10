@@ -49,6 +49,30 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
      */
+    public function alpha(string $alpha): array
+    {
+        Guards::guardAgainstInvalidAlpha($alpha);
+
+        $errors = [];
+
+        try {
+            return $this->lookup(self::KEY_ALPHA2, $alpha);
+        } catch (OutOfBoundsException $e) {
+            $errors[] = $e->getMessage();
+        }
+
+        try {
+            return $this->lookup(self::KEY_ALPHA3, $alpha);
+        } catch (OutOfBoundsException $e) {
+            $errors[] = $e->getMessage();
+        }
+
+        throw new OutOfBoundsException(implode(' and ', $errors));
+    }
+
+    /**
+     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
+     */
     public function alpha2(string $alpha2): array
     {
         Guards::guardAgainstInvalidAlpha2($alpha2);

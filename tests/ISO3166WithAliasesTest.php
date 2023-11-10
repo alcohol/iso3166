@@ -27,6 +27,8 @@ class ISO3166WithAliasesTest extends TestCase
     public function testAlias(): void
     {
         self::assertEquals($this->iso3166->name('United States')['name'], 'United States of America');
+        self::assertEquals($this->iso3166->alpha('US')['alpha2'], 'US');
+        self::assertEquals($this->iso3166->alpha('USA')['alpha3'], 'USA');
         self::assertEquals($this->iso3166->alpha2('US')['alpha2'], 'US');
         self::assertEquals($this->iso3166->alpha3('USA')['alpha3'], 'USA');
         self::assertEquals($this->iso3166->numeric('840')['numeric'], '840');
