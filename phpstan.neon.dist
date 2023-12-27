@@ -6,7 +6,7 @@ includes:
 
 parameters:
   level: 9
-  tmpDir: .
+  tmpDir: .phpstan.cache
   checkGenericClassInNonGenericObjectType: true
   paths:
     - src

@@ -26,9 +26,10 @@
         "psr-4": { "League\\ISO3166\\": "tests" }
     },
     "scripts": {
-        "cs-review": "php-cs-fixer fix --verbose --diff --dry-run",
-        "cs-fix": "php-cs-fixer fix --verbose",
-        "test": "phpunit"
+        "test": "vendor/bin/phpunit",
+        "phpstan": "tools/phpstan/vendor/bin/phpstan",
+        "php-cs-fixer": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "php-cs-fixer-fix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix"
     },
     "extra": {
         "branch-alias": {
