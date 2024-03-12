@@ -158,11 +158,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     private function lookup(string $key, string $value): array
     {
         $value = mb_strtolower($value);
+        $value_ascii = str_replace('^', '', iconv('UTF-8', 'ASCII//TRANSLIT', $value)); // remove ^ from translation of Côte d’Ivoire into C^ote d'Ivoire.
 
         foreach ($this->countries as $country) {
             $comparison = mb_strtolower($country[$key]);
 
-            if ($value === $comparison || $value === mb_substr($comparison, 0, mb_strlen($value))) {
+            if ($value === $comparison
+                    || $value === mb_substr($comparison, 0, mb_strlen($value))
+                    || $value_ascii === str_replace('^', '', iconv('UTF-8', 'ASCII//TRANSLIT', $comparison))) { // remove ^ from translation of Côte d’Ivoire into C^ote d'Ivoire.
                 return $country;
             }
         }
