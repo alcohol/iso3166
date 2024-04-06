@@ -25,7 +25,7 @@ class ISO3166WithAliases implements ISO3166DataProvider
 
     public function name(string $name): array
     {
-        $aliases = [
+        static $aliases = [
             'Bolivia' => 'Bolivia (Plurinational State of)',
             'Bolivia, Plurinational State of' => 'Bolivia (Plurinational State of)',
             'Congo-Kinshasa' => 'Congo (Democratic Republic of the)',
