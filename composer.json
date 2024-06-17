@@ -2,15 +2,15 @@
     "name": "league/iso3166",
     "description": "ISO 3166-1 PHP Library",
     "keywords": ["ISO 3166", "ISO", "3166", "3166-1", "countries", "library"],
-    "homepage": "https://github.com/thephpleague/iso3166",
+    "homepage": "https://github.com/alcohol/iso3166",
     "license": "MIT",
     "authors": [{
         "name": "Rob Bast",
         "email": "rob.bast@gmail.com"
     }],
     "support": {
-        "issues": "https://github.com/thephpleague/iso3166/issues",
-        "source": "https://github.com/thephpleague/iso3166"
+        "issues": "https://github.com/alcohol/iso3166/issues",
+        "source": "https://github.com/alcohol/iso3166"
     },
     "require": {
         "php": "^7.4 || ^8.0",
