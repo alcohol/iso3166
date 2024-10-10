@@ -30,8 +30,7 @@ jobs:
           coverage: none
           tools: cs2pr, composer
       - run: composer update
-      - run: composer --working-dir=tools/phpstan install
-      - run: tools/phpstan/vendor/bin/phpstan --error-format=checkstyle | cs2pr
+      - run: vendor/bin/phpstan --error-format=checkstyle | cs2pr
 
   phpunit:
     runs-on: ubuntu-latest
