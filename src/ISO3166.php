@@ -1284,7 +1284,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             ],
         ],
         [
-            'name' => 'Kosovo'
+            'name' => 'Kosovo',
             'alpha2' => 'XK',
             'alpha3' => 'XKX',
             'numeric' => 412,
