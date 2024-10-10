@@ -11,12 +11,9 @@ declare(strict_types=1);
 
 namespace League\ISO3166;
 
-use League\ISO3166\ISO3166DataProvider;
-
 class ISO3166WithAliases implements ISO3166DataProvider
 {
-    /** @var ISO3166DataProvider */
-    private $source;
+    private ISO3166DataProvider $source;
 
     public function __construct(ISO3166DataProvider $iso3166)
     {
@@ -49,9 +46,9 @@ class ISO3166WithAliases implements ISO3166DataProvider
             'Vietnam' => 'Viet Nam',
         ];
 
-        foreach ($aliases as $alias => $full) {
+        foreach ($aliases as $alias => $original) {
             if (0 === strcasecmp($alias, $name)) {
-                $name = $full;
+                $name = $original;
                 break;
             }
         }
