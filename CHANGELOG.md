@@ -3,7 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [unreleased]
+
+* See [unreleased].
+
+## [4.3.2] - 2024-10-10
 
 * Updated: added XK for Kosovo ([#101])
 * Changed: added types for private properties
@@ -83,7 +87,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-[Unreleased]: https://github.com/thephpleague/iso3166/compare/4.3.1...HEAD
+[unreleased]: https://github.com/thephpleague/iso3166/compare/4.3.2...HEAD
+[4.3.2]: https://github.com/thephpleague/iso3166/compare/4.3.1...4.3.2
 [4.3.1]: https://github.com/thephpleague/iso3166/compare/4.3.0...4.3.1
 [4.3.0]: https://github.com/thephpleague/iso3166/compare/4.2.1...4.3.0
 [4.2.1]: https://github.com/thephpleague/iso3166/compare/4.2.0...4.2.1
