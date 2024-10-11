@@ -22,7 +22,7 @@ class ISO3166WithAliases implements ISO3166DataProvider
 
     public function name(string $name): array
     {
-        $aliases = [
+        static $aliases = [
             'Bolivia' => 'Bolivia (Plurinational State of)',
             'Bolivia, Plurinational State of' => 'Bolivia (Plurinational State of)',
             'Congo-Kinshasa' => 'Congo (Democratic Republic of the)',
@@ -42,6 +42,7 @@ class ISO3166WithAliases implements ISO3166DataProvider
             'Tanzania' => 'Tanzania, United Republic of',
             'United Kingdom' => 'United Kingdom of Great Britain and Northern Ireland',
             'United States' => 'United States of America',
+            'USA' => 'United States of America',
             'Venezuela' => 'Venezuela (Bolivarian Republic of)',
             'Vietnam' => 'Viet Nam',
         ];
