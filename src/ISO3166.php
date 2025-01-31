@@ -29,7 +29,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     private array $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC, self::KEY_NAME];
 
     /**
-     * @param array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}> $countries replace default dataset with given array
+     * @param array<array{
+     *     name: string,
+     *     alpha2: string,
+     *     alpha3: string,
+     *     numeric: numeric-string,
+     *     currency: string[],
+     *     continent: string
+     * }> $countries replace default dataset with given array
      */
     public function __construct(array $countries = [])
     {
@@ -39,7 +46,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
+     * @return array{
+     *     name: string,
+     *     alpha2: string,
+     *     alpha3: string,
+     *     numeric: numeric-string,
+     *     currency: string[],
+     *     continent: string
+     * }
      */
     public function name(string $name): array
     {
@@ -47,7 +61,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
+     * @return array{
+     *     name: string,
+     *     alpha2: string,
+     *     alpha3: string,
+     *     numeric: numeric-string,
+     *     currency: string[],
+     *     continent: string
+     * }
      */
     public function alpha2(string $alpha2): array
     {
@@ -57,7 +78,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
+     * @return array{
+     *     name: string,
+     *     alpha2: string,
+     *     alpha3: string,
+     *     numeric: numeric-string,
+     *     currency: string[],
+     *     continent: string
+     * }
      */
     public function alpha3(string $alpha3): array
     {
@@ -67,7 +95,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
+     * @return array{
+     *     name: string,
+     *     alpha2: string,
+     *     alpha3: string,
+     *     numeric: numeric-string,
+     *     currency: string[],
+     *     continent: string
+     * }
      */
     public function numeric(string $numeric): array
     {
@@ -77,7 +112,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
+     * @return array{
+     *     name: string,
+     *     alpha2: string,
+     *     alpha3: string,
+     *     numeric: numeric-string,
+     *     currency: string[],
+     *     continent: string
+     * }
      */
     public function exactName(string $name): array
     {
@@ -95,7 +137,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>
+     * @return array<array{
+     *     name: string,
+     *     alpha2: string,
+     *     alpha3: string,
+     *     numeric: numeric-string,
+     *     currency: string[],
+     *     continent: string
+     * }>
      */
     public function all(): array
     {
@@ -107,7 +156,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      *
      * @throws \League\ISO3166\Exception\DomainException if an invalid key is specified
      *
-     * @return \Generator<string, array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>
+     * @return \Generator<string, array{
+     *     name: string,
+     *     alpha2: string,
+     *     alpha3: string,
+     *     numeric: numeric-string,
+     *     currency: string[],
+     *     continent: string
+     * }>
      */
     public function iterator(string $key = self::KEY_ALPHA2): \Generator
     {
@@ -153,7 +209,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      *
      * @throws \League\ISO3166\Exception\OutOfBoundsException if key does not exist in dataset
      *
-     * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
+     * @return array{
+     *     name: string,
+     *     alpha2: string,
+     *     alpha3: string,
+     *     numeric: numeric-string,
+     *     currency: string[],
+     *     continent: string
+     * }
      */
     private function lookup(string $key, string $value): array
     {
@@ -173,7 +236,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * Default dataset.
      *
-     * @var array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>>
+     * @var array<array{
+     *     name: string,
+     *     alpha2: string,
+     *     alpha3: string,
+     *     numeric: numeric-string,
+     *     currency: string[],
+     *     continent: string
+     * }>
      */
     private array $countries = [
         [
@@ -184,6 +254,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AFN',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Åland Islands',
@@ -193,6 +264,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Albania',
@@ -202,6 +274,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ALL',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Algeria',
@@ -211,6 +284,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'DZD',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'American Samoa',
@@ -220,6 +294,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Andorra',
@@ -229,6 +304,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Angola',
@@ -238,6 +314,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AOA',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Anguilla',
@@ -247,6 +324,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Antarctica',
@@ -280,6 +358,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'UYU',
                 'ZAR',
             ],
+            'continent' => 'Antarctica',
         ],
         [
             'name' => 'Antigua and Barbuda',
@@ -289,6 +368,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Argentina',
@@ -298,6 +378,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ARS',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Armenia',
@@ -307,6 +388,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AMD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Aruba',
@@ -316,6 +398,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AWG',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Australia',
@@ -325,6 +408,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Austria',
@@ -334,6 +418,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Azerbaijan',
@@ -343,6 +428,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AZN',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Bahamas',
@@ -352,6 +438,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BSD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Bahrain',
@@ -361,6 +448,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BHD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Bangladesh',
@@ -370,6 +458,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BDT',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Barbados',
@@ -379,6 +468,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BBD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Belarus',
@@ -388,6 +478,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BYN',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Belgium',
@@ -397,6 +488,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Belize',
@@ -406,6 +498,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BZD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Benin',
@@ -415,6 +508,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Bermuda',
@@ -424,6 +518,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BMD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Bhutan',
@@ -433,6 +528,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BTN',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Bolivia (Plurinational State of)',
@@ -442,6 +538,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BOB',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Bonaire, Sint Eustatius and Saba',
@@ -451,6 +548,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Bosnia and Herzegovina',
@@ -460,6 +558,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BAM',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Botswana',
@@ -469,6 +568,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BWP',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Bouvet Island',
@@ -478,6 +578,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NOK',
             ],
+            'continent' => 'Antarctica',
         ],
         [
             'name' => 'Brazil',
@@ -487,6 +588,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BRL',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'British Indian Ocean Territory',
@@ -496,6 +598,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GBP',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Brunei Darussalam',
@@ -506,6 +609,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'BND',
                 'SGD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Bulgaria',
@@ -515,6 +619,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BGN',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Burkina Faso',
@@ -524,6 +629,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Burundi',
@@ -533,6 +639,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'BIF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Cabo Verde',
@@ -542,6 +649,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CVE',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Cambodia',
@@ -551,6 +659,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KHR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Cameroon',
@@ -560,6 +669,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XAF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Canada',
@@ -569,6 +679,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CAD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Cayman Islands',
@@ -578,6 +689,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KYD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Central African Republic',
@@ -587,6 +699,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XAF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Chad',
@@ -596,6 +709,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XAF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Chile',
@@ -605,6 +719,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CLP',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'China',
@@ -614,6 +729,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CNY',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Christmas Island',
@@ -623,6 +739,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Cocos (Keeling) Islands',
@@ -632,6 +749,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Colombia',
@@ -641,6 +759,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'COP',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Comoros',
@@ -650,6 +769,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KMF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Congo',
@@ -659,6 +779,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XAF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Congo (Democratic Republic of the)',
@@ -668,6 +789,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CDF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Cook Islands',
@@ -677,6 +799,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NZD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Costa Rica',
@@ -686,6 +809,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CRC',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Côte d\'Ivoire',
@@ -695,6 +819,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Croatia',
@@ -704,6 +829,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Cuba',
@@ -714,6 +840,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'CUC',
                 'CUP',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Curaçao',
@@ -723,6 +850,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ANG',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Cyprus',
@@ -732,6 +860,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Czechia',
@@ -741,6 +870,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CZK',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Denmark',
@@ -750,6 +880,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'DKK',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Djibouti',
@@ -759,6 +890,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'DJF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Dominica',
@@ -768,6 +900,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Dominican Republic',
@@ -777,6 +910,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'DOP',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Ecuador',
@@ -786,6 +920,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Egypt',
@@ -795,6 +930,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EGP',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'El Salvador',
@@ -804,6 +940,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Equatorial Guinea',
@@ -813,6 +950,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XAF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Eritrea',
@@ -822,6 +960,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ERN',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Estonia',
@@ -831,6 +970,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Ethiopia',
@@ -840,6 +980,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ETB',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Eswatini',
@@ -850,6 +991,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'SZL',
                 'ZAR',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Falkland Islands (Malvinas)',
@@ -859,6 +1001,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'FKP',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Faroe Islands',
@@ -868,6 +1011,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'DKK',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Fiji',
@@ -877,6 +1021,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'FJD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Finland',
@@ -886,6 +1031,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'France',
@@ -895,6 +1041,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'French Guiana',
@@ -904,6 +1051,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'French Polynesia',
@@ -913,6 +1061,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XPF',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'French Southern Territories',
@@ -922,6 +1071,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Antarctica',
         ],
         [
             'name' => 'Gabon',
@@ -931,6 +1081,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XAF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Gambia',
@@ -940,6 +1091,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GMD',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Georgia',
@@ -949,6 +1101,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GEL',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Germany',
@@ -958,6 +1111,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Ghana',
@@ -967,6 +1121,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GHS',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Gibraltar',
@@ -976,6 +1131,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GIP',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Greece',
@@ -985,6 +1141,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Greenland',
@@ -994,6 +1151,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'DKK',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Grenada',
@@ -1003,6 +1161,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Guadeloupe',
@@ -1012,6 +1171,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Guam',
@@ -1021,6 +1181,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Guatemala',
@@ -1030,6 +1191,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GTQ',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Guernsey',
@@ -1039,6 +1201,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GBP',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Guinea',
@@ -1048,6 +1211,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GNF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Guinea-Bissau',
@@ -1057,6 +1221,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Guyana',
@@ -1066,6 +1231,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GYD',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Haiti',
@@ -1075,6 +1241,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'HTG',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Heard Island and McDonald Islands',
@@ -1084,6 +1251,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'continent' => 'Antarctica',
         ],
         [
             'name' => 'Holy See',
@@ -1093,6 +1261,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Honduras',
@@ -1102,6 +1271,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'HNL',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Hong Kong',
@@ -1111,6 +1281,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'HKD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Hungary',
@@ -1120,6 +1291,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'HUF',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Iceland',
@@ -1129,6 +1301,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ISK',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'India',
@@ -1138,6 +1311,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'INR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Indonesia',
@@ -1147,6 +1321,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'IDR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Iran (Islamic Republic of)',
@@ -1156,6 +1331,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'IRR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Iraq',
@@ -1165,6 +1341,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'IQD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Ireland',
@@ -1174,6 +1351,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Isle of Man',
@@ -1183,6 +1361,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GBP',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Israel',
@@ -1192,6 +1371,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ILS',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Italy',
@@ -1201,6 +1381,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Jamaica',
@@ -1210,6 +1391,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'JMD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Japan',
@@ -1219,6 +1401,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'JPY',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Jersey',
@@ -1228,6 +1411,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GBP',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Jordan',
@@ -1237,6 +1421,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'JOD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Kazakhstan',
@@ -1246,6 +1431,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KZT',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Kenya',
@@ -1255,6 +1441,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KES',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Kiribati',
@@ -1264,6 +1451,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Korea (Democratic People\'s Republic of)',
@@ -1273,6 +1461,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KPW',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Korea (Republic of)',
@@ -1282,6 +1471,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KRW',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Kosovo',
@@ -1291,6 +1481,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Kuwait',
@@ -1300,6 +1491,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KWD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Kyrgyzstan',
@@ -1309,6 +1501,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'KGS',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Lao People\'s Democratic Republic',
@@ -1318,6 +1511,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'LAK',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Latvia',
@@ -1327,6 +1521,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Lebanon',
@@ -1336,6 +1531,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'LBP',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Lesotho',
@@ -1346,6 +1542,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'LSL',
                 'ZAR',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Liberia',
@@ -1355,6 +1552,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'LRD',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Libya',
@@ -1364,6 +1562,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'LYD',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Liechtenstein',
@@ -1373,6 +1572,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CHF',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Lithuania',
@@ -1382,6 +1582,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Luxembourg',
@@ -1391,6 +1592,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Macao',
@@ -1400,6 +1602,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MOP',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'North Macedonia',
@@ -1409,6 +1612,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MKD',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Madagascar',
@@ -1418,6 +1622,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MGA',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Malawi',
@@ -1427,6 +1632,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MWK',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Malaysia',
@@ -1436,6 +1642,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MYR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Maldives',
@@ -1445,6 +1652,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MVR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Mali',
@@ -1454,6 +1662,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Malta',
@@ -1463,6 +1672,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Marshall Islands',
@@ -1472,6 +1682,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Martinique',
@@ -1481,6 +1692,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Mauritania',
@@ -1490,6 +1702,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MRO',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Mauritius',
@@ -1499,6 +1712,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MUR',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Mayotte',
@@ -1508,6 +1722,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Mexico',
@@ -1517,6 +1732,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MXN',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Micronesia (Federated States of)',
@@ -1526,6 +1742,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Moldova (Republic of)',
@@ -1535,6 +1752,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MDL',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Monaco',
@@ -1544,6 +1762,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Mongolia',
@@ -1553,6 +1772,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MNT',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Montenegro',
@@ -1562,6 +1782,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Montserrat',
@@ -1571,6 +1792,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Morocco',
@@ -1580,6 +1802,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MAD',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Mozambique',
@@ -1589,6 +1812,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MZN',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Myanmar',
@@ -1598,6 +1822,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MMK',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Namibia',
@@ -1608,6 +1833,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'NAD',
                 'ZAR',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Nauru',
@@ -1617,6 +1843,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Nepal',
@@ -1626,6 +1853,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NPR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Netherlands',
@@ -1635,6 +1863,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'New Caledonia',
@@ -1644,6 +1873,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XPF',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'New Zealand',
@@ -1653,6 +1883,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NZD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Nicaragua',
@@ -1662,6 +1893,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NIO',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Niger',
@@ -1671,6 +1903,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Nigeria',
@@ -1680,6 +1913,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NGN',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Niue',
@@ -1689,6 +1923,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NZD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Norfolk Island',
@@ -1698,6 +1933,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Northern Mariana Islands',
@@ -1707,6 +1943,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Norway',
@@ -1716,6 +1953,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NOK',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Oman',
@@ -1725,6 +1963,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'OMR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Pakistan',
@@ -1734,6 +1973,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'PKR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Palau',
@@ -1743,6 +1983,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Palestine, State of',
@@ -1752,6 +1993,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ILS',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Panama',
@@ -1761,6 +2003,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'PAB',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Papua New Guinea',
@@ -1770,6 +2013,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'PGK',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Paraguay',
@@ -1779,6 +2023,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'PYG',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Peru',
@@ -1788,6 +2033,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'PEN',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Philippines',
@@ -1797,6 +2043,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'PHP',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Pitcairn',
@@ -1806,6 +2053,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NZD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Poland',
@@ -1815,6 +2063,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'PLN',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Portugal',
@@ -1824,6 +2073,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Puerto Rico',
@@ -1833,6 +2083,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Qatar',
@@ -1842,6 +2093,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'QAR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Réunion',
@@ -1851,6 +2103,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Romania',
@@ -1860,6 +2113,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'RON',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Russian Federation',
@@ -1869,6 +2123,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'RUB',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Rwanda',
@@ -1878,6 +2133,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'RWF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Saint Barthélemy',
@@ -1887,6 +2143,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Saint Helena, Ascension and Tristan da Cunha',
@@ -1896,6 +2153,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SHP',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Saint Kitts and Nevis',
@@ -1905,6 +2163,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Saint Lucia',
@@ -1914,6 +2173,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Saint Martin (French part)',
@@ -1924,6 +2184,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'EUR',
                 'USD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Saint Pierre and Miquelon',
@@ -1933,6 +2194,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Saint Vincent and the Grenadines',
@@ -1942,6 +2204,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XCD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Samoa',
@@ -1951,6 +2214,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'WST',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'San Marino',
@@ -1960,6 +2224,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Sao Tome and Principe',
@@ -1969,6 +2234,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'STD',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Saudi Arabia',
@@ -1978,6 +2244,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SAR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Senegal',
@@ -1987,6 +2254,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Serbia',
@@ -1996,6 +2264,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'RSD',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Seychelles',
@@ -2005,6 +2274,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SCR',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Sierra Leone',
@@ -2014,6 +2284,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SLL',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Singapore',
@@ -2023,6 +2294,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SGD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Sint Maarten (Dutch part)',
@@ -2032,6 +2304,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ANG',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Slovakia',
@@ -2041,6 +2314,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Slovenia',
@@ -2050,6 +2324,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Solomon Islands',
@@ -2059,6 +2334,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SBD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Somalia',
@@ -2068,6 +2344,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SOS',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'South Africa',
@@ -2077,6 +2354,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ZAR',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'South Georgia and the South Sandwich Islands',
@@ -2086,6 +2364,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GBP',
             ],
+            'continent' => 'Antarctica',
         ],
         [
             'name' => 'South Sudan',
@@ -2095,6 +2374,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SSP',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Spain',
@@ -2104,6 +2384,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'EUR',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Sri Lanka',
@@ -2113,6 +2394,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'LKR',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Sudan',
@@ -2122,6 +2404,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SDG',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Suriname',
@@ -2131,6 +2414,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SRD',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Svalbard and Jan Mayen',
@@ -2140,6 +2424,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NOK',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Sweden',
@@ -2149,6 +2434,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SEK',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Switzerland',
@@ -2158,6 +2444,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'CHF',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'Syrian Arab Republic',
@@ -2167,6 +2454,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'SYP',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Taiwan (Province of China)',
@@ -2176,6 +2464,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TWD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Tajikistan',
@@ -2185,6 +2474,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TJS',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Tanzania, United Republic of',
@@ -2194,6 +2484,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TZS',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Thailand',
@@ -2203,6 +2494,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'THB',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Timor-Leste',
@@ -2212,6 +2504,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Togo',
@@ -2221,6 +2514,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XOF',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Tokelau',
@@ -2230,6 +2524,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'NZD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Tonga',
@@ -2239,6 +2534,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TOP',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Trinidad and Tobago',
@@ -2248,6 +2544,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TTD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Tunisia',
@@ -2257,6 +2554,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TND',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Turkey',
@@ -2266,6 +2564,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TRY',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Turkmenistan',
@@ -2275,6 +2574,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'TMT',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Turks and Caicos Islands',
@@ -2284,6 +2584,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Tuvalu',
@@ -2293,6 +2594,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AUD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Uganda',
@@ -2302,6 +2604,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'UGX',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Ukraine',
@@ -2311,6 +2614,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'UAH',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'United Arab Emirates',
@@ -2320,6 +2624,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'AED',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'United Kingdom of Great Britain and Northern Ireland',
@@ -2329,6 +2634,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'GBP',
             ],
+            'continent' => 'Europe',
         ],
         [
             'name' => 'United States of America',
@@ -2338,6 +2644,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'United States Minor Outlying Islands',
@@ -2347,6 +2654,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Uruguay',
@@ -2356,6 +2664,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'UYU',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Uzbekistan',
@@ -2365,6 +2674,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'UZS',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Vanuatu',
@@ -2374,6 +2684,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'VUV',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Venezuela (Bolivarian Republic of)',
@@ -2383,6 +2694,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'VEF',
             ],
+            'continent' => 'South America',
         ],
         [
             'name' => 'Viet Nam',
@@ -2392,6 +2704,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'VND',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Virgin Islands (British)',
@@ -2401,6 +2714,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Virgin Islands (U.S.)',
@@ -2410,6 +2724,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'USD',
             ],
+            'continent' => 'North America',
         ],
         [
             'name' => 'Wallis and Futuna',
@@ -2419,6 +2734,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'XPF',
             ],
+            'continent' => 'Oceania',
         ],
         [
             'name' => 'Western Sahara',
@@ -2428,6 +2744,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'MAD',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Yemen',
@@ -2437,6 +2754,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'YER',
             ],
+            'continent' => 'Asia',
         ],
         [
             'name' => 'Zambia',
@@ -2446,6 +2764,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ZMW',
             ],
+            'continent' => 'Africa',
         ],
         [
             'name' => 'Zimbabwe',
@@ -2459,6 +2778,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'USD',
                 'ZAR',
             ],
+            'continent' => 'Africa',
         ],
     ];
 }
