@@ -157,12 +157,21 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      */
     private function lookup(string $key, string $value): array
     {
-        $value = mb_strtolower($value);
+        $value = mb_strtolower(mb_trim($value));
+        $valueStringLength = mb_strlen($value);
+
+        if(!(bool)$valueStringLength)
+        {
+          throw new OutOfBoundsException('Value should not be empty!');
+        }
 
         foreach ($this->countries as $country) {
             $comparison = mb_strtolower($country[$key]);
 
-            if ($value === $comparison || $value === mb_substr($comparison, 0, mb_strlen($value))) {
+            if ($value === $comparison
+             || $value === mb_substr($comparison, 0, $valueStringLength)
+             || $comparison == mb_substr($value, 0, mb_strlen($comparison))
+            ) {
                 return $country;
             }
         }
