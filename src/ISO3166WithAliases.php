@@ -15,7 +15,7 @@ class ISO3166WithAliases implements ISO3166DataProvider
 {
     private ISO3166DataProvider $source;
 
-    /** @type array<string, string> */
+    /** @var array<string, string> */
     public const aliases = [
         'Bolivia' => 'Bolivia (Plurinational State of)',
         'Bolivia, Plurinational State of' => 'Bolivia (Plurinational State of)',
