@@ -185,7 +185,8 @@ class ISO3166Test extends TestCase
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);
 
         return [
-            ['000', OutOfBoundsException::class, $noMatch],
+            ['', DomainException::class, '{^Expected string, got empty string$}'],
+            ['Dummy', OutOfBoundsException::class, $noMatch],
         ];
     }
 
@@ -221,6 +222,7 @@ class ISO3166Test extends TestCase
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);
 
         return [
+            ['', DomainException::class, '{^Expected string, got empty string$}'],
             ['FO', OutOfBoundsException::class, $noMatch],
             ['BA', OutOfBoundsException::class, $noMatch],
         ];

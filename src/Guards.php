@@ -16,6 +16,18 @@ use League\ISO3166\Exception\DomainException;
 final class Guards
 {
     /**
+     * Assert that input is not an empty string.
+     *
+     * @throws \League\ISO3166\Exception\DomainException if input is an empty string
+     */
+    public static function guardAgainstInvalidName(string $name): void
+    {
+        if ('' === trim($name)) {
+            throw new DomainException('Expected string, got empty string');
+        }
+    }
+
+    /**
      * Assert that input looks like an alpha2 key.
      *
      * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha2 key
