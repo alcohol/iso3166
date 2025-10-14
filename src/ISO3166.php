@@ -39,6 +39,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
+     * @throws DomainException Invalid argument format
+     * @throws OutOfBoundsException No country could be found based on argument value
+     *
      * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
      */
     public function name(string $name): array
@@ -49,6 +52,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
+     * @throws DomainException Invalid argument format
+     * @throws OutOfBoundsException No country could be found based on argument value
+     *
      * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
      */
     public function alpha2(string $alpha2): array
@@ -59,6 +65,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
+     * @throws DomainException Invalid argument format
+     * @throws OutOfBoundsException No country could be found based on argument value
+     *
      * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
      */
     public function alpha3(string $alpha3): array
@@ -69,6 +78,9 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
+     * @throws DomainException Invalid argument format
+     * @throws OutOfBoundsException No country could be found based on argument value
+     *
      * @return array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}
      */
     public function numeric(string $numeric): array
