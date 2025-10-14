@@ -19,6 +19,7 @@ final class Guards
      * Assert that input is not an empty string.
      *
      * @phpstan-param mixed $name
+     *
      * @phpstan-assert string $name
      *
      * @throws DomainException if input is an empty string
@@ -38,6 +39,7 @@ final class Guards
      * Assert that input looks like an alpha2 key.
      *
      * @phpstan-param mixed $alpha2
+     *
      * @phpstan-assert string $alpha2
      *
      * @throws DomainException if input does not look like an alpha2 key
@@ -57,6 +59,7 @@ final class Guards
      * Assert that input looks like an alpha3 key.
      *
      * @phpstan-param mixed $alpha3
+     *
      * @phpstan-assert string $alpha3
      *
      * @throws DomainException if input does not look like an alpha3 key
@@ -76,6 +79,7 @@ final class Guards
      * Assert that input looks like a numeric key.
      *
      * @phpstan-param mixed $numeric
+     *
      * @phpstan-assert string $numeric
      *
      * @throws DomainException if input does not look like a numeric key
