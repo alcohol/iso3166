@@ -29,14 +29,14 @@ class ISO3166DataValidatorTest extends TestCase
      *
      * @dataProvider requiredKeysProvider
      *
-     * @param array<array<string, string|array<string>>> $data
+     * @param array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}> $data
      *
      * @phpstan-param class-string<\Throwable> $expectedException
      */
     public function testDataEntryHasRequiredKeys(
         array $data,
-        string $expectedException = null,
-        string $exceptionPattern = null
+        ?string $expectedException = null,
+        ?string $exceptionPattern = null
     ): void {
         if (null !== $expectedException && null !== $exceptionPattern) {
             $this->expectException($expectedException);
