@@ -1,21 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#1 \\$alpha2 of static method League\\\\ISO3166\\\\Guards\\:\\:guardAgainstInvalidAlpha2\\(\\) expects string, mixed given\\.$#"
-			count: 1
-			path: src/ISO3166DataValidator.php
-
-		-
-			message: "#^Parameter \\#1 \\$alpha3 of static method League\\\\ISO3166\\\\Guards\\:\\:guardAgainstInvalidAlpha3\\(\\) expects string, mixed given\\.$#"
-			count: 1
-			path: src/ISO3166DataValidator.php
-
-		-
-			message: "#^Parameter \\#1 \\$numeric of static method League\\\\ISO3166\\\\Guards\\:\\:guardAgainstInvalidNumeric\\(\\) expects string, mixed given\\.$#"
-			count: 1
-			path: src/ISO3166DataValidator.php
-
-		-
 			message: "#^Parameter \\#1 \\$countries of class League\\\\ISO3166\\\\ISO3166 constructor expects array\\<array\\{name\\: string, alpha2\\: string, alpha3\\: string, numeric\\: numeric\\-string, currency\\: array\\<string\\>\\}\\>, array\\<array\\<string, mixed\\>\\> given\\.$#"
 			count: 1
 			path: tests/ISO3166Test.php
