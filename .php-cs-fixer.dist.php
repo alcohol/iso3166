@@ -1,5 +1,9 @@
 <?php
 
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
+
 $header = <<<EOF
 (c) Rob Bast <rob.bast@gmail.com>
 
@@ -7,11 +11,8 @@ For the full copyright and license information, please view
 the LICENSE file that was distributed with this source code.
 EOF;
 
-$finder = PhpCsFixer\Finder::create()
-    ->in('src', 'tests')
-;
-$config = new PhpCsFixer\Config('ISO3166', 'ISO3166 style guide');
-
+$finder = Finder::create()->in('src', 'tests');
+$config = new Config('ISO3166', 'ISO3166 style guide');
 $config
     ->setRules([
         // default
@@ -34,6 +35,9 @@ $config
     ])
     ->setFinder($finder)
     ->setRiskyAllowed(true)
+    ->setUnsupportedPhpVersionAllowed(true)
+    ->setFinder($finder)
+    ->setParallelConfig(ParallelConfigFactory::detect())
 ;
 
 return $config;
