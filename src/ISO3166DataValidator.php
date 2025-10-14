@@ -36,28 +36,19 @@ final class ISO3166DataValidator
      */
     private function assertEntryHasRequiredKeys(array $entry): void
     {
-        if (!isset($entry[ISO3166::KEY_NAME])) {
-            throw new DomainException('Each data entry must have a name key.');
+        foreach (ISO3166::getKeys() as $key) {
+            if (false === isset($entry[$key])) {
+                throw new DomainException("Each data entry must have a $key key.");
+            }
+
+            if (false === is_string($entry[$key])) {
+                throw new DomainException("Property $key of all data entries must be a string.");
+            }
         }
 
         Guards::guardAgainstInvalidName($entry[ISO3166::KEY_NAME]);
-
-        if (!isset($entry[ISO3166::KEY_ALPHA2])) {
-            throw new DomainException('Each data entry must have a alpha2 key.');
-        }
-
         Guards::guardAgainstInvalidAlpha2($entry[ISO3166::KEY_ALPHA2]);
-
-        if (!isset($entry[ISO3166::KEY_ALPHA3])) {
-            throw new DomainException('Each data entry must have a alpha3 key.');
-        }
-
         Guards::guardAgainstInvalidAlpha3($entry[ISO3166::KEY_ALPHA3]);
-
-        if (!isset($entry[ISO3166::KEY_NUMERIC])) {
-            throw new DomainException('Each data entry must have a numeric key.');
-        }
-
         Guards::guardAgainstInvalidNumeric($entry[ISO3166::KEY_NUMERIC]);
     }
 }

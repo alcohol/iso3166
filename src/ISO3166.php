@@ -26,7 +26,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /** @var string */
     public const KEY_NAME = 'name';
     /** @var string[] */
-    private array $keys = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC, self::KEY_NAME];
+    private const KEYS = [self::KEY_ALPHA2, self::KEY_ALPHA3, self::KEY_NUMERIC, self::KEY_NAME];
 
     /**
      * @param array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}> $countries replace default dataset with given array
@@ -36,6 +36,14 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
         if ([] !== $countries) {
             $this->countries = $countries;
         }
+    }
+
+    /**
+     * @return string[]
+     */
+    public static function getKeys(): array
+    {
+        return self::KEYS;
     }
 
     /**
@@ -115,8 +123,8 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
      */
     public function iterator(string $key = self::KEY_ALPHA2): \Generator
     {
-        if (!in_array($key, $this->keys, true)) {
-            throw new DomainException(sprintf('Invalid value for $key, got "%s", expected one of: %s', $key, implode(', ', $this->keys)));
+        if (!in_array($key, self::getKeys(), true)) {
+            throw new DomainException(sprintf('Invalid value for $key, got "%s", expected one of: %s', $key, implode(', ', self::getKeys())));
         }
 
         foreach ($this->countries as $country) {
