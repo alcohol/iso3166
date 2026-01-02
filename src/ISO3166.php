@@ -275,7 +275,6 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'currency' => [
                 'ARS',
                 'AUD',
-                'BGN',
                 'BRL',
                 'BYR',
                 'CLP',
@@ -532,7 +531,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'BGR',
             'numeric' => '100',
             'currency' => [
-                'BGN',
+                'EUR',
             ],
         ],
         [
