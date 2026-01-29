@@ -17,20 +17,22 @@ use PHPUnit\Framework\TestCase;
 
 class ISO3166Test extends TestCase
 {
-    /** @var array<string, string> */
-    public $foo = [
+    /** @var array{name: 'FOO', alpha2: 'FO', alpha3: 'FOO', numeric: '001', currency: string[]} */
+    public array $foo = [
         ISO3166::KEY_ALPHA2 => 'FO',
         ISO3166::KEY_ALPHA3 => 'FOO',
         ISO3166::KEY_NUMERIC => '001',
         ISO3166::KEY_NAME => 'FOO',
+        'currency' => ['EUR'],
     ];
 
-    /** @var array<string, string> */
-    public $bar = [
+    /** @var array{name: 'BAR', alpha2: 'BA', alpha3: 'BAR', numeric: '002', currency: string[]} */
+    public array $bar = [
         ISO3166::KEY_ALPHA2 => 'BA',
         ISO3166::KEY_ALPHA3 => 'BAR',
         ISO3166::KEY_NUMERIC => '002',
         ISO3166::KEY_NAME => 'BAR',
+        'currency' => ['EUR'],
     ];
 
     /** @var ISO3166 */
@@ -51,8 +53,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByAlpha2Invalid(string $alpha2, string $expectedException, string $exceptionPattern): void
     {
-        static::expectException($expectedException);
-        static::expectExceptionMessageMatches($exceptionPattern);
+        $this->expectException($expectedException);
+        $this->expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->alpha2($alpha2);
     }
@@ -90,8 +92,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByAlpha3Invalid(string $alpha3, string $expectedException, string $exceptionPattern): void
     {
-        static::expectException($expectedException);
-        static::expectExceptionMessageMatches($exceptionPattern);
+        $this->expectException($expectedException);
+        $this->expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->alpha3($alpha3);
     }
@@ -129,8 +131,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByNumericInvalid(string $numeric, string $expectedException, string $exceptionPattern): void
     {
-        static::expectException($expectedException);
-        static::expectExceptionMessageMatches($exceptionPattern);
+        $this->expectException($expectedException);
+        $this->expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->numeric($numeric);
     }
@@ -171,8 +173,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByNameInvalid(string $name, string $expectedException, string $exceptionPattern): void
     {
-        static::expectException($expectedException);
-        static::expectExceptionMessageMatches($exceptionPattern);
+        $this->expectException($expectedException);
+        $this->expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->name($name);
     }
@@ -185,7 +187,8 @@ class ISO3166Test extends TestCase
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);
 
         return [
-            ['000', OutOfBoundsException::class, $noMatch],
+            ['', DomainException::class, '{^Expected non-empty-string, got empty-string$}'],
+            ['Dummy', OutOfBoundsException::class, $noMatch],
         ];
     }
 
@@ -207,8 +210,8 @@ class ISO3166Test extends TestCase
      */
     public function testGetByExactNameInvalid(string $name, string $expectedException, string $exceptionPattern): void
     {
-        static::expectException($expectedException);
-        static::expectExceptionMessageMatches($exceptionPattern);
+        $this->expectException($expectedException);
+        $this->expectExceptionMessageMatches($exceptionPattern);
 
         $this->iso3166->exactName($name);
     }
@@ -221,6 +224,7 @@ class ISO3166Test extends TestCase
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);
 
         return [
+            ['', DomainException::class, '{^Expected non-empty-string, got empty-string$}'],
             ['FO', OutOfBoundsException::class, $noMatch],
             ['BA', OutOfBoundsException::class, $noMatch],
         ];
@@ -262,6 +266,7 @@ class ISO3166Test extends TestCase
     public function testListBy(): void
     {
         try {
+            /** @phpstan-ignore argument.type */
             foreach ($this->iso3166->iterator('foo') as $key => $value) {
                 static::assertTrue(true);
             }

@@ -16,9 +16,9 @@ use League\ISO3166\Exception\DomainException;
 final class ISO3166DataValidator
 {
     /**
-     * @param array<array<string, mixed>> $data
+     * @param array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: array<string>}> $data
      *
-     * @return array<array<string, mixed>>
+     * @return array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: array<string>}>
      */
     public function validate(array $data): array
     {
@@ -32,24 +32,30 @@ final class ISO3166DataValidator
     /**
      * @param array<string, mixed> $entry
      *
-     * @throws \League\ISO3166\Exception\DomainException if given data entry does not have all the required keys
+     * @throws DomainException if given data entry does not have all the required keys
      */
     private function assertEntryHasRequiredKeys(array $entry): void
     {
+        if (!isset($entry[ISO3166::KEY_NAME])) {
+            throw new DomainException('Each data entry must have a name key.');
+        }
+
+        Guards::guardAgainstInvalidName($entry[ISO3166::KEY_NAME]);
+
         if (!isset($entry[ISO3166::KEY_ALPHA2])) {
-            throw new DomainException('Each data entry must have a valid alpha2 key.');
+            throw new DomainException('Each data entry must have a alpha2 key.');
         }
 
         Guards::guardAgainstInvalidAlpha2($entry[ISO3166::KEY_ALPHA2]);
 
         if (!isset($entry[ISO3166::KEY_ALPHA3])) {
-            throw new DomainException('Each data entry must have a valid alpha3 key.');
+            throw new DomainException('Each data entry must have a alpha3 key.');
         }
 
         Guards::guardAgainstInvalidAlpha3($entry[ISO3166::KEY_ALPHA3]);
 
         if (!isset($entry[ISO3166::KEY_NUMERIC])) {
-            throw new DomainException('Each data entry must have a valid numeric key.');
+            throw new DomainException('Each data entry must have a numeric key.');
         }
 
         Guards::guardAgainstInvalidNumeric($entry[ISO3166::KEY_NUMERIC]);

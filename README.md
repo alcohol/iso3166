@@ -2,6 +2,12 @@
 
 A PHP library providing ISO 3166-1 data.
 
+> [!NOTE]
+> I do my best to keep the data up to date, but if you find any errors or omissions, please [open an issue](https://github.com/alcohol/iso3166/issues/new).
+
+> [!IMPORTANT]
+> This package is limited to [`ISO 3166-1`](https://en.wikipedia.org/wiki/ISO_3166-1) data, a subset of [`ISO 3166`](https://en.wikipedia.org/wiki/ISO_3166).
+
 [![Code Coverage](https://codecov.io/gh/thephpleague/iso3166/branch/master/graph/badge.svg)](https://codecov.io/gh/thephpleague/iso3166)
 ![License](https://img.shields.io/github/license/thephpleague/iso3166.svg)
 

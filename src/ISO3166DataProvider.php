@@ -18,7 +18,7 @@ interface ISO3166DataProvider
      *
      * @api
      *
-     * @throws \League\ISO3166\Exception\OutOfBoundsException if input does not exist in dataset
+     * @throws Exception\OutOfBoundsException if input does not exist in dataset
      *
      * @return array<string, mixed>
      */
@@ -29,8 +29,8 @@ interface ISO3166DataProvider
      *
      * @api
      *
-     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha2 key
-     * @throws \League\ISO3166\Exception\OutOfBoundsException if input does not exist in dataset
+     * @throws Exception\DomainException if input does not look like an alpha2 key
+     * @throws Exception\OutOfBoundsException if input does not exist in dataset
      *
      * @return array<string, mixed>
      */
@@ -41,8 +41,8 @@ interface ISO3166DataProvider
      *
      * @api
      *
-     * @throws \League\ISO3166\Exception\DomainException if input does not look like an alpha3 key
-     * @throws \League\ISO3166\Exception\OutOfBoundsException if input does not exist in dataset
+     * @throws Exception\DomainException if input does not look like an alpha3 key
+     * @throws Exception\OutOfBoundsException if input does not exist in dataset
      *
      * @return array<string, mixed>
      */
@@ -53,8 +53,8 @@ interface ISO3166DataProvider
      *
      * @api
      *
-     * @throws \League\ISO3166\Exception\DomainException if input does not look like a numeric key
-     * @throws \League\ISO3166\Exception\OutOfBoundsException if input does not exist in dataset
+     * @throws Exception\DomainException if input does not look like a numeric key
+     * @throws Exception\OutOfBoundsException if input does not exist in dataset
      *
      * @return array<string, mixed>
      */
