@@ -52,7 +52,7 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
       - run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction # yamllint disable-line
       - run: vendor/bin/phpunit
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
 
   yamllint:
     runs-on: ubuntu-latest
