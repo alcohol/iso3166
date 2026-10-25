@@ -739,7 +739,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'CUW',
             'numeric' => '531',
             'currency' => [
-                'ANG',
+                'XCG',
             ],
         ],
         [
@@ -1506,7 +1506,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'MRT',
             'numeric' => '478',
             'currency' => [
-                'MRO',
+                'MRU',
             ],
         ],
         [
@@ -1985,7 +1985,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'STP',
             'numeric' => '678',
             'currency' => [
-                'STD',
+                'STN',
             ],
         ],
         [
@@ -2030,7 +2030,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'SLE',
             'numeric' => '694',
             'currency' => [
-                'SLL',
+                'SLE',
             ],
         ],
         [
@@ -2048,7 +2048,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'SXM',
             'numeric' => '534',
             'currency' => [
-                'ANG',
+                'XCG',
             ],
         ],
         [
@@ -2399,7 +2399,8 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'VEN',
             'numeric' => '862',
             'currency' => [
-                'VEF',
+                'VED',
+                'VES',
             ],
         ],
         [
