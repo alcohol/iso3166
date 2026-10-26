@@ -5,12 +5,25 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
-## [4.5.0]
+* See [unreleased].
 
-## [4.4.0]
+## [4.5.1] - 2026-10-26
 
-## [4.3.3]
+* Changed: replaced withdrawn ISO 4217 currency codes for Curaçao, Mauritania, Sao Tome and Principe, Sierra Leone, Sint Maarten and Venezuela ([#129])
 
+## [4.5.0] - 2026-08-27
+
+* Changed: renamed Nauru to Naoero
+
+## [4.4.0] - 2026-01-02
+
+* Changed: Bulgaria adopted the EUR on 2026-01-01 ([#121])
+* Changed: added `@throws` PHPDoc tags ([#119])
+
+## [4.3.3] - 2025-06-05
+
+* Updated: added USA to aliases
+* Fixed: Turkey spelling ([#116])
 
 ## [4.3.2] - 2024-10-10
 
@@ -92,7 +105,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-[unreleased]: https://github.com/thephpleague/iso3166/compare/4.5.0...HEAD
+[unreleased]: https://github.com/thephpleague/iso3166/compare/4.5.1...HEAD
+[4.5.1]: https://github.com/thephpleague/iso3166/compare/4.5.0...4.5.1
 [4.5.0]: https://github.com/thephpleague/iso3166/compare/4.4.0...4.5.0
 [4.4.0]: https://github.com/thephpleague/iso3166/compare/4.3.3...4.4.0
 [4.3.3]: https://github.com/thephpleague/iso3166/compare/4.3.2...4.3.3
@@ -114,6 +128,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
 
+[#129]: https://github.com/thephpleague/iso3166/pull/129
+[#121]: https://github.com/thephpleague/iso3166/pull/121
+[#119]: https://github.com/thephpleague/iso3166/pull/119
+[#116]: https://github.com/thephpleague/iso3166/issues/116
 [#101]: https://github.com/thephpleague/iso3166/issues/101
 [#96]: https://github.com/thephpleague/iso3166/pull/96
 [#95]: https://github.com/thephpleague/iso3166/pull/95
