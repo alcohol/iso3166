@@ -13,6 +13,8 @@ namespace League\ISO3166;
 
 use League\ISO3166\Exception\DomainException;
 use League\ISO3166\Exception\OutOfBoundsException;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 class ISO3166Test extends TestCase
@@ -45,12 +47,12 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @testdox Calling getByAlpha2 with bad input throws various exceptions.
-     *
      * @dataProvider invalidAlpha2Provider
      *
      * @phpstan-param class-string<\Throwable> $expectedException
      */
+    #[TestDox('Calling getByAlpha2 with bad input throws various exceptions.')]
+    #[DataProvider('invalidAlpha2Provider')]
     public function testGetByAlpha2Invalid(string $alpha2, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
@@ -62,7 +64,7 @@ class ISO3166Test extends TestCase
     /**
      * @return array<array<string|class-string<\Throwable>|string>>
      */
-    public function invalidAlpha2Provider(): array
+    public static function invalidAlpha2Provider(): array
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_ALPHA2);
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_ALPHA2);
@@ -74,9 +76,7 @@ class ISO3166Test extends TestCase
         ];
     }
 
-    /**
-     * @testdox Calling getByAlpha2 with a known alpha2 returns matching data array.
-     */
+    #[TestDox('Calling getByAlpha2 with a known alpha2 returns matching data array.')]
     public function testGetByAlpha2(): void
     {
         static::assertEquals($this->foo, $this->iso3166->alpha2($this->foo[ISO3166::KEY_ALPHA2]));
@@ -84,12 +84,12 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @testdox Calling getByAlpha3 with bad input throws various exceptions.
-     *
      * @dataProvider invalidAlpha3Provider
      *
      * @phpstan-param class-string<\Throwable> $expectedException
      */
+    #[TestDox('Calling getByAlpha3 with bad input throws various exceptions.')]
+    #[DataProvider('invalidAlpha3Provider')]
     public function testGetByAlpha3Invalid(string $alpha3, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
@@ -101,7 +101,7 @@ class ISO3166Test extends TestCase
     /**
      * @return array<array<string|class-string<\Throwable>|string>>
      */
-    public function invalidAlpha3Provider(): array
+    public static function invalidAlpha3Provider(): array
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_ALPHA3);
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_ALPHA3);
@@ -113,9 +113,7 @@ class ISO3166Test extends TestCase
         ];
     }
 
-    /**
-     * @testdox Calling getByAlpha3 with a known alpha3 returns matching data array.
-     */
+    #[TestDox('Calling getByAlpha3 with a known alpha3 returns matching data array.')]
     public function testGetByAlpha3(): void
     {
         static::assertEquals($this->foo, $this->iso3166->alpha3($this->foo[ISO3166::KEY_ALPHA3]));
@@ -123,12 +121,12 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @testdox Calling getByNumeric with bad input throws various exceptions.
-     *
      * @dataProvider invalidNumericProvider
      *
      * @param class-string<\Throwable> $expectedException
      */
+    #[TestDox('Calling getByNumeric with bad input throws various exceptions.')]
+    #[DataProvider('invalidNumericProvider')]
     public function testGetByNumericInvalid(string $numeric, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
@@ -140,7 +138,7 @@ class ISO3166Test extends TestCase
     /**
      * @phpstan-return array<array<string|class-string<\Throwable>|string>>
      */
-    public function invalidNumericProvider(): array
+    public static function invalidNumericProvider(): array
     {
         $invalidNumeric = sprintf('{^Not a valid %s key: .*$}', ISO3166::KEY_NUMERIC);
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NUMERIC);
@@ -155,9 +153,7 @@ class ISO3166Test extends TestCase
         ];
     }
 
-    /**
-     * @testdox Calling getByNumeric with a known numeric returns matching data array.
-     */
+    #[TestDox('Calling getByNumeric with a known numeric returns matching data array.')]
     public function testGetByNumeric(): void
     {
         static::assertEquals($this->foo, $this->iso3166->numeric($this->foo[ISO3166::KEY_NUMERIC]));
@@ -165,12 +161,12 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @testdox Calling getByName with bad input throws various exceptions.
-     *
      * @dataProvider invalidNameProvider
      *
      * @param class-string<\Throwable> $expectedException
      */
+    #[TestDox('Calling getByName with bad input throws various exceptions.')]
+    #[DataProvider('invalidNameProvider')]
     public function testGetByNameInvalid(string $name, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
@@ -182,7 +178,7 @@ class ISO3166Test extends TestCase
     /**
      * @phpstan-return array<array<string|class-string<\Throwable>|string>>
      */
-    public function invalidNameProvider(): array
+    public static function invalidNameProvider(): array
     {
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);
 
@@ -192,9 +188,7 @@ class ISO3166Test extends TestCase
         ];
     }
 
-    /**
-     * @testdox Calling getByName with a known name returns matching data array.
-     */
+    #[TestDox('Calling getByName with a known name returns matching data array.')]
     public function testGetByName(): void
     {
         static::assertEquals($this->foo, $this->iso3166->name($this->foo[ISO3166::KEY_NAME]));
@@ -202,12 +196,12 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @testdox Calling getByExactName with bad input throws various exceptions.
-     *
      * @dataProvider invalidExactNameProvider
      *
      * @param class-string<\Throwable> $expectedException
      */
+    #[TestDox('Calling getByExactName with bad input throws various exceptions.')]
+    #[DataProvider('invalidExactNameProvider')]
     public function testGetByExactNameInvalid(string $name, string $expectedException, string $exceptionPattern): void
     {
         $this->expectException($expectedException);
@@ -219,7 +213,7 @@ class ISO3166Test extends TestCase
     /**
      * @phpstan-return array<array<string|class-string<\Throwable>|string>>
      */
-    public function invalidExactNameProvider(): array
+    public static function invalidExactNameProvider(): array
     {
         $noMatch = sprintf('{^No "%s" key found matching: .*$}', ISO3166::KEY_NAME);
 
@@ -230,26 +224,20 @@ class ISO3166Test extends TestCase
         ];
     }
 
-    /**
-     * @testdox Calling getByExactName with a known name returns matching data array.
-     */
+    #[TestDox('Calling getByExactName with a known name returns matching data array.')]
     public function testGetByExactName(): void
     {
         static::assertEquals($this->foo, $this->iso3166->exactName($this->foo[ISO3166::KEY_NAME]));
         static::assertEquals($this->bar, $this->iso3166->exactName($this->bar[ISO3166::KEY_NAME]));
     }
 
-    /**
-     * @testdox Calling getAll returns an array with all elements.
-     */
+    #[TestDox('Calling getAll returns an array with all elements.')]
     public function testGetAll(): void
     {
-        static::assertIsArray($this->iso3166->all());
+        static::assertSame([$this->foo, $this->bar], $this->iso3166->all());
     }
 
-    /**
-     * @testdox Iterating over $instance should behave as expected.
-     */
+    #[TestDox('Iterating over $instance should behave as expected.')]
     public function testIterator(): void
     {
         $i = 0;
@@ -260,23 +248,19 @@ class ISO3166Test extends TestCase
         static::assertEquals(\count($this->iso3166->all()), $i, 'Compare iterated count to count(getAll()).');
     }
 
-    /**
-     * @testdox Iterating over $instance->listBy() should behave as expected.
-     */
+    #[TestDox('Iterating over $instance->listBy() with an invalid key throws an exception.')]
+    public function testListByInvalidKey(): void
+    {
+        $this->expectException(DomainException::class);
+        $this->expectExceptionMessageMatches('{Invalid value for \\$key, got "\\w++", expected one of:(?: \\w++,?)+}');
+
+        /** @phpstan-ignore argument.type */
+        iterator_to_array($this->iso3166->iterator('foo'));
+    }
+
+    #[TestDox('Iterating over $instance->listBy() should behave as expected.')]
     public function testListBy(): void
     {
-        try {
-            /** @phpstan-ignore argument.type */
-            foreach ($this->iso3166->iterator('foo') as $key => $value) {
-                static::assertTrue(true);
-            }
-        } catch (\Exception $e) {
-            static::assertInstanceOf(DomainException::class, $e);
-            static::assertMatchesRegularExpression('{Invalid value for \$key, got "\w++", expected one of:(?: \w++,?)+}', $e->getMessage());
-        } finally {
-            static::assertTrue(isset($e));
-        }
-
         $i = 0;
         foreach ($this->iso3166->iterator(ISO3166::KEY_ALPHA3) as $key => $value) {
             ++$i;
@@ -285,9 +269,7 @@ class ISO3166Test extends TestCase
         static::assertEquals(\count($this->iso3166), $i, 'Compare iterated count to count($iso3166).');
     }
 
-    /**
-     * @testdox Make sure string compare is unicode.
-     */
+    #[TestDox('Make sure string compare is unicode.')]
     public function testCountryNameCompare(): void
     {
         $country = (new ISO3166())->name('CÔTE D\'IVOIRE');

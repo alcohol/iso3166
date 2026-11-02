@@ -16,7 +16,7 @@ $config = new Config('ISO3166', 'ISO3166 style guide');
 $config
     ->setRules([
         // default
-        '@PSR2' => true,
+        '@PER-CS' => true,
         '@Symfony' => true,
         // additionally
         'array_syntax' => ['syntax' => 'short'],
@@ -33,7 +33,6 @@ $config
         'simplified_null_return' => false,
         'ternary_to_null_coalescing' => true,
     ])
-    ->setFinder($finder)
     ->setRiskyAllowed(true)
     ->setUnsupportedPhpVersionAllowed(true)
     ->setFinder($finder)

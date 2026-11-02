@@ -5,7 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
-* See [unreleased].
+* Added: `League\ISO3166\Exception` marker interface, implemented by every exception thrown by this library
+* Deprecated: `League\ISO3166\Exception\ISO3166Exception`, catch `League\ISO3166\Exception` instead (it will be removed in 5.0)
+* Changed: allow PHPUnit 10, 11 and 12 next to 9 for development, tests use attributes and static data providers
+* Changed: upgraded PHPStan to 2.x, tightened `Guards` assertions (`non-empty-string` / `numeric-string`) and iterator generics
+* Changed: php-cs-fixer uses `@PER-CS` instead of `@PSR2`
+* Changed: CI only runs on pushes to `main` and on pull requests, with read-only permissions, concurrency, `composer validate` and a single coverage upload; dropped the `prefer-lowest` jobs (there are no runtime dependencies, so they only downgraded dev tools)
+* Fixed: branch alias now points at `dev-main`
+* Fixed: README badges point at `alcohol/iso3166`
 
 ## [4.5.1] - 2026-10-26
 

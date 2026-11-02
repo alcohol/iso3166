@@ -14,7 +14,7 @@ namespace League\ISO3166;
 use League\ISO3166\Exception\DomainException;
 use League\ISO3166\Exception\OutOfBoundsException;
 
-/** @implements \IteratorAggregate<string, array> */
+/** @implements \IteratorAggregate<int, array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}> */
 final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvider
 {
     /** @var string */
@@ -150,7 +150,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     }
 
     /**
-     * @return \Generator<array<string, string|array<string>>>
+     * @return \Generator<int, array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>
      *
      * @see \IteratorAggregate
      *
@@ -192,7 +192,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
     /**
      * Default dataset.
      *
-     * @var array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>>
+     * @var array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}>
      */
     private array $countries = [
         [

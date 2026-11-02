@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace League\ISO3166\Exception;
 
+/** @phpstan-ignore class.implementsDeprecatedInterface (kept for BC until 5.0) */
 final class DomainException extends \DomainException implements ISO3166Exception
 {
 }
