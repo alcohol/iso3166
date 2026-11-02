@@ -16,3 +16,12 @@ updates:
       interval: "weekly"
     assignees:
       - "alcohol"
+
+  # isolated tooling
+  - package-ecosystem: "composer"
+    directories:
+      - "/tools/php-cs-fixer"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - "alcohol"
