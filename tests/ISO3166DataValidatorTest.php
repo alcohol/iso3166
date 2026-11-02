@@ -27,8 +27,6 @@ class ISO3166DataValidatorTest extends TestCase
     }
 
     /**
-     * @testdox Assert that each entry has all the required lookup keys:
-     *
      * @dataProvider requiredKeysProvider
      *
      * @param array<array{name: string, alpha2: string, alpha3: string, numeric: numeric-string, currency: string[]}> $data

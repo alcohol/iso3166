@@ -48,11 +48,10 @@ jobs:
       fail-fast: false
       matrix:
         php: ['8.5', '8.4', '8.3', '8.2', '8.1', '8.0', '7.4']
-        stability: [prefer-lowest, prefer-stable]
-    name: PHPUnit on PHP ${{ matrix.php }}@${{ matrix.stability }}
+    name: PHPUnit on PHP ${{ matrix.php }}
     env:
       # collect and upload coverage from a single matrix job only
-      COVERAGE: ${{ matrix.php == '8.4' && matrix.stability == 'prefer-stable' }}
+      COVERAGE: ${{ matrix.php == '8.4' }}
     steps:
       - uses: actions/checkout@v7
       - uses: shivammathur/setup-php@v2
@@ -63,7 +62,7 @@ jobs:
       - run: |
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
-      - run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+      - run: composer update --prefer-dist --no-interaction
       - if: env.COVERAGE != 'true'
         run: vendor/bin/phpunit
       - if: env.COVERAGE == 'true'

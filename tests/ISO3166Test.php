@@ -47,8 +47,6 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @testdox Calling getByAlpha2 with bad input throws various exceptions.
-     *
      * @dataProvider invalidAlpha2Provider
      *
      * @phpstan-param class-string<\Throwable> $expectedException
@@ -78,9 +76,6 @@ class ISO3166Test extends TestCase
         ];
     }
 
-    /**
-     * @testdox Calling getByAlpha2 with a known alpha2 returns matching data array.
-     */
     #[TestDox('Calling getByAlpha2 with a known alpha2 returns matching data array.')]
     public function testGetByAlpha2(): void
     {
@@ -89,8 +84,6 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @testdox Calling getByAlpha3 with bad input throws various exceptions.
-     *
      * @dataProvider invalidAlpha3Provider
      *
      * @phpstan-param class-string<\Throwable> $expectedException
@@ -120,9 +113,6 @@ class ISO3166Test extends TestCase
         ];
     }
 
-    /**
-     * @testdox Calling getByAlpha3 with a known alpha3 returns matching data array.
-     */
     #[TestDox('Calling getByAlpha3 with a known alpha3 returns matching data array.')]
     public function testGetByAlpha3(): void
     {
@@ -131,8 +121,6 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @testdox Calling getByNumeric with bad input throws various exceptions.
-     *
      * @dataProvider invalidNumericProvider
      *
      * @param class-string<\Throwable> $expectedException
@@ -165,9 +153,6 @@ class ISO3166Test extends TestCase
         ];
     }
 
-    /**
-     * @testdox Calling getByNumeric with a known numeric returns matching data array.
-     */
     #[TestDox('Calling getByNumeric with a known numeric returns matching data array.')]
     public function testGetByNumeric(): void
     {
@@ -176,8 +161,6 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @testdox Calling getByName with bad input throws various exceptions.
-     *
      * @dataProvider invalidNameProvider
      *
      * @param class-string<\Throwable> $expectedException
@@ -205,9 +188,6 @@ class ISO3166Test extends TestCase
         ];
     }
 
-    /**
-     * @testdox Calling getByName with a known name returns matching data array.
-     */
     #[TestDox('Calling getByName with a known name returns matching data array.')]
     public function testGetByName(): void
     {
@@ -216,8 +196,6 @@ class ISO3166Test extends TestCase
     }
 
     /**
-     * @testdox Calling getByExactName with bad input throws various exceptions.
-     *
      * @dataProvider invalidExactNameProvider
      *
      * @param class-string<\Throwable> $expectedException
@@ -246,9 +224,6 @@ class ISO3166Test extends TestCase
         ];
     }
 
-    /**
-     * @testdox Calling getByExactName with a known name returns matching data array.
-     */
     #[TestDox('Calling getByExactName with a known name returns matching data array.')]
     public function testGetByExactName(): void
     {
@@ -256,18 +231,12 @@ class ISO3166Test extends TestCase
         static::assertEquals($this->bar, $this->iso3166->exactName($this->bar[ISO3166::KEY_NAME]));
     }
 
-    /**
-     * @testdox Calling getAll returns an array with all elements.
-     */
     #[TestDox('Calling getAll returns an array with all elements.')]
     public function testGetAll(): void
     {
         static::assertSame([$this->foo, $this->bar], $this->iso3166->all());
     }
 
-    /**
-     * @testdox Iterating over $instance should behave as expected.
-     */
     #[TestDox('Iterating over $instance should behave as expected.')]
     public function testIterator(): void
     {
@@ -279,9 +248,6 @@ class ISO3166Test extends TestCase
         static::assertEquals(\count($this->iso3166->all()), $i, 'Compare iterated count to count(getAll()).');
     }
 
-    /**
-     * @testdox Iterating over $instance->listBy() with an invalid key throws an exception.
-     */
     #[TestDox('Iterating over $instance->listBy() with an invalid key throws an exception.')]
     public function testListByInvalidKey(): void
     {
@@ -292,9 +258,6 @@ class ISO3166Test extends TestCase
         iterator_to_array($this->iso3166->iterator('foo'));
     }
 
-    /**
-     * @testdox Iterating over $instance->listBy() should behave as expected.
-     */
     #[TestDox('Iterating over $instance->listBy() should behave as expected.')]
     public function testListBy(): void
     {
@@ -306,9 +269,6 @@ class ISO3166Test extends TestCase
         static::assertEquals(\count($this->iso3166), $i, 'Compare iterated count to count($iso3166).');
     }
 
-    /**
-     * @testdox Make sure string compare is unicode.
-     */
     #[TestDox('Make sure string compare is unicode.')]
     public function testCountryNameCompare(): void
     {
