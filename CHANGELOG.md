@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
-* See [unreleased].
+* Fixed: `alpha2()`, `alpha3()` and `numeric()` now reject input with a trailing newline (e.g. `"NL\n"`) with a `DomainException` instead of reporting it as not found
 
 ## [4.7.0] - 2026-11-02
 
