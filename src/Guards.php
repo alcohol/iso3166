@@ -50,7 +50,7 @@ final class Guards
             throw new DomainException(sprintf('Expected string, got %s', gettype($alpha2)));
         }
 
-        if (1 !== preg_match('/^[a-zA-Z]{2}$/', $alpha2)) {
+        if (1 !== preg_match('/^[a-zA-Z]{2}\z/', $alpha2)) {
             throw new DomainException(sprintf('Not a valid alpha2 key: %s', $alpha2));
         }
     }
@@ -70,7 +70,7 @@ final class Guards
             throw new DomainException(sprintf('Expected string, got %s', gettype($alpha3)));
         }
 
-        if (1 !== preg_match('/^[a-zA-Z]{3}$/', $alpha3)) {
+        if (1 !== preg_match('/^[a-zA-Z]{3}\z/', $alpha3)) {
             throw new DomainException(sprintf('Not a valid alpha3 key: %s', $alpha3));
         }
     }
@@ -90,7 +90,7 @@ final class Guards
             throw new DomainException(sprintf('Expected string, got %s', gettype($numeric)));
         }
 
-        if (1 !== preg_match('/^\d{3}$/', $numeric)) {
+        if (1 !== preg_match('/^\d{3}\z/', $numeric)) {
             throw new DomainException(sprintf('Not a valid numeric key: %s', $numeric));
         }
     }

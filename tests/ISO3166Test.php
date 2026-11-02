@@ -72,6 +72,7 @@ class ISO3166Test extends TestCase
         return [
             ['A', DomainException::class, $invalidNumeric],
             ['ABC', DomainException::class, $invalidNumeric],
+            ["FO\n", DomainException::class, $invalidNumeric],
             ['AB', OutOfBoundsException::class, $noMatch],
         ];
     }
@@ -109,6 +110,7 @@ class ISO3166Test extends TestCase
         return [
             ['AB', DomainException::class, $invalidNumeric],
             ['ABCD', DomainException::class, $invalidNumeric],
+            ["FOO\n", DomainException::class, $invalidNumeric],
             ['ABC', OutOfBoundsException::class, $noMatch],
         ];
     }
@@ -149,6 +151,7 @@ class ISO3166Test extends TestCase
             ['AB', DomainException::class, $invalidNumeric],
             ['ABC', DomainException::class, $invalidNumeric],
             ['ABCD', DomainException::class, $invalidNumeric],
+            ["001\n", DomainException::class, $invalidNumeric],
             ['000', OutOfBoundsException::class, $noMatch],
         ];
     }
