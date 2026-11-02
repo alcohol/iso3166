@@ -31,4 +31,9 @@ class ISO3166WithAliasesTest extends TestCase
         self::assertEquals($this->iso3166->alpha3('USA')['alpha3'], 'USA');
         self::assertEquals($this->iso3166->numeric('840')['numeric'], '840');
     }
+
+    public function testNauruAlias(): void
+    {
+        self::assertSame('NR', $this->iso3166->name('Nauru')['alpha2']);
+    }
 }
