@@ -5,7 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
-* Fixed: `alpha2()`, `alpha3()` and `numeric()` now reject input with a trailing newline (e.g. `"NL\n"`) with a `DomainException` instead of reporting it as not found
+* See [unreleased].
+
+## [4.7.1] - 2026-11-02
+
+* Fixed: `alpha2()`, `alpha3()` and `numeric()` now reject input with a trailing newline (e.g. `"NL\n"`) with a `DomainException` instead of reporting it as not found ([#135])
 
 ## [4.7.0] - 2026-11-02
 
@@ -124,7 +128,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-[unreleased]: https://github.com/alcohol/iso3166/compare/4.7.0...HEAD
+[unreleased]: https://github.com/alcohol/iso3166/compare/4.7.1...HEAD
+[4.7.1]: https://github.com/alcohol/iso3166/compare/4.7.0...4.7.1
 [4.7.0]: https://github.com/alcohol/iso3166/compare/4.6.0...4.7.0
 [4.6.0]: https://github.com/alcohol/iso3166/compare/4.5.1...4.6.0
 [4.5.1]: https://github.com/thephpleague/iso3166/compare/4.5.0...4.5.1
@@ -149,6 +154,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.1]: https://github.com/thephpleague/iso3166/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
 
+[#135]: https://github.com/alcohol/iso3166/pull/135
 [#131]: https://github.com/alcohol/iso3166/pull/131
 [#130]: https://github.com/alcohol/iso3166/issues/130
 [#129]: https://github.com/thephpleague/iso3166/pull/129
