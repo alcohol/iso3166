@@ -8,8 +8,9 @@ A PHP library providing ISO 3166-1 data.
 > [!IMPORTANT]
 > This package is limited to [`ISO 3166-1`](https://en.wikipedia.org/wiki/ISO_3166-1) data, a subset of [`ISO 3166`](https://en.wikipedia.org/wiki/ISO_3166).
 
-[![Code Coverage](https://codecov.io/gh/thephpleague/iso3166/branch/master/graph/badge.svg)](https://codecov.io/gh/thephpleague/iso3166)
-![License](https://img.shields.io/github/license/thephpleague/iso3166.svg)
+[![Continuous Integration](https://github.com/alcohol/iso3166/actions/workflows/ci.yaml/badge.svg)](https://github.com/alcohol/iso3166/actions/workflows/ci.yaml)
+[![Code Coverage](https://codecov.io/gh/alcohol/iso3166/branch/main/graph/badge.svg)](https://codecov.io/gh/alcohol/iso3166)
+![License](https://img.shields.io/github/license/alcohol/iso3166.svg)
 
 ## What is ISO 3166-1
 
@@ -18,7 +19,7 @@ A PHP library providing ISO 3166-1 data.
 > * ISO 3166-1 alpha-3 – three-letter country codes which allow a better visual association between the codes and the country names than the alpha-2 codes.
 > * ISO 3166-1 numeric – three-digit country codes which are identical to those developed and maintained by the United Nations Statistics Division, with the advantage of script (writing system) independence, and hence useful for people or systems using non-Latin scripts.
 >
-> *-- [Wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1)*
+> *-- [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1)*
 
 ## Installing
 
@@ -63,5 +64,5 @@ league/iso3166 is licensed under the MIT license.
 
 ## Source(s)
 
-* [ISO 3166-1](http://en.wikipedia.org/wiki/ISO_3166-1) by [Wikipedia](http://www.wikipedia.org) licensed under [CC BY-SA 3.0 Unported License](http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)
-* [www.iso.org](http://www.iso.org)
+* [ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1) by [Wikipedia](https://www.wikipedia.org) licensed under [CC BY-SA 3.0 Unported License](https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License)
+* [www.iso.org](https://www.iso.org)

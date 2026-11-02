@@ -6,6 +6,7 @@
 *.xml text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab,tab-in-indent,tabwidth=4
 *.json text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab,tab-in-indent,tabwidth=4
 *.yml text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab,tab-in-indent,tabwidth=4
+*.yaml text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab,tab-in-indent,tabwidth=4
 
 # don't add these files/directories to github release tarballs (composer dist install)
 /docs/ export-ignore
@@ -20,3 +21,4 @@
 /phpstan.neon.dist export-ignore
 /phpunit.xml.dist export-ignore
 /README.md export-ignore
+/.yamllint export-ignore
