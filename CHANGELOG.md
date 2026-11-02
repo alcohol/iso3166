@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+* Added: `League\ISO3166\Exception` marker interface, implemented by every exception thrown by this library
+* Deprecated: `League\ISO3166\Exception\ISO3166Exception`, catch `League\ISO3166\Exception` instead (it will be removed in 5.0)
 * Changed: allow PHPUnit 10, 11 and 12 next to 9 for development, tests use attributes and static data providers
 * Changed: upgraded PHPStan to 2.x, tightened `Guards` assertions (`non-empty-string` / `numeric-string`) and iterator generics
 * Changed: php-cs-fixer uses `@PER-CS` instead of `@PSR2`

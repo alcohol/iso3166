@@ -11,6 +11,9 @@ declare(strict_types=1);
 
 namespace League\ISO3166\Exception;
 
-interface ISO3166Exception extends \Throwable
+/**
+ * @deprecated since 4.6, catch {@see \League\ISO3166\Exception} instead; will be removed in 5.0
+ */
+interface ISO3166Exception extends \League\ISO3166\Exception
 {
 }
