@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+* See [unreleased].
+
+## [4.7.0] - 2026-11-02
+
 * Changed: Antarctica lists BYN instead of the withdrawn BYR ([#130])
 * Changed: Zimbabwe also lists ZWG ([#130])
 * Changed: Bhutan also lists INR; Haiti, British Indian Ocean Territory and Panama also list USD, per the ISO 4217 list ([#130])
@@ -120,7 +124,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * New: initial release of `league/iso3166`.
 
-[unreleased]: https://github.com/alcohol/iso3166/compare/4.6.0...HEAD
+[unreleased]: https://github.com/alcohol/iso3166/compare/4.7.0...HEAD
+[4.7.0]: https://github.com/alcohol/iso3166/compare/4.6.0...4.7.0
 [4.6.0]: https://github.com/alcohol/iso3166/compare/4.5.1...4.6.0
 [4.5.1]: https://github.com/thephpleague/iso3166/compare/4.5.0...4.5.1
 [4.5.0]: https://github.com/thephpleague/iso3166/compare/4.4.0...4.5.0
