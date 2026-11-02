@@ -12,6 +12,8 @@ declare(strict_types=1);
 namespace League\ISO3166;
 
 use League\ISO3166\Exception\DomainException;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 
 class ISO3166DataValidatorTest extends TestCase
@@ -33,6 +35,8 @@ class ISO3166DataValidatorTest extends TestCase
      *
      * @phpstan-param class-string<\Throwable> $expectedException
      */
+    #[TestDox('Assert that each entry has all the required lookup keys:')]
+    #[DataProvider('requiredKeysProvider')]
     public function testDataEntryHasRequiredKeys(
         array $data,
         ?string $expectedException = null,
@@ -49,7 +53,7 @@ class ISO3166DataValidatorTest extends TestCase
     /**
      * @phpstan-return array<string, array<array<array<string, string>>|class-string<\Throwable>|string|null>>
      */
-    public function requiredKeysProvider(): array
+    public static function requiredKeysProvider(): array
     {
         return [
             'entry missing alpha2' => [

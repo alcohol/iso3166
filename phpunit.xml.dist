@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Targets the PHPUnit 10+ configuration format. PHPUnit 9 (only installed on
+    PHP 7.4/8.0 or with prefer-lowest) still runs this file, but will report
+    schema validation warnings. Code coverage is only collected in CI
+    (see .github/workflows/ci.yaml), pass coverage options to run it locally.
+-->
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/9.5/phpunit.xsd"
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
     bootstrap="vendor/autoload.php"
-    cacheResultFile=".phpunit.cache/test-results"
+    cacheDirectory=".phpunit.cache"
     colors="true"
     stderr="true"
 >
@@ -14,22 +20,10 @@
         </testsuite>
     </testsuites>
 
-    <coverage cacheDirectory=".phpunit.cache/code-coverage"
-              processUncoveredFiles="true">
+    <source ignoreSuppressionOfDeprecations="true" restrictNotices="true" restrictWarnings="true">
         <include>
             <directory>src</directory>
         </include>
-        <exclude>
-            <directory>tests</directory>
-        </exclude>
-        <report>
-            <clover outputFile="coverage.xml"/>
-            <text outputFile="php://stderr"/>
-        </report>
-    </coverage>
-
-    <logging>
-        <text outputFile="php://stderr"/>
-    </logging>
+    </source>
 
 </phpunit>
