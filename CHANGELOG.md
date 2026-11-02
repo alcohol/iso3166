@@ -5,7 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
-* See [unreleased].
+* Changed: Antarctica lists BYN instead of the withdrawn BYR ([#130])
+* Changed: Zimbabwe also lists ZWG ([#130])
+* Changed: Bhutan also lists INR; Haiti, British Indian Ocean Territory and Panama also list USD, per the ISO 4217 list ([#130])
+* Changed: Cuba no longer lists the withdrawn CUC ([#130])
+* Added: `Nauru` alias for `Naoero` in `ISO3166WithAliases`
 
 ## [4.6.0] - 2026-11-02
 
@@ -141,6 +145,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 [1.0.0]: https://github.com/thephpleague/iso3166/compare/64bae4f00dbd5679b9a36c54c37af73d5deb5be1...1.0.0
 
 [#131]: https://github.com/alcohol/iso3166/pull/131
+[#130]: https://github.com/alcohol/iso3166/issues/130
 [#129]: https://github.com/thephpleague/iso3166/pull/129
 [#121]: https://github.com/thephpleague/iso3166/pull/121
 [#119]: https://github.com/thephpleague/iso3166/pull/119

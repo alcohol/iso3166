@@ -28,6 +28,7 @@ class ISO3166WithAliases implements ISO3166DataProvider
         'Laos' => 'Lao People\'s Democratic Republic',
         'Micronesia' => 'Micronesia (Federated States of)',
         'Moldova' => 'Moldova (Republic of)',
+        'Nauru' => 'Naoero',
         'Palestine' => 'Palestine, State of',
         'Russia' => 'Russian Federation',
         'Saint Martin' => 'Saint Martin (French part)',

@@ -276,7 +276,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'ARS',
                 'AUD',
                 'BRL',
-                'BYR',
+                'BYN',
                 'CLP',
                 'CNY',
                 'CZK',
@@ -450,6 +450,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '064',
             'currency' => [
                 'BTN',
+                'INR',
             ],
         ],
         [
@@ -513,6 +514,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '086',
             'currency' => [
                 'GBP',
+                'USD',
             ],
         ],
         [
@@ -729,7 +731,6 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'alpha3' => 'CUB',
             'numeric' => '192',
             'currency' => [
-                'CUC',
                 'CUP',
             ],
         ],
@@ -1092,6 +1093,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '332',
             'currency' => [
                 'HTG',
+                'USD',
             ],
         ],
         [
@@ -1778,6 +1780,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
             'numeric' => '591',
             'currency' => [
                 'PAB',
+                'USD',
             ],
         ],
         [
@@ -2477,6 +2480,7 @@ final class ISO3166 implements \Countable, \IteratorAggregate, ISO3166DataProvid
                 'GBP',
                 'USD',
                 'ZAR',
+                'ZWG',
             ],
         ],
     ];
